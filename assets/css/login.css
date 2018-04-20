@@ -1,0 +1,40 @@
+/*	
+------------------------------------------------------------
+Login Page Styles
+------------------------------------------------------------	
+Notes:
+------------------------------------------------------------	
+*/
+
+
+
+/* Facebook Connect */
+#loginform div.dark
+{
+	width: 120px;
+	margin: 0;
+	padding: 0 0 10px 3px;
+}
+
+/* Twitter Connect */
+#twc_connect
+{
+	width: 165px;
+	margin: 0;
+	padding: 0 0 10px 0;
+}
+
+	#twc_connect p
+	{
+		display: none;
+		font-family: Times, Garamond, Georgia, serif; 
+		font-size: 10px;
+		color: #666;
+	}
+	
+	#twc_connect #twc_button,
+	#twc_connect #twc_button img
+	{
+		margin: 0;
+		padding: 0;
+	}

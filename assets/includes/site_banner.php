@@ -1,0 +1,149 @@
+<?php
+
+//die('here');
+
+?><!-- site_banner.php -->
+
+<div id="site_banner" class="clearfix">
+<div id="site_banner_inner" class="clearfix">
+
+
+
+<?php
+
+global $post;
+//print_r( $post ); die();
+
+if ( is_front_page() ) {
+
+	?>
+
+	<div class="splash_widget_col">
+
+		<div class="splash_main_widget">
+
+			<?php dynamic_sidebar( 'SOF Homepage Top Main' ); ?>
+
+		</div>
+
+		<div class="splash_sub_widget">
+
+			<?php dynamic_sidebar( 'SOF Homepage Top Sub' ); ?>
+
+		</div>
+
+	</div>
+
+	<div class="splash_right_widget">
+
+		<?php dynamic_sidebar( 'SOF Homepage Top Right' ); ?>
+
+	</div>
+
+	<?php
+
+} elseif ( is_page() AND empty( $post->post_parent ) ) {
+
+	?>
+
+	<div class="splash_widget_col">
+
+		<div class="splash_main_widget">
+
+			<?php if (have_posts()) : while (have_posts()) : the_post();
+
+			$hidden_title = '';
+			if ( get_post_meta( get_the_ID(), 'show_heading', true ) == '1' ) { $hidden_title = ' class="hidden"'; }
+
+			?>
+
+			<div class="post clearfix">
+
+			<h2 id="post-<?php the_ID(); ?>"<?php echo $hidden_title; ?>><?php the_title(); ?> <?php edit_post_link('Edit this entry', '<span>', '</span>'); ?></h2>
+
+			<?php the_content('<p class="serif">Read the rest of this page &raquo;</p>'); ?>
+
+			</div><!-- /post -->
+
+			<?php endwhile; endif; ?>
+
+		</div>
+
+		<div class="splash_sub_widget">
+
+			<?php ?>
+
+		</div>
+
+	</div>
+
+	<div class="splash_right_widget">
+
+		<?php dynamic_sidebar( 'SOF Homepage Top Right' ); ?>
+
+	</div>
+
+	<?php
+
+} else {
+
+	?>
+
+	<div class="splash_widget_col">
+
+		<div class="splash_main_widget">
+
+			<?php dynamic_sidebar( 'SOF Homepage Top Main' ); ?>
+
+		</div>
+
+		<div class="splash_sub_widget">
+
+			<?php dynamic_sidebar( 'SOF Homepage Top Sub' ); ?>
+
+		</div>
+
+	</div>
+
+	<div class="splash_right_widget">
+
+		<?php //include( get_template_directory() . '/assets/includes/network.php' ); ?>
+		<?php dynamic_sidebar( 'SOF Homepage Top Right' ); ?>
+
+	</div>
+
+	<?php
+
+	//include( get_template_directory() . '/assets/includes/banner_main.php' );
+
+}
+
+?>
+
+</div><!-- /site_banner_inner -->
+</div><!-- /site_banner -->
+
+
+
+<div id="cols" class="clearfix">
+<div class="cols_inner">
+
+
+
+<?php
+
+// get page list, blank by default
+$pagelist = apply_filters( 'theball_pagelist', '' );
+
+// did we get a page list?
+if ( $pagelist != '' ) {
+
+	// include it
+	include( $pagelist );
+
+}
+
+?>
+
+
+

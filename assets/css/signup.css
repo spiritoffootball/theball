@@ -1,0 +1,43 @@
+/* 
+--------------------------------------------------------------------------------
+WordPress Multisite Signup Page 
+--------------------------------------------------------------------------------
+*/
+
+
+
+#content
+{
+	margin: 20px auto;
+	padding: 0;
+}
+
+#content h2
+{
+	font-family: Georgia, serif;
+	font-size: 1.55em;
+	font-weight: normal;
+	color: #202B6D;
+	margin: 8px 0 16px 0;
+}
+
+#content p
+{
+	font-size: 1em;
+	line-height: 1.45;
+}
+
+#content form p,
+.mu_alert
+{
+	font-size: 1em;
+	line-height: 1.45;
+	margin: 0 0 12px 0;
+}
+
+#setupform
+{
+	margin: 0;
+	padding: 0;
+	width: 450px;
+}

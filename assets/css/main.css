@@ -1,0 +1,511 @@
+/*
+--------------------------------------------------------------------------------
+Main Site Specific Styles
+--------------------------------------------------------------------------------
+Notes:
+--------------------------------------------------------------------------------
+*/
+
+
+
+#main_blog #site_banner
+{
+	padding: 40px 0 120px 0;
+	background: #0A0933 url("/wp-content/themes/theball/assets/images/interface/sunset-1000x360.jpg") left top no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50%;
+}
+
+	#main_blog #banner_copy p,
+	#main_blog #banner_copy a
+	{
+		color: #fff;
+	}
+
+
+
+#main_blog #content_wrapper
+{
+	background: #000;
+}
+
+	#main_blog div#cols
+	{
+		float: none;
+		width: auto;
+		margin: 0;
+		background: transparent;
+		background: transparent url("../images/decoration/sof_logo_muted_bg_800.png") no-repeat 50% top;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+
+	#main_blog div#cols .cols_inner
+	{
+		width: 980px;
+		margin: 0 auto;
+	}
+
+
+
+/*
+--------------------------------------------------------------------------------
+Site Banner post
+--------------------------------------------------------------------------------
+*/
+#main_blog #site_banner .splash_widget_col
+{
+	float: left;
+	width: 60%;
+}
+
+	#main_blog #site_banner .splash_main_widget .post img
+	{
+		float: left;
+	}
+
+	#main_blog #site_banner .splash_main_widget div.alignleft,
+	#main_blog #site_banner .splash_main_widget div.alignright
+	{
+		margin: 0;
+		float: none;
+	}
+
+	#main_blog #site_banner .splash_main_widget .post img,
+	#main_blog #site_banner .splash_main_widget .widget img
+	{
+		width: 100%;
+		height: auto;
+	}
+
+	#main_blog #site_banner .post h2
+	{
+		color: #fff;
+	}
+
+
+
+/* main block */
+#main_blog #site_banner .splash_main_widget
+{
+}
+
+	#main_blog .widget .widget-title
+	{
+		color: #fff;
+	}
+
+	#main_blog #site_banner .splash_main_widget .post h2,
+	#main_blog #site_banner .splash_main_widget .widget .widget-title
+	{
+		font-size: 150%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: #000;
+		background: rgba( 0, 0, 0, 0.66);
+		text-shadow: 0 0 15px #0A0933;
+		margin: 0;
+		padding: 0.3em 1.05%;
+		width: 98%;
+		text-align: left;
+		z-index: 20;
+	}
+
+	#main_blog #site_banner .splash_main_widget .post h2 span
+	{
+		display: block;
+		float: right;
+		margin: 0.4em 0.4em 0 0;
+	}
+
+	#main_blog #site_banner .splash_main_widget .post .text-overlay,
+	#main_blog #site_banner .splash_main_widget .widget .text-overlay
+	{
+		color: #fff;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background: #000;
+		background: rgba( 0, 0, 0, 0.46);
+		text-shadow: 0 0 5px #0A0933;
+		margin: 0;
+		padding: 1em;
+		text-align: left;
+	}
+
+	#main_blog #site_banner .splash_main_widget .post .text-overlay p
+	{
+		font-weight: normal;
+		font-size: 100%;
+		line-height: normal;
+	}
+
+	#main_blog #site_banner .splash_main_widget .post .text-overlay em
+	{
+		font-style: normal;
+		font-weight: normal;
+	}
+
+	#main_blog #site_banner .splash_main_widget .post .text-overlay a
+	{
+		color: #fff;
+	}
+
+
+
+/*
+--------------------------------------------------------------------------------
+Right block
+--------------------------------------------------------------------------------
+*/
+#main_blog #site_banner .splash_right_widget
+{
+	float: right;
+	width: 38%;
+}
+
+	#main_blog #site_banner .splash_right_widget .widget
+	{
+	}
+
+
+
+/*
+--------------------------------------------------------------------------------
+Main column
+--------------------------------------------------------------------------------
+*/
+#main_blog div.main_column
+{
+	background: transparent;
+}
+
+#main_blog div.main_column .post h1,
+#main_blog div.main_column .post h2,
+#main_blog div.main_column .post h3,
+#main_blog div.main_column .post p,
+#main_blog div.main_column .post a
+{
+	color: #fff;
+}
+
+#main_blog div.main_column .post blockquote
+{
+	background-color: #333;
+	background: rgba( 0, 0, 0, 0.44);
+	text-shadow: 0 0 15px #0A0933;
+	border: 1px solid #555;
+	font-size: 110%;
+}
+
+#main_blog div.main_column .post  h3,
+#main_blog div.main_column .post  h4,
+#main_blog div.main_column .post  li
+{
+	color: #fff;
+}
+
+#main_blog #main_column_splash
+{
+	background: transparent;
+}
+
+#main_blog #main_column_splash .post
+{
+	padding: 0 20px;
+}
+
+#main_blog #main_column_splash .post h2
+{
+	margin: 1em 0 0.5em 0;
+}
+
+#main_blog .post form#searchform
+{
+	border: none;
+}
+
+
+
+/*
+--------------------------------------------------------------------------------
+History page hacks
+--------------------------------------------------------------------------------
+*/
+body#main_blog.page-id-6 div.main_column .post.post-42  img
+{
+	display: none;
+}
+
+
+
+/*
+--------------------------------------------------------------------------------
+Press list page
+--------------------------------------------------------------------------------
+*/
+body#main_blog.page-id-207 div.main_column .post  ul
+{
+	border-top: 1px solid #333;
+}
+
+body#main_blog.page-id-207 div.main_column .post  li
+{
+	border-bottom: 1px solid #333;
+}
+
+body#main_blog.page-id-207 div#cols
+{
+	background: transparent;
+	background: transparent url("../images/decoration/sof_logo_muted_bg_800.png") no-repeat 50% top;
+	-webkit-background-size: auto;
+	-moz-background-size: auto;
+	-o-background-size: auto;
+	background-size: auto;
+}
+
+
+
+/*
+--------------------------------------------------------------------------------
+Sidebar
+--------------------------------------------------------------------------------
+*/
+
+/* Hide sidebar teaser text */
+#main_blog .ball_teaser_text > p
+{
+	display: none;
+}
+
+
+
+/*
+--------------------------------------------------------------------------------
+Responsiveness
+--------------------------------------------------------------------------------
+*/
+
+/* our design is 980px wide - when screens would struggle with this, then */
+@media all and (max-width: 980px) {
+
+	#main_blog #site_banner
+	{
+		padding-bottom: 75px;
+	}
+
+	#main_blog div#cols
+	{
+		float: none;
+		width: auto;
+		margin: 0;
+		background: transparent;
+		background: transparent url("../images/decoration/sof_logo_muted_bg_800.png") no-repeat 50% top;
+	}
+
+	#main_blog div#cols .cols_inner
+	{
+		width: auto;
+		margin: 0;
+	}
+
+	/* main widget */
+	.text-overlay
+	{
+		font-size: 80%;
+	}
+
+	/* main column */
+	#main_blog div.main_column
+	{
+		width: auto;
+		margin: 0;
+	}
+
+	#main_blog .main_column .post
+	{
+		float: none;
+		width: 480px;
+		margin: 0 auto;
+		padding-top: 20px;
+	}
+
+	#main_blog .main_column .post .entrytext
+	{
+		padding: 0;
+	}
+
+	#main_blog .main_column .post img
+	{
+		float: none;
+		width: 100%;
+		height: auto;
+		padding: 0 0 20px 0;
+	}
+
+	#main_blog div.right_column
+	{
+		width: auto;
+		background: transparent url("../images/decoration/sof_logo_muted_bg_800.png") no-repeat 50% top;
+	}
+
+	#main_blog div.right_column_inner
+	{
+		width: 700px;
+		margin: 0 auto;
+	}
+
+	/*
+	#main_blog.home .main_column .social_widget
+	{
+		float: none;
+		width: auto;
+		margin: 0;
+		background: transparent url("../images/decoration/sof_logo_muted_bg_800.png") no-repeat 50% top;
+	}
+
+	#main_blog.home .main_column .social_widget .widget
+	{
+		float: none;
+		width: 466px;
+		margin: 0 auto;
+	}
+	*/
+
+}
+
+
+
+/* next natural breakpoint */
+@media all and (max-width: 725px) {
+
+	#main_blog #site_banner .splash_widget_col
+	{
+		float: none;
+		width: auto;
+	}
+
+		#main_blog #site_banner .splash_main_widget
+		{
+			width: 80%;
+			margin: 0 auto 40px auto;
+		}
+
+		.text-overlay
+		{
+			font-size: 100%;
+		}
+
+		#main_blog #site_banner .splash_right_widget
+		{
+			float: none;
+			width: 80%;
+			margin: 0 auto;
+		}
+
+	#main_blog #site_banner
+	{
+		padding-bottom: 120px;
+	}
+
+	#main_blog div.right_column_inner
+	{
+		width: auto;
+		margin: 0;
+	}
+
+}
+
+
+
+/* next natural breakpoint */
+@media all and (max-width: 640px) {
+
+	.splash_right_widget .widget-title
+	{
+		display: block;
+		width: auto;
+		margin: 0 auto 0.3em auto;
+	}
+
+}
+
+
+
+/* next natural breakpoint */
+@media all and (max-width: 600px) {
+
+	#main_blog #site_banner
+	{
+		padding-bottom: 75px;
+	}
+
+		.text-overlay
+		{
+			font-size: 80%;
+		}
+
+	#main_blog #site_banner .splash_right_widget
+	{
+		width: 370px;
+		margin: 0 auto;
+	}
+
+	#main_blog .main_column .post
+	{
+		float: none;
+		width: auto;
+		margin: 0 20px;
+		padding-top: 20px;
+	}
+
+}
+
+
+
+/* next natural breakpoint */
+@media all and (max-width: 520px) {
+
+	#main_blog #site_banner
+	{
+		padding-top: 0;
+	}
+
+	#main_blog #site_banner .splash_main_widget
+	{
+		width: auto;
+	}
+
+	.splash_right_widget .widget-title
+	{
+		text-align: center;
+	}
+
+}
+
+
+
+/* next natural breakpoint */
+@media all and (max-width: 370px) {
+
+	#main_blog #site_banner .splash_right_widget
+	{
+		width: 100%;
+	}
+
+		.text-overlay
+		{
+			font-size: 60%;
+		}
+
+}
+
+
+

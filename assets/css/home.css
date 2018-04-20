@@ -1,0 +1,400 @@
+/*
+--------------------------------------------------------------------------------
+Home Page Specific Styles
+--------------------------------------------------------------------------------
+Notes:
+--------------------------------------------------------------------------------
+*/
+
+#main_blog.home h2
+{
+	text-transform: uppercase;
+}
+
+#main_blog.home #site_banner
+{
+	padding: 40px 0 120px 0;
+	background: #0A0933 url("/wp-content/themes/theball/assets/images/interface/sunset-1000x360.jpg") left top no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50%;
+}
+
+#main_blog.home #content_wrapper
+{
+	background: #000;
+}
+
+	#main_blog.home div#cols
+	{
+		float: none;
+		width: auto;
+		margin: 0;
+		background: transparent;
+		background: transparent url("../images/decoration/sof_logo_muted_bg_800.png") no-repeat 50% top;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+
+	#main_blog.home div.main_column
+	{
+		float: none;
+		background: none;
+	}
+
+	#main_blog.home div.right_column
+	{
+		width: 700px;
+		margin: 0 auto;
+		background: #202B6D;
+	}
+
+	#main_blog.home #cols div.post.ball_teaser
+	{
+		float: left;
+		width: 320px;
+		padding-left: 10px;
+		padding-right: 20px;
+	}
+
+	#main_blog.home #cols div.post.ball_teaser.ball_teaser_row_start
+	{
+		width: 320px;
+		padding-right: 10px;
+		padding-left: 20px;
+	}
+
+
+
+	#main_blog.home #main_column_splash
+	{
+		margin-bottom: 0;
+		background: #AFC2DC;
+	}
+
+		#main_blog.home .post .post_header_inner h2
+		{
+			font-size: 2em;
+			font-weight: 400;
+			margin: 0 0 0.1em 0;
+			padding: 0;
+			line-height: 1;
+		}
+
+		#main_blog.home .post .post_header_inner p
+		{
+			margin: 0 0 1em 0;
+			line-height: 1.7;
+		}
+
+		#main_blog.home .post p.teaser-read-more
+		{
+			margin: 0 0 0.4em 0;
+		}
+
+		#main_blog.home .post p a.call-to-action
+		{
+			font-size: 100%;
+			padding: 6px 10px;
+		}
+
+
+
+	/* on main site home */
+	#main_blog.home .post .post_header.has_feature_image .post_header_text
+	{
+		width: 670px;
+	}
+
+
+
+	/* Homepage Site Banner widgets */
+	#main_blog.home #site_banner .splash_widget_col
+	{
+		float: left;
+		width: 60%;
+	}
+
+		#main_blog.home #site_banner .splash_main_widget .widget img
+		{
+			width: 100%;
+			height: auto;
+		}
+
+		#main_blog.home .widget .widget-title
+		{
+			color: #fff;
+		}
+
+
+
+
+	/* main column */
+	#main_blog.home div.main_column
+	{
+		width: 980px;
+		margin: 0 auto;
+	}
+
+		#main_blog.home .main_column .widget
+		{
+			color: #fff;
+			padding: 0 0 40px 0;
+		}
+
+		#main_blog.home div.main_column .widget-title
+		{
+			font-size: 130%;
+			margin: 0 0 0.2em 0;
+		}
+
+
+
+	/* middle right block */
+	#main_blog.home .main_column .about_widget
+	{
+		float: right;
+		width: 480px;
+	}
+
+		#main_blog.home .main_column .about_widget .widget
+		{
+		}
+
+		#main_blog.home .main_column .about_widget .widget iframe
+		{
+			margin: 0 0 0.4em 0;
+			width: 100%;
+			height: 270px;
+		}
+
+		#main_blog.home .main_column .widget a.button
+		{
+			font-size: 14px;
+			line-height: 3;
+		}
+
+
+
+	/* middle left block */
+	#main_blog.home .main_column .social_widget
+	{
+		float: left;
+		width: 466px;
+	}
+
+		#main_blog.home .main_column .social_widget .widget
+		{
+		}
+
+
+
+/* Facebook widget */
+#main_blog.home .main_column #text-5.widget .textwidget iframe
+{
+	width: 466px;
+	height: 658px;
+	margin: 0 auto;
+}
+
+
+
+#countdown
+{
+	font-size: 80%;
+	color: #fff;
+	border: none;
+	background: #000;
+	background: rgba( 0, 0, 0, 0.46);
+}
+
+
+
+/* our design is 980px wide - when screens would struggle with this, then */
+@media all and (max-width: 980px) {
+
+	#main_blog.home #site_banner
+	{
+		padding-bottom: 75px;
+	}
+
+	#main_blog.home div#cols
+	{
+		float: none;
+		width: auto;
+		margin: 0;
+		background: transparent;
+		background: transparent url("../images/decoration/sof_logo_muted_bg_800.png") no-repeat 50% top;
+	}
+
+	#main_blog div#cols .cols_inner
+	{
+		width: auto;
+		margin: 0;
+	}
+
+	/* main column */
+	#main_blog.home div.main_column
+	{
+		width: auto;
+		margin: 0;
+	}
+
+	#main_blog.home .main_column .about_widget
+	{
+		float: none;
+		width: 480px;
+		margin: 0 auto;
+		padding-top: 20px;
+	}
+
+	#main_blog.home .main_column .social_widget
+	{
+		float: none;
+		width: auto;
+		margin: 0;
+		background: transparent url("../images/decoration/sof_logo_muted_bg_800.png") no-repeat 50% top;
+	}
+
+	#main_blog.home .main_column .social_widget .widget
+	{
+		float: none;
+		width: 466px;
+		margin: 0 auto;
+	}
+
+}
+
+
+
+/* next natural breakpoint */
+@media all and (max-width: 725px) {
+
+	#main_blog.home #site_banner .splash_widget_col
+	{
+		float: none;
+		width: auto;
+	}
+
+		#main_blog.home #site_banner .splash_main_widget
+		{
+			width: 80%;
+			margin: 0 auto 40px auto;
+		}
+
+	#main_blog.home #site_banner
+	{
+		padding-bottom: 120px;
+	}
+
+}
+
+
+
+/* next natural breakpoint */
+@media all and (max-width: 600px) {
+
+	#main_blog.home #site_banner
+	{
+		padding-bottom: 75px;
+	}
+
+	#main_blog.home .main_column .about_widget
+	{
+		width: 370px;
+		margin: 0 auto;
+	}
+
+		#main_blog.home .main_column .about_widget .widget iframe
+		{
+			float: none;
+			width: 370px;
+			height: 208px;
+		}
+
+		/* Hide Facebook since it's not responsive */
+		#main_blog.home .main_column #text-2.widget
+		{
+			display: none;
+		}
+
+	#main_blog.home .main_column .social_widget .widget
+	{
+		width: 80%;
+	}
+
+}
+
+
+
+/* next natural breakpoint */
+@media all and (max-width: 520px) {
+
+	#main_blog.home #site_banner
+	{
+		padding-top: 0;
+	}
+
+	#main_blog.home #site_banner .splash_main_widget
+	{
+		width: auto;
+	}
+
+	#main_blog.home #site_banner .splash_main_widget .widget .widget-title
+	{
+		font-size: 120%;
+		text-align: center;
+	}
+
+	#main_blog.home .main_column .social_widget .widget
+	{
+		width: 90%;
+	}
+
+}
+
+
+
+/* next natural breakpoint */
+@media all and (max-width: 370px) {
+
+	#main_blog.home .main_column .about_widget
+	{
+		width: 100%;
+	}
+
+	#main_blog.home div.main_column .widget-title
+	{
+		margin: 0 0 0.2em 0.4em;
+	}
+
+	#main_blog.home .main_column .about_widget .widget iframe
+	{
+		float: none;
+		width: 100%;
+		height: 180px;
+		margin: 0 0 0.5em 0;
+	}
+
+	.about_widget p
+	{
+		margin-left: 0.5em;
+		margin-right: 0.5em;
+	}
+
+	.fb_iframe_widget_fluid span,
+	.fb_iframe_widget span,
+	.fb_iframe_widget iframe
+	{
+		width: 100% !important;
+	}
+
+}
+
+
+
