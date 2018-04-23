@@ -780,7 +780,7 @@ endif;
 
 if ( ! function_exists( 'theball_geomashup_map_get' ) ):
 /**
- * Show the map for a past.
+ * Show the map for a post.
  *
  * @since 2.3.2
  */
