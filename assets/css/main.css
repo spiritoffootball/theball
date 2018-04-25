@@ -521,6 +521,11 @@ Responsiveness
 			font-size: 60%;
 		}
 
+	#main_blog .main_column .post.latest_ball_post
+	{
+		margin: 0 0.4em 0.2em 0.4em;
+	}
+
 }
 
 

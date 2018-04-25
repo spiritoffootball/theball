@@ -108,6 +108,7 @@ Notes:
 	/* on main site home */
 	#main_blog.home .post .post_header.has_feature_image .post_header_text
 	{
+		position: absolute;
 		width: 100%;
 		padding: 0;
 	}

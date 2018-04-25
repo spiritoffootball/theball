@@ -2036,7 +2036,7 @@ Main Blog Homepage Styling
 		margin: 0 10px 0 0;
 		padding: 0;
 		float: left;
-		width: 138px;
+		width: 128px;
 		height: 32px;
 	}
 
@@ -2044,6 +2044,7 @@ Main Blog Homepage Styling
 	.post ul.social-text-links li:last-child
 	{
 		margin-right: 0;
+		width: auto;
 	}
 
 		a.facebook-text,
@@ -2067,6 +2068,18 @@ Main Blog Homepage Styling
 		a.twitter-text
 		{
 			background: transparent url("../images/social_media/twitter_logo_128.png") left top no-repeat;
+		}
+
+		span.blog-link
+		{
+			padding-top: 9px;
+			display: inline-block;
+		}
+
+		a.button.blog-text
+		{
+			text-decoration: none;
+			text-shadow: none;
 		}
 
 /* homepage teasers */
@@ -4095,6 +4108,32 @@ NMA widget
 	{
 		clear: left;
 		text-align: center;
+	}
+
+	/* Social Media links */
+	.social-text-links li,
+	.post ul.social-text-links li
+	{
+		width: 94px;
+		height: 32px;
+	}
+
+	a.facebook-text,
+	a.twitter-text
+	{
+		background-size: 94px;
+		width: 94px;
+		height: 32px;
+	}
+
+	span.blog-link
+	{
+		padding-top: 5px;
+	}
+
+	a.button.blog-text
+	{
+		font-size: 100%;
 	}
 
 }
