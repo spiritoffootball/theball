@@ -309,6 +309,11 @@ Notes:
 		padding-bottom: 120px;
 	}
 
+	#main_blog.home .widget .post .post_header_inner h2
+	{
+		font-size: 1.2em;
+	}
+
 }
 
 
