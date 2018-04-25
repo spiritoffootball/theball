@@ -81,7 +81,7 @@ Notes:
 		{
 			font-size: 2em;
 			font-weight: 400;
-			margin: 0 0 0.1em 0;
+			margin: 10px 15px;
 			padding: 0;
 			line-height: 1;
 		}
@@ -108,10 +108,14 @@ Notes:
 	/* on main site home */
 	#main_blog.home .post .post_header.has_feature_image .post_header_text
 	{
-		width: 670px;
+		width: 100%;
+		padding: 0;
 	}
 
-
+	#main_blog.home .post .post_header.has_feature_image
+	{
+		margin: 0 0 0.4em 0;
+	}
 
 	/* Homepage Site Banner widgets */
 	#main_blog.home #site_banner .splash_widget_col
@@ -177,6 +181,18 @@ Notes:
 		{
 			font-size: 14px;
 			line-height: 3;
+		}
+
+		#main_blog div.main_column .widget .post p
+		{
+			margin: 0;
+			padding: 0;
+		}
+
+		#main_blog div.main_column .widget .post a
+		{
+			color: #000;
+			text-decoration: none;
 		}
 
 

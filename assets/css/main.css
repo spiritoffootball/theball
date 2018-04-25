@@ -350,6 +350,14 @@ Responsiveness
 		padding: 0 0 20px 0;
 	}
 
+	#main_blog .main_column .post .post_header_inner img
+	{
+		float: none;
+		width: 100%;
+		height: auto;
+		padding: 0;
+	}
+
 	#main_blog div.right_column
 	{
 		width: auto;
@@ -464,6 +472,14 @@ Responsiveness
 		width: auto;
 		margin: 0 20px;
 		padding-top: 20px;
+	}
+
+	#main_blog .main_column .post.latest_ball_post
+	{
+		float: none;
+		width: auto;
+		margin: 0;
+		padding-top: 0;
 	}
 
 }
