@@ -3985,7 +3985,7 @@ NMA widget
 		color: #000;
 		text-shadow: 0 0 1px #0A0933;
 		line-height: 1.9;
-		margin: 8px 0;
+		margin: 8px 0 8px 5px;
 	}
 
 	.nma_widget span
@@ -3993,7 +3993,8 @@ NMA widget
 		color: #fff;
 		background: #000;
 		background: rgba( 0, 0, 0, 0.5 );
-		padding: 2px 5px;
+		padding: 2px 0;
+		box-shadow: -5px 0 0 rgba( 0, 0, 0, 0.5 ), 5px 0 0 rgba( 0, 0, 0, 0.5 );
 	}
 
 	.nma_widget a
