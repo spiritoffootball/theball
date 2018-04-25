@@ -4083,32 +4083,7 @@ NMA widget
 }
 
 /* next natural breakpoint */
-@media all and (max-width: 370px) {
-
-	div.nma_widget
-	{
-		width: 100%;
-	}
-
-	.nma_widget iframe
-	{
-		float: none;
-		width: 100%;
-		height: 180px;
-		margin: 0 0 0.5em 0;
-	}
-
-	.nma_widget p
-	{
-		margin-left: 0.5em;
-		margin-right: 0.5em;
-	}
-
-	.nma_widget p:last-child
-	{
-		clear: left;
-		text-align: center;
-	}
+@media all and (max-width: 600px) {
 
 	/* Social Media links */
 	.social-text-links li,
@@ -4134,6 +4109,36 @@ NMA widget
 	a.button.blog-text
 	{
 		font-size: 100%;
+	}
+
+}
+
+/* next natural breakpoint */
+@media all and (max-width: 520px) {
+
+	div.nma_widget
+	{
+		width: 100%;
+	}
+
+	.nma_widget iframe
+	{
+		float: none;
+		width: 100%;
+		height: 180px;
+		margin: 0 0 0.5em 0;
+	}
+
+	.nma_widget p
+	{
+		margin-left: 0.5em;
+		margin-right: 0.5em;
+	}
+
+	.nma_widget p:last-child
+	{
+		clear: left;
+		text-align: center;
 	}
 
 }
