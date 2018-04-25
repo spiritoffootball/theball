@@ -351,6 +351,11 @@ Notes:
 		width: 80%;
 	}
 
+	#main_blog div.main_column .widget .post p
+	{
+		font-size: 80%;
+	}
+
 }
 
 
