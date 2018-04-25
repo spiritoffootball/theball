@@ -184,6 +184,11 @@ Notes:
 			line-height: 3;
 		}
 
+		#main_blog div.main_column .widget .post h2 a
+		{
+			text-transform: none;
+		}
+
 		#main_blog div.main_column .widget .post p
 		{
 			margin: 0;
@@ -192,9 +197,14 @@ Notes:
 
 		#main_blog div.main_column .widget .post a
 		{
-			color: #000;
+			color: #555;
 			text-decoration: none;
-			text-transform: none;
+		}
+
+		#main_blog div.main_column .widget .post a:hover,
+		#main_blog div.main_column .widget .post a:active
+		{
+			color: #000;
 		}
 
 
