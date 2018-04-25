@@ -3973,6 +3973,12 @@ NMA widget
 		display: none;
 	}
 
+	.nma_widget iframe
+	{
+		width: 100%;
+		height: 209px;
+	}
+
 	.nma_widget p
 	{
 		font-size: 80%;
