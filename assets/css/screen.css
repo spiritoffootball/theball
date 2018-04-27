@@ -3598,7 +3598,7 @@ RESPONSIVENESS
 	.post .post_header.has_feature_image .post_header_text
 	{
 		position: relative;
-		width: 100%;
+		width: auto;
 		height: auto;
 	}
 
@@ -3831,6 +3831,12 @@ RESPONSIVENESS
 		padding: 20px 0;
 		margin: 0 auto;
 		float: none;
+	}
+
+	.post .post_header .post_header_text h2
+	{
+		font-size: 1.5em;
+		margin-bottom: 2px;
 	}
 
 }
