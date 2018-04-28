@@ -79,7 +79,7 @@ Notes:
 
 		#main_blog.home .post .post_header_inner h2
 		{
-			font-size: 2em;
+			font-size: 1.8em;
 			font-weight: 400;
 			margin: 10px 15px;
 			padding: 0;
@@ -197,7 +197,7 @@ Notes:
 		{
 			background: #000;
 			background: rgba( 0, 0, 0, 0.46);
-			text-shadow: 0 0 5px #0A0933;
+			text-shadow: 0 0 3px #0A0933;
 		}
 
 		#main_blog.home .main_column .about_widget .widget .post .post_header h2 a
