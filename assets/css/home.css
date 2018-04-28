@@ -83,7 +83,7 @@ Notes:
 			font-weight: 400;
 			margin: 10px 15px;
 			padding: 0;
-			line-height: 1;
+			line-height: 1.2;
 		}
 
 		#main_blog.home .post .post_header_inner p
@@ -169,6 +169,44 @@ Notes:
 
 		#main_blog.home .main_column .about_widget .widget
 		{
+		}
+
+		/* Entry Header styling */
+		#main_blog.home .main_column .about_widget .widget .post .post_header
+		{
+			border: none;
+			padding: 5px 0;
+			margin-bottom: 5px;
+			background: #212b6c;
+		}
+
+		/* whe we have a feature image */
+		#main_blog.home .main_column .about_widget .widget .post .post_header.has_feature_image
+		{
+			padding: 0;
+    	}
+
+		#main_blog.home .main_column .about_widget .widget .post .post_header_text
+		{
+			background: transparent;
+			text-shadow: none;
+		}
+
+		#main_blog.home .main_column .about_widget .widget .post .has_feature_image .post_header_text
+		{
+			background: #000;
+			background: rgba( 0, 0, 0, 0.46);
+			text-shadow: 0 0 5px #0A0933;
+		}
+
+		#main_blog.home .main_column .about_widget .widget .post .post_header h2 a
+		{
+			color: #fff;
+		}
+
+		#main_blog.home .main_column .about_widget .widget .post .post_header.has_feature_image h2 a
+		{
+			color: #fff;
 		}
 
 		#main_blog.home .main_column .about_widget .widget iframe
