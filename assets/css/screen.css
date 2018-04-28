@@ -1274,6 +1274,7 @@ div.captioned_image
 	background: #eee;
 	margin: 0.5em 0 1em 0;
 	padding: 20px 20px 0 20px;
+	max-width: 620px;
 }
 
 	div.captioned_image.aligncenter
@@ -3636,6 +3637,8 @@ RESPONSIVENESS
 	div.captioned_image
 	{
 		width: auto !important;
+		padding: 10px;
+		padding-bottom: 0;
 	}
 
 		div.captioned_image img
