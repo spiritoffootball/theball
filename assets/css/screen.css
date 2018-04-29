@@ -3796,17 +3796,6 @@ RESPONSIVENESS
 /* next natural breakpoint */
 @media all and (max-width: 570px) {
 
-	.home #main_column_splash .post .splash_copy p
-	{
-		line-height: 1.4;
-		font-size: 70%;
-	}
-
-	.home #main_column_splash .splash_copy_inner
-	{
-		padding-top: 5px;
-	}
-
 }
 
 
@@ -3820,12 +3809,6 @@ RESPONSIVENESS
 
 /* next natural breakpoint */
 @media all and (max-width: 520px) {
-
-	.page-template-page_subpages_splash #main_column_splash .post,
-	.page-template-page_subpages_splash #main_column_splash .post.splash_post
-	{
-		height: auto;
-	}
 
 	.page-template-page_subpages_splash #main_column_splash .post div.splash_image
 	{
@@ -3871,6 +3854,12 @@ RESPONSIVENESS
 		margin: 0;
 	}
 
+	.page-template-page_subpages_splash #main_column_splash .post,
+	.page-template-page_subpages_splash #main_column_splash .post.splash_post
+	{
+		height: auto;
+	}
+
 	.page-template-page_subpages_splash #main_column_splash .post div.alignleft,
 	.page-template-page_subpages_splash #main_column_splash .post div.alignright
 	{
@@ -3882,6 +3871,7 @@ RESPONSIVENESS
 		position: relative;
 		width: 100%;
 		height: auto;
+		background: transparent;
 	}
 
 	div.main_column div.vimeo
