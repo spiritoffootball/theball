@@ -90,7 +90,7 @@ The "left-open elements" here are closed in footer.php
 
 
 
-<body<?php echo theball_body_id(); ?><?php body_class(); ?>>
+<body<?php echo theball_body_id(); ?> <?php body_class(); ?>>
 
 
 
