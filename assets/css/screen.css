@@ -2172,6 +2172,12 @@ Archive Lists
 --------------------------------------------------------------------------------
 */
 
+#main_column_splash .post_header.has_feature_image img
+{
+	width: 100%;
+	height: auto;
+}
+
 /* header for archives */
 .post .post_header.archive_header
 {
@@ -3515,13 +3521,13 @@ RESPONSIVENESS
 	}
 
 	div.main_column,
-	#main_column_splash
+	.page-template-page_subpages_splash #main_column_splash
 	{
 		width: auto;
 	}
 
-	#main_column_splash .post,
-	#main_column_splash .post.splash_post
+	.page-template-page_subpages_splash #main_column_splash .post,
+	.page-template-page_subpages_splash #main_column_splash .post.splash_post
 	{
 		position: relative;
 		height: 380px;
@@ -3529,12 +3535,12 @@ RESPONSIVENESS
 		overflow: hidden;
 	}
 
-		#main_column_splash .post h2
+		.page-template-page_subpages_splash #main_column_splash .post h2
 		{
 			display: none;
 		}
 
-		#main_column_splash .post div.splash_image
+		.page-template-page_subpages_splash #main_column_splash .post div.splash_image
 		{
 			float: none;
 			position: absolute;
@@ -3544,14 +3550,14 @@ RESPONSIVENESS
 			height: 380px;
 		}
 
-			#main_column_splash .post div.splash_image img
+			.page-template-page_subpages_splash #main_column_splash .post div.splash_image img
 			{
 				width: 100%;
 				height: auto;
 				padding: 0;
 			}
 
-		#main_column_splash .post div.splash_copy
+		.page-template-page_subpages_splash #main_column_splash .post div.splash_copy
 		{
 			position: absolute;
 			top: 0;
@@ -3770,7 +3776,7 @@ RESPONSIVENESS
 /* next natural breakpoint */
 @media all and (max-width: 600px) {
 
-	#main_column_splash .post div.splash_copy
+	.page-template-page_subpages_splash #main_column_splash .post div.splash_copy
 	{
 		font-size: 100%;
 	}
@@ -3815,13 +3821,13 @@ RESPONSIVENESS
 /* next natural breakpoint */
 @media all and (max-width: 520px) {
 
-	#main_column_splash .post,
-	#main_column_splash .post.splash_post
+	.page-template-page_subpages_splash #main_column_splash .post,
+	.page-template-page_subpages_splash #main_column_splash .post.splash_post
 	{
 		height: auto;
 	}
 
-	#main_column_splash .post div.splash_image
+	.page-template-page_subpages_splash #main_column_splash .post div.splash_image
 	{
 		position: relative;
 		height: auto;
@@ -3865,13 +3871,13 @@ RESPONSIVENESS
 		margin: 0;
 	}
 
-	#main_column_splash .post div.alignleft,
-	#main_column_splash .post div.alignright
+	.page-template-page_subpages_splash #main_column_splash .post div.alignleft,
+	.page-template-page_subpages_splash #main_column_splash .post div.alignright
 	{
 		margin: 0;
 	}
 
-	#main_column_splash .post div.splash_copy
+	.page-template-page_subpages_splash #main_column_splash .post div.splash_copy
 	{
 		position: relative;
 		width: 100%;

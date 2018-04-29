@@ -1,6 +1,6 @@
 <?php
 
-get_header(); 
+get_header();
 
 ?>
 
@@ -10,7 +10,7 @@ get_header();
 
 
 
-<?php include( get_stylesheet_directory().'/assets/includes/site_banner.php' ); ?>
+<?php include( get_stylesheet_directory() . '/assets/includes/site_banner.php' ); ?>
 
 
 
@@ -18,13 +18,13 @@ get_header();
 
 
 
-<?php if (have_posts()) : ?>
+<?php if ( have_posts() ) : ?>
 
 <?php
 
 // Search Nav
-$nl = get_next_posts_link('Next &raquo;');
-$pl = get_previous_posts_link('&laquo; Previous');
+$nl = get_next_posts_link( 'Next &raquo;' );
+$pl = get_previous_posts_link( '&laquo; Previous' );
 
 ?>
 
@@ -56,22 +56,22 @@ $pl = get_previous_posts_link('&laquo; Previous');
 
 
 
-	<?php while (have_posts()) : the_post(); ?>
-	
-		<?php if ( function_exists( 'wpSearch_Query' ) ) { switch_to_blog($post->blog_id); } ?>
+	<?php while ( have_posts() ) : the_post(); ?>
+
+		<?php if ( function_exists( 'wpSearch_Query' ) ) { switch_to_blog( $post->blog_id ); } ?>
 
 		<div class="post search_result">
 
 			<h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-			
+
 			<div class="search_meta">
-			
-				<?php if ( function_exists( 'wpSearch_Query' ) ) { ?><p class="search_blogname"><?php echo bloginfo('name'); ?></p><?php } ?>
-				
-				<p><?php the_time('l, F jS, Y') ?></p>
-				
-				<p><?php the_tags('Tags: ', ', ', '<br />'); ?> Posted in <?php the_category(', ') ?> | <?php edit_post_link('Edit', '', ' | '); ?>  <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?></p>
-			
+
+				<?php if ( function_exists( 'wpSearch_Query' ) ) { ?><p class="search_blogname"><?php echo bloginfo( 'name' ); ?></p><?php } ?>
+
+				<p><?php the_time( 'l, F jS, Y' ) ?></p>
+
+				<p><?php the_tags( 'Tags: ', ', ', '<br />' ); ?> Posted in <?php the_category( ', ' ) ?> | <?php edit_post_link( 'Edit', '', ' | ' ); ?>  <?php comments_popup_link( 'No Comments &#187;', '1 Comment &#187;', '% Comments &#187;' ); ?></p>
+
 			</div><!-- /search_meta -->
 
 			<?php if ( function_exists( 'wpSearch_Query' ) ) { restore_current_blog(); } ?>
@@ -102,14 +102,14 @@ $pl = get_previous_posts_link('&laquo; Previous');
 
 
 	<div class="main_column_inner">
-	
+
 	<div class="post search_result">
 
 	<h2>Nothing found for &#8216;<?php the_search_query(); ?>&#8217;</h2>
-	
-	<p>Try a different search?</p>
 
-	<?php include ( get_template_directory() . '/searchform.php' ); ?>
+	<p><?php _e( 'Try a different search?', 'theball' ); ?></p>
+
+	<?php include( get_template_directory() . '/searchform.php' ); ?>
 
 	</div><!-- /post -->
 

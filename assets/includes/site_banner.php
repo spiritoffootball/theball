@@ -50,7 +50,7 @@ if ( is_front_page() ) {
 
 		<div class="splash_main_widget">
 
-			<?php if (have_posts()) : while (have_posts()) : the_post();
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
 
 			$hidden_title = '';
 			if ( get_post_meta( get_the_ID(), 'show_heading', true ) == '1' ) { $hidden_title = ' class="hidden"'; }
@@ -59,9 +59,9 @@ if ( is_front_page() ) {
 
 			<div class="post clearfix">
 
-			<h2 id="post-<?php the_ID(); ?>"<?php echo $hidden_title; ?>><?php the_title(); ?> <?php edit_post_link('Edit this entry', '<span>', '</span>'); ?></h2>
+			<h2 id="post-<?php the_ID(); ?>"<?php echo $hidden_title; ?>><?php the_title(); ?> <?php edit_post_link( 'Edit this entry', '<span>', '</span>' ); ?></h2>
 
-			<?php the_content('<p class="serif">Read the rest of this page &raquo;</p>'); ?>
+			<?php the_content( '<p class="serif">Read the rest of this page &raquo;</p>' ); ?>
 
 			</div><!-- /post -->
 

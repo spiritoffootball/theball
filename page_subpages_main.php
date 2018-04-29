@@ -34,62 +34,64 @@ $args = array(
 	'order' => 'ASC',
 	'post_type' => 'page',
 	'post_status' => 'publish',
-	'post_parent' => $post->ID
+	'post_parent' => $post->ID,
 );
 
 // do query
-query_posts($args);
-
-
+$subpages = new WP_Query( $args );
 
 // THE LOOP
-if (have_posts()) :
+if ( $subpages->have_posts() ) : ?>
 
-while (have_posts()) : the_post(); ?>
+	<?php while ( $subpages->have_posts() ) : $subpages->the_post(); ?>
 
+		<div class="main_column_inner">
 
-<div class="main_column_inner">
+		<div class="post post-<?php the_ID(); ?>">
 
-<div class="post post-<?php the_ID(); ?>">
+			<div class="entrytext">
 
-	<div class="entrytext">
+				<h3 id="post-<?php the_ID(); ?>"><?php the_title(); ?></h3>
 
-		<h3 id="post-<?php the_ID(); ?>"><?php the_title(); ?></h3>
+				<?php the_content( '<p class="serif">Read the rest of this page &raquo;</p>' ); ?>
 
-		<?php the_content('<p class="serif">Read the rest of this page &raquo;</p>'); ?>
+				<?php
 
-		<?php
+				// NOTE: Comment permalinks are filtered if the comment is not on the first page
+				// in a multipage post... see: cp_multipage_comment_link in functions.php
 
-		// NOTE: Comment permalinks are filtered if the comment is not on the first page
-		// in a multipage post... see: cp_multipage_comment_link in functions.php
+				// set default behaviour
+				$defaults = array(
+					'before' => '<div class="multipager">',
+					'after' => '</div>',
+					'link_before' => '',
+					'link_after' => '',
+					'next_or_number' => 'next',
+					'nextpagelink' => '<span class="alignright">' . __( 'Next page' ) . ' &raquo;</span>',
+					'previouspagelink' => '<span class="alignleft">&laquo; ' . __( 'Previous page' ).'</span>',
+					'pagelink' => '%',
+					'more_file' => '',
+					'echo' => 1,
+				);
 
-		// set default behaviour
-		$defaults = array(
+				wp_link_pages( $defaults ); ?>
 
-			'before' => '<div class="multipager">', // . __('Pages: '),
-			'after' => '</div>',
-			'link_before' => '',
-			'link_after' => '',
-			'next_or_number' => 'next',
-			'nextpagelink' => '<span class="alignright">'.__('Next page').' &raquo;</span>', // <li class="alignright"></li>
-			'previouspagelink' => '<span class="alignleft">&laquo; '.__('Previous page').'</span>', // <li class="alignleft"></li>
-			'pagelink' => '%',
-			'more_file' => '',
-			'echo' => 1
+				<?php edit_post_link( 'Edit this entry', '<p>', '</p>' ); ?>
 
-		);
+			</div><!-- /entrytext -->
 
-		wp_link_pages( $defaults ); ?>
+		</div><!-- /post -->
 
-		<?php edit_post_link('Edit this entry', '<p>', '</p>'); ?>
+		</div><!-- /main_column_inner -->
 
-	</div><!-- /entrytext -->
+	<?php endwhile;
 
-</div><!-- /post -->
+	// prevent weirdness
+	wp_reset_postdata();
 
-</div><!-- /main_column_inner -->
+	?>
 
-<?php endwhile; endif; ?>
+<?php endif; ?>
 
 
 

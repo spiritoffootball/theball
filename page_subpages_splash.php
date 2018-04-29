@@ -1,13 +1,21 @@
-<?php
-/*
-Template Name: Subpages
+<?php /*
+================================================================================
+Template Name: Subpages with Splash
+================================================================================
+
+Although the functionality of this template and the more basic "Subpages" one is
+the same, we need to use this template for pages that use a "splash_image" in
+the content of the parent post so that responsiveness is *not* applied to every
+instance of the parent post.
+
+--------------------------------------------------------------------------------
 */
 
 get_header();
 
 ?>
 
-<!-- page_subpages.php -->
+<!-- page_subpages_splash.php -->
 
 <div id="content_wrapper" class="clearfix">
 

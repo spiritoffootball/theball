@@ -12,7 +12,7 @@ Template Name: Archives
 
 
 
-<?php include( get_stylesheet_directory().'/assets/includes/site_banner.php' ); ?>
+<?php include( get_stylesheet_directory() . '/assets/includes/site_banner.php' ); ?>
 
 
 
@@ -21,11 +21,42 @@ Template Name: Archives
 
 
 <div class="main_column_inner" id="main_column_splash">
+
+<?php
+
+// init
+$has_feature_image = false;
+$feature_image_class = '';
+
+// do we have a feature image?
+if ( has_post_thumbnail() ) {
+	$has_feature_image = true;
+	$feature_image_class = ' has_feature_image';
+}
+
+?>
+
+<div class="post_header<?php echo $feature_image_class; ?>">
+
+	<div class="post_header_inner">
+
+		<?php
+
+		// show feature image when we have one
+		if ( $has_feature_image ) {
+			echo get_the_post_thumbnail( get_the_ID(), 'medium-640' );
+		}
+
+		?>
+
+	</div><!-- /post_header_inner -->
+
+</div><!-- /post_header -->
+
 <div class="post">
-
-<h2><?php bloginfo('title'); ?> Archives</h2>
-
+	<h2><?php bloginfo( 'title' ); ?> Archives</h2>
 </div><!-- /post -->
+
 </div><!-- /main_column_inner -->
 
 
@@ -37,35 +68,33 @@ Template Name: Archives
 <h3><?php echo apply_filters( 'theball_topics_title', __( 'Topics' ) ); ?></h3>
 
 <ul>
-<?php 
+<?php
 
 // configure
 $defaults = array(
-
-	'show_option_all' => '', 
+	'show_option_all' => '',
 	'orderby' => 'name',
-	'order' => 'ASC', 
+	'order' => 'ASC',
 	'show_last_update' => 0,
-	'style' => 'list', 
+	'style' => 'list',
 	'show_count' => 0,
-	'hide_empty' => 1, 
+	'hide_empty' => 1,
 	'use_desc_for_title' => 1,
-	'child_of' => 0, 
-	'feed' => '', 
+	'child_of' => 0,
+	'feed' => '',
 	'feed_type' => '',
-	'feed_image' => '', 
-	'exclude' => '', 
-	'exclude_tree' => '', 
+	'feed_image' => '',
+	'exclude' => '',
+	'exclude_tree' => '',
 	'current_category' => 0,
-	'hierarchical' => true, 
+	'hierarchical' => true,
 	'title_li' => '',
-	'echo' => 1, 
-	'depth' => 0
-
+	'echo' => 1,
+	'depth' => 0,
 );
 
 // show them
-wp_list_categories( $defaults ); 
+wp_list_categories( $defaults );
 
 ?>
 </ul>
@@ -87,19 +116,17 @@ wp_list_categories( $defaults );
 
 // configure
 $defaults = array(
-
-	'type' => 'monthly', 
+	'type' => 'monthly',
 	'limit' => '',
-	'format' => 'html', 
+	'format' => 'html',
 	'before' => '',
-	'after' => '', 
+	'after' => '',
 	'show_post_count' => false,
-	'echo' => 1
-	
+	'echo' => 1,
 );
 
 // show them
-wp_get_archives( $defaults ); 
+wp_get_archives( $defaults );
 
 ?>
 </ul>

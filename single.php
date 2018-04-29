@@ -42,13 +42,13 @@ if ( $pagelist != '' ) {
 <?php if (have_posts()) : ?>
 
 <ul class="blog_navigation clearfix">
-	<?php next_post_link('<li class="alignright">%link +</li>'); ?>
-	<?php previous_post_link('<li class="alignleft">- %link</li>'); ?>
+	<?php next_post_link( '<li class="alignright">%link +</li>' ); ?>
+	<?php previous_post_link( '<li class="alignleft">- %link</li>' ); ?>
 </ul>
 
 
 
-<?php while (have_posts()) : the_post(); ?>
+<?php while ( have_posts() ) : the_post(); ?>
 
 
 
@@ -99,9 +99,9 @@ if ( $has_feature_image ) {
 
 <div class="entry_content clearfix">
 
-<?php global $more; $more = true; the_content(''); ?>
+<?php global $more; $more = true; the_content( '' ); ?>
 
-<p class="postname">Written by <?php the_author_posts_link(); ?> on <?php the_time('l, F jS, Y') ?></p>
+<p class="postname">Written by <?php the_author_posts_link(); ?> on <?php the_time( 'l, F jS, Y' ) ?></p>
 
 </div>
 
@@ -114,16 +114,16 @@ if ( $has_feature_image ) {
 
 // set default behaviour
 $defaults = array(
-	'before' => '<div class="multipager">', // . __('Pages: '),
+	'before' => '<div class="multipager">',
 	'after' => '</div>',
 	'link_before' => '',
 	'link_after' => '',
 	'next_or_number' => 'next',
-	'nextpagelink' => '<span class="alignright">'.__('Next page').' &raquo;</span>', // <li class="alignright"></li>
-	'previouspagelink' => '<span class="alignleft">&laquo; '.__('Previous page').'</span>', // <li class="alignleft"></li>
+	'nextpagelink' => '<span class="alignright">' . __( 'Next page' ) . ' &raquo;</span>',
+	'previouspagelink' => '<span class="alignleft">&laquo; ' . __( 'Previous page' ) . '</span>',
 	'pagelink' => '%',
 	'more_file' => '',
-	'echo' => 1
+	'echo' => 1,
 );
 
 wp_link_pages( $defaults ); ?>
@@ -134,24 +134,24 @@ wp_link_pages( $defaults ); ?>
 
 
 
-<p class="postmetadata">This post is filed under <?php the_category(', ') ?><?php the_tags( ' and tagged with ', ', ', ''); ?>. You can follow any responses to this post through the <?php post_comments_feed_link('RSS 2.0'); ?> feed. <?php
+<p class="postmetadata">This post is filed under <?php the_category( ', ' ) ?><?php the_tags( ' and tagged with ', ', ', '' ); ?>. You can follow any responses to this post through the <?php post_comments_feed_link( 'RSS 2.0' ); ?> feed. <?php
 
-if (('open' == $post->comment_status) && ('open' == $post->ping_status)) {
+if ( ( 'open' == $post->comment_status ) && ( 'open' == $post->ping_status ) ) {
 
 	// Both Comments and Pings are open
 	?>You can leave a response, or <a href="<?php trackback_url(); ?>" rel="trackback">trackback</a> from your own site. <?php
 
-} elseif (!('open' == $post->comment_status) && ('open' == $post->ping_status)) {
+} elseif ( ! ( 'open' == $post->comment_status ) && ( 'open' == $post->ping_status )) {
 
 	// Only Pings are Open
 	?>Comments are currently closed, but you can <a href="<?php trackback_url(); ?> " rel="trackback">trackback</a> from your own site. <?php
 
-} elseif (('open' == $post->comment_status) && !('open' == $post->ping_status)) {
+} elseif ( ( 'open' == $post->comment_status ) && ! ( 'open' == $post->ping_status ) ) {
 
 	// Comments are open, Pings are not
 	?>You can leave a comment. Pinging is currently not allowed. <?php
 
-} elseif (!('open' == $post->comment_status) && !('open' == $post->ping_status)) {
+} elseif ( ! ( 'open' == $post->comment_status ) && ! ( 'open' == $post->ping_status ) ) {
 
 	// Neither Comments, nor Pings are open
 	?>Both comments and pings are currently closed. <?php
@@ -159,7 +159,7 @@ if (('open' == $post->comment_status) && ('open' == $post->ping_status)) {
 }
 
 // ShareThis
-if (function_exists('sharethis_button')) {
+if ( function_exists( 'sharethis_button' ) ) {
 	//echo '<br/>';
 	sharethis_button();
 }
@@ -185,8 +185,8 @@ if (function_exists('sharethis_button')) {
 
 
 <ul class="blog_navigation clearfix">
-	<?php next_post_link('<li class="alignright">%link +</li>'); ?>
-	<?php previous_post_link('<li class="alignleft">- %link</li>'); ?>
+	<?php next_post_link( '<li class="alignright">%link +</li>' ); ?>
+	<?php previous_post_link( '<li class="alignleft">- %link</li>' ); ?>
 </ul>
 
 
@@ -199,11 +199,11 @@ if (function_exists('sharethis_button')) {
 
 <div class="post">
 
-<h2>Not Found</h2>
+<h2><?php _e( 'Not Found', 'theball' ); ?></h2>
 
-<p>Sorry, but you are looking for something that isn't here.</p>
+<p><?php _e( 'Sorry, but you are looking for something that isn’t here.', 'theball' ); ?></p>
 
-<?php include ( get_template_directory() . '/searchform.php' ); ?>
+<?php include( get_template_directory() . '/searchform.php' ); ?>
 
 </div><!-- /post -->
 

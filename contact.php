@@ -10,9 +10,9 @@ Template Name: Contact
 
 <div id="content_wrapper" class="clearfix">
 
-	
-					
-<?php include( get_stylesheet_directory().'/assets/includes/site_banner.php' ); ?>
+
+
+<?php include( get_stylesheet_directory() . '/assets/includes/site_banner.php' ); ?>
 
 
 
@@ -20,7 +20,7 @@ Template Name: Contact
 
 
 
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 
 
@@ -44,34 +44,32 @@ Template Name: Contact
 
 <div class="entry_content clearfix">
 
-<?php global $more; $more = false; the_content('', true); ?>
+<?php global $more; $more = false; the_content( '', true ); ?>
 
 <?php
 
-// NOTE: Comment permalinks are filtered if the comment is not on the first page 
+// NOTE: Comment permalinks are filtered if the comment is not on the first page
 // in a multipage post... see: cp_multipage_comment_link in functions.php
 
 // set default behaviour
 $defaults = array(
-	
 	'before' => '<div class="multipager">',
 	'after' => '</div>',
-	'link_before' => '', 
+	'link_before' => '',
 	'link_after' => '',
-	'next_or_number' => 'next', 
-	'nextpagelink' => '<span class="alignright">'.__('Next page').' &raquo;</span>',
-	'previouspagelink' => '<span class="alignleft">&laquo; '.__('Previous page').'</span>',
+	'next_or_number' => 'next',
+	'nextpagelink' => '<span class="alignright">' . __( 'Next page' ) . ' &raquo;</span>',
+	'previouspagelink' => '<span class="alignleft">&laquo; ' . __( 'Previous page' ) . '</span>',
 	'pagelink' => '%',
-	'more_file' => '', 
-	'echo' => 1
-	
+	'more_file' => '',
+	'echo' => 1,
 );
 
-wp_link_pages( $defaults ); 
+wp_link_pages( $defaults );
 
 ?>
 
-<?php edit_post_link('Edit this entry', '<p class="edit_link">', '</p>'); ?>
+<?php edit_post_link( 'Edit this entry', '<p class="edit_link">', '</p>' ); ?>
 
 </div><!-- /entry_content -->
 
@@ -87,11 +85,11 @@ wp_link_pages( $defaults );
 
 <div class="post">
 
-<h2>Page Not Found</h2>
+<h2><?php _e( 'Page Not Found', 'theball' ); ?></h2>
 
-<p>Sorry, but you are looking for something that isn't here.</p>
+<p><?php _e( 'Sorry, but you are looking for something that isn’t here.', 'theball' ); ?></p>
 
-<?php include ( get_template_directory() . '/searchform.php' ); ?>
+<?php include( get_template_directory() . '/searchform.php' ); ?>
 
 </div><!-- /post -->
 

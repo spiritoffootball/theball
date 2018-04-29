@@ -13,8 +13,8 @@ NOTES
 
 
 // Do not delete these lines
-if (!empty($_SERVER['SCRIPT_FILENAME']) AND 'comments.php' == basename($_SERVER['SCRIPT_FILENAME'])) {
-	die ('Please do not load this page directly. Thanks!');
+if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) AND 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
+	die( 'Please do not load this page directly. Thanks!' );
 }
 
 // if there's a password
@@ -51,32 +51,28 @@ Comments
 
 
 
-	<h3><?php 
-	
+	<h3><?php
+
 	comments_number(
-		'<span>0</span> comments on this post', 
-		'<span>1</span> comment on this post', 
+		'<span>0</span> comments on this post',
+		'<span>1</span> comment on this post',
 		'<span>%</span> comments on this post'
-	); 
-	
+	);
+
 	?></h3>
 
 
 	<ol class="commentlist">
 
 		<?php wp_list_comments(
-		
 			array(
-			
 				// list comments params
-				'type'=> 'all', //'comment', 
+				'type'=> 'all', //'comment',
 				'reply_text' => 'Reply to this comment',
-				'callback' => 'theball_comments'
-				
+				'callback' => 'theball_comments',
 			)
-			
 		); ?>
-	
+
 	</ol>
 
 
@@ -98,25 +94,25 @@ No Comments
 
 
 
-	<?php 
-	
-	// If comments are open, but there are no comments... 
-	if ('open' == $post->comment_status) : 
-	
+	<?php
+
+	// If comments are open, but there are no comments...
+	if ( 'open' == $post->comment_status ) :
+
 	?>
 		<div id="comments_wrapper" class="no_comments">
 
 		<h3 class="nocomments">No comments yet</h3>
-		
-		<p>Be the first to leave one!</p>
-	
+
+		<p><?php _e( 'Be the first to leave one!', 'theball' ); ?></p>
+
 		</div><!-- /comments_wrapper -->
 
-	 <?php 
-	 
-	 // comments are closed... 
-	 else : 
-	 	
+	 <?php
+
+	 // comments are closed...
+	 else :
+
  	?>
 	 	<div id="comments_wrapper" class="no_comments">
 
@@ -135,10 +131,10 @@ No Comments
 
 
 
-<?php 
+<?php
 
 // include comment form
-include( get_template_directory() . '/commentform.php' ); 
+include( get_template_directory() . '/commentform.php' );
 
 ?>
 

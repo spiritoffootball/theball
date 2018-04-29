@@ -10,12 +10,15 @@
  */
 class The_Ball_Widget extends WP_Widget {
 
+
+
 	/**
-	 * Constructor
+	 * Constructor.
 	 *
 	 * @return void
-	 **/
-	function __construct() {
+	 */
+	public function __construct() {
+
 		$widget_ops = array(
 			'classname' => 'theball_widget',
 			'description' => __( 'Use this widget to choose your homepage teaser boxes', 'theball' )
@@ -26,23 +29,29 @@ class The_Ball_Widget extends WP_Widget {
 		add_action( 'save_post', array(&$this, 'flush_widget_cache' ) );
 		add_action( 'deleted_post', array(&$this, 'flush_widget_cache' ) );
 		add_action( 'switch_theme', array(&$this, 'flush_widget_cache' ) );
+
 	}
+
+
 
 	/**
 	 * Outputs the HTML for this widget.
 	 *
-	 * @param array An array of standard parameters for widgets in this theme
-	 * @param array An array of settings for this widget instance
-	 * @return void Echoes it's output
-	 **/
-	function widget( $args, $instance ) {
+	 * @param array An array of standard parameters for widgets in this theme.
+	 * @param array An array of settings for this widget instance.
+	 * @return void Echoes it's output.
+	 */
+	public function widget( $args, $instance ) {
+
 		$cache = wp_cache_get( 'theball_widget', 'widget' );
 
-		if ( !is_array( $cache ) )
+		if ( ! is_array( $cache ) ) {
 			$cache = array();
+		}
 
-		if ( ! isset( $args['widget_id'] ) )
+		if ( ! isset( $args['widget_id'] ) ) {
 			$args['widget_id'] = null;
+		}
 
 		if ( isset( $cache[$args['widget_id']] ) ) {
 			echo $cache[$args['widget_id']];
@@ -54,11 +63,13 @@ class The_Ball_Widget extends WP_Widget {
 
 		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'The Ball Box', 'theball' ) : $instance['title'], $instance, $this->id_base);
 
-		if ( ! isset( $instance['number'] ) )
+		if ( ! isset( $instance['number'] ) ) {
 			$instance['number'] = '10';
+		}
 
-		if ( ! $number = absint( $instance['number'] ) )
+		if ( ! $number = absint( $instance['number'] ) ) {
  			$number = 10;
+ 		}
 
 		$boxes_args = array(
 			'post_type' => 'page',
@@ -80,7 +91,7 @@ class The_Ball_Widget extends WP_Widget {
 
 				<li class="widget-entry-title">
 					<h4><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'theball' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
-					<div class="entry-thumbs"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'theball' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_post_thumbnail('thumbnail'); ?></a></div>
+					<div class="entry-thumbs"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'theball' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_post_thumbnail( 'thumbnail' ); ?></a></div>
 				</li>
 
 			<?php endwhile; ?>
@@ -97,37 +108,51 @@ class The_Ball_Widget extends WP_Widget {
 
 		$cache[$args['widget_id']] = ob_get_flush();
 		wp_cache_set( 'theball_widget', $cache, 'widget' );
+
 	}
+
+
 
 	/**
 	 * Deals with the settings when they are saved by the admin. Here is
 	 * where any validation should be dealt with.
-	 **/
-	function update( $new_instance, $old_instance ) {
+	 */
+	public function update( $new_instance, $old_instance ) {
+
 		$instance = $old_instance;
 		$instance['title'] = strip_tags( $new_instance['title'] );
 		$this->flush_widget_cache();
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
-		if ( isset( $alloptions['theball_widget'] ) )
+		if ( isset( $alloptions['theball_widget'] ) ) {
 			delete_option( 'theball_widget' );
+		}
 
 		return $instance;
 	}
 
-	function flush_widget_cache() {
+
+
+	public function flush_widget_cache() {
 		wp_cache_delete( 'theball_widget', 'widget' );
 	}
 
+
+
 	/**
 	 * Displays the form for this widget on the Widgets page of the WP Admin area.
-	 **/
-	function form( $instance ) {
-		$title = isset( $instance['title']) ? esc_attr( $instance['title'] ) : '';
+	 */
+	public function form( $instance ) {
+
+		$title = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
 ?>
 			<p><label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title:', 'theball' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" /></p>
 
 		<?php
+
 	}
-}
+
+
+
+} // end widget class

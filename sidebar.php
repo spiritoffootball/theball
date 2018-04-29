@@ -8,22 +8,6 @@
 <?php
 
 /*
-// show Facebook Info, if connected...
-if ( function_exists('fbc_render_login_state') ) {
-	echo '
-		<div id="wp-facebook-info">
-			<div class="fbc_loginstate_top">'.fbc_render_login_state() .'</div>
-		</div>';
-}
-*/
-
-?>
-
-
-
-<?php
-
-/*
 --------------------------------------------------------------------------------
 2014 Teaser
 --------------------------------------------------------------------------------
@@ -55,7 +39,6 @@ if ( function_exists('fbc_render_login_state') ) {
 </div>
 
 </div><!-- /post ball_teaser -->
-
 
 
 
@@ -97,7 +80,6 @@ if ( function_exists('fbc_render_login_state') ) {
 
 
 
-
 <?php
 
 /*
@@ -133,8 +115,6 @@ if ( function_exists('fbc_render_login_state') ) {
 </div>
 
 </div><!-- /post ball_teaser -->
-
-
 
 
 
@@ -176,210 +156,8 @@ if ( function_exists('fbc_render_login_state') ) {
 
 
 
-
-
-<?php
-
-/*
---------------------------------------------------------------------------------
-Donate
---------------------------------------------------------------------------------
-*/
-
-/*
-?><div class="right_column_inner padded_b">
-
-<div class="post">
-
-<h2><a href="http://www.aliveandkicking.org.uk/Donate.html" style="text-shadow: none">Donate a ball!</a></h2>
-
-<div class="vimeo">
-<a href="http://www.aliveandkicking.org.uk/Donate.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/interface/donate_a_ball.jpg" alt="Donate a ball!" title="Donate a ball!" width="240" height="180" /></a>
-</div>
-
-<p><em>Pass the ball on!</em> All footballs donated via <a href="http://www.aliveandkicking.org.uk/Donate.html">Alive &amp; Kicking's website</a> before the 2010 World Cup went to Special Olympics programmes in sub-Saharan Africa. But you can still donate a ball to a good cause...</p>
-
-<p><a href="http://www.aliveandkicking.org.uk/Donate.html" style="text-transform: uppercase;">Donate now!</a></p>
-
-</div><!-- /post -->
-
-</div><!-- /right_column_inner -->
-
-<?php
-
-*/
-
-
-
-
-
-
-/*
---------------------------------------------------------------------------------
-Recent Posts
---------------------------------------------------------------------------------
-*/
-
-/*
-
-// display recent posts only on homepage
-if ( $_is_homepage ) {
-
-?>
-
-<?php switch_to_blog( 4 ); // switch to 2010 blog ?>
-
-<div class="right_column_inner padded_b">
-
-<div class="archive_wrapper">
-
-<h2>Most recent posts</h2>
-
-<ul>
-
-<?php
-
-// get latest post
-$latest = get_posts('numberposts=12');
-
-foreach($latest as $post) {
-
-	// set up data
-	setup_postdata($post);
-
-	?><li>
-	<h4><a href="<?php the_permalink(); ?>" id="post-<?php the_ID(); ?>"><?php the_title(); ?></a></h4>
-	<p>Published on <?php the_time('F jS, Y') ?></p>
-	</li>
-
-	<?php
-
-} // end foreach
-
-?>
-
-</ul>
-
-</div><!-- /archive_wrapper -->
-
-</div><!-- /right_column_inner -->
-
-<?php */
-
-
-
-
-
-
-/*
---------------------------------------------------------------------------------
-Recent Posts
---------------------------------------------------------------------------------
-*/
-
-/*
-if (function_exists('get_recent_comments')) { ?>
-<div class="right_column_inner padded_b">
-
-<div class="archive_wrapper">
-
-<h2><?php _e('Most recent comments'); ?></h2>
-
-<ul>
-<?php get_recent_comments(); ?>
-</ul>
-
-</div><!-- /archive_wrapper -->
-
-</div><!-- /right_column_inner -->
-<?php }
-
-*/
-
-?>
-
-
-
-<?php
-
-/*
-
-if (function_exists('get_recent_trackbacks')) { ?>
-<div class="right_column_inner padded_b">
-
-<div class="archive_wrapper">
-
-<h2><?php _e('Recent Trackbacks:'); ?></h2>
-
-<ul>
-<?php get_recent_trackbacks(); ?>
-</ul>
-
-</div><!-- /archive_wrapper -->
-
-</div><!-- /right_column_inner -->
-<?php }
-
-?>
-
-
-
-<?php restore_current_blog(); ?>
-
-<?php
-
-} // end display choice
-
-*/
-
-?>
-
-
-
-
-
-<?php
-
-/*
---------------------------------------------------------------------------------
-Archives
---------------------------------------------------------------------------------
-*/
-
-/*
-// display archives only on blog home
-if ( $_side == 'is_home' ) {
-
-?>
-<div class="right_column_inner padded_b">
-
-<div class="archive_wrapper">
-
-<h2>Monthly Archives</h2>
-
-<ul>
-<?php switch_to_blog( 4 ); // switch to 2010 blog ?>
-<?php wp_get_archives('type=monthly'); ?>
-<?php restore_current_blog(); ?>
-</ul>
-
-</div><!-- /archive_wrapper -->
-
-</div><!-- /right_column_inner -->
-<?php
-
-} // end display choice
-*/
-
-?>
-
-
-
 </div><!-- /.right_column_inner -->
 </div><!-- /.right_column -->
-
-
-
 
 
 

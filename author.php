@@ -4,7 +4,7 @@
 if ( isset( $_GET['author_name'] ) ) {
 	$my_author = get_userdatabylogin( $author_name );
 } else {
-	$my_author = get_userdata(intval($author));
+	$my_author = get_userdata( intval( $author ) );
 }
 
 
@@ -14,7 +14,7 @@ $authorURL = '';
 
 // do we have an URL for this user?
 if ( $my_author->user_url != '' AND $my_author->user_url != 'http://' ) {
-	
+
 	// set url
 	$authorURL = $my_author->user_url;
 
@@ -25,7 +25,7 @@ if ( $my_author->user_url != '' AND $my_author->user_url != 'http://' ) {
 // get full name
 $full_name = theball_get_full_name( $my_author->first_name, $my_author->last_name );
 
-if ( $full_name == '' ) { 
+if ( $full_name == '' ) {
 
 	// use nickname
 	$full_name = $my_author->nickname;
@@ -43,7 +43,7 @@ if ( $full_name == '' ) {
 
 
 
-<?php include( get_stylesheet_directory().'/assets/includes/site_banner.php' ); ?>
+<?php include( get_stylesheet_directory() . '/assets/includes/site_banner.php' ); ?>
 
 
 
@@ -69,12 +69,12 @@ if ( $full_name == '' ) {
 <p><?php echo nl2br( $my_author->description ); ?></p>
 <?php } ?>
 
-<?php 
+<?php
 /*
 // disabled email publishing
 if ( $my_author->user_email != '' ) { ?>
 <p id="author_email"><a href="mailto:<?php echo $my_author->user_email; ?>"><?php echo $my_author->user_email; ?></a></p>
-<?php } 
+<?php }
 */
 ?>
 
@@ -104,12 +104,12 @@ if ( $my_author->user_email != '' ) { ?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 <li>
-<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link: <?php the_title(); ?>"><?php the_title(); ?></a> on <?php the_time('j F Y'); ?>
+<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link: <?php the_title(); ?>"><?php the_title(); ?></a> on <?php the_time( 'j F Y' ); ?>
 </li>
 
 <?php endwhile; else: ?>
 
-<li><?php _e('No recent posts by this author.'); ?></li>
+<li><?php _e( 'No recent posts by this author.', 'theball' ); ?></li>
 
 <?php endif; ?>
 <!-- End Loop -->

@@ -6,12 +6,12 @@
 
 
 <!-- Meta -->
-<meta http-equiv="content-type" content="<?php bloginfo('html_type') ?>; charset=<?php bloginfo('charset') ?>" />
-<meta name="description" content="<?php bloginfo('description') ?>" />
+<meta http-equiv="content-type" content="<?php bloginfo( 'html_type' ) ?>; charset=<?php bloginfo( 'charset' ) ?>" />
+<meta name="description" content="<?php bloginfo( 'description' ) ?>" />
 <meta name="MSSmartTagsPreventParsing" content="true" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<?php if(is_search()) { ?><meta name="robots" content="noindex, nofollow" /><?php } ?>
+<?php if ( is_search() ) { ?><meta name="robots" content="noindex, nofollow" /><?php } ?>
 
 
 
@@ -20,25 +20,25 @@
 
 global $post;
 
-if (is_home()) {
+if ( is_home() ) {
 	echo 'The Blog &laquo; ';
-} elseif (is_404()) {
+} elseif ( is_404() ) {
 	echo 'Not Found &laquo; ';
-} elseif (is_category()) {
-	echo 'Category: '; wp_title(''); echo ' &laquo; ';
-} elseif (is_search()) {
+} elseif ( is_category() ) {
+	echo 'Category: '; wp_title( '' ); echo ' &laquo; ';
+} elseif ( is_search() ) {
 	echo 'Search Results &laquo; ';
 } elseif ( is_day() || is_month() || is_year() ) {
-	echo 'Archives: '; wp_title(''); echo ' &laquo; ';
+	echo 'Archives: '; wp_title( '' ); echo ' &laquo; ';
 } elseif ( is_single() ) {
-	wp_title('&laquo;',true,'right');
+	wp_title( '&laquo;', true, 'right' );
 } elseif ( is_page() ) {
-	wp_title('&laquo;',true,'right');
+	wp_title( '&laquo;', true, 'right' );
 } else {
-	wp_title('&laquo;',true,'right');
+	wp_title( '&laquo;', true, 'right' );
 }
 
-echo bloginfo('name');
+echo bloginfo( 'name' );
 
 ?></title>
 
@@ -57,15 +57,15 @@ echo bloginfo('name');
 //switch_to_blog(5);
 
 ?>
-<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
-<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> Comments RSS Feed" href="<?php bloginfo('comments_rss2_url'); ?>" />
+<link rel="alternate" type="application/rss+xml" title="<?php bloginfo( 'name' ); ?> RSS Feed" href="<?php bloginfo( 'rss2_url' ); ?>" />
+<link rel="alternate" type="application/rss+xml" title="<?php bloginfo( 'name' ); ?> Comments RSS Feed" href="<?php bloginfo( 'comments_rss2_url' ); ?>" />
 <?php
 
 // switch back
 //restore_current_blog();
 
 ?>
-<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 
 
@@ -78,11 +78,11 @@ echo bloginfo('name');
 
 
 
-<?php if ( is_multisite() ) { if ( 'wp-signup.php' == basename($_SERVER['SCRIPT_FILENAME']) ) { ?>
+<?php if ( is_multisite() ) { if ( 'wp-signup.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) { ?>
 <!-- signup css -->
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/signup.css" media="screen" />
 <?php }} ?>
-<?php if ( is_multisite() ) { if ( 'wp-activate.php' == basename($_SERVER['SCRIPT_FILENAME']) ) { ?>
+<?php if ( is_multisite() ) { if ( 'wp-activate.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) { ?>
 <!-- activate css -->
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/activate.css" media="screen" />
 <?php }} ?>

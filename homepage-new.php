@@ -1,18 +1,18 @@
-<?php 
+<?php
 /*
 Template Name: Homepage New
 */
 
-get_header(); 
+get_header();
 
 ?>
 
-<!-- homepage.php -->
+<!-- homepage-new.php -->
 
 <div id="content_wrapper" class="clearfix">
 
-	
-					
+
+
 <?php include( get_stylesheet_directory() . '/assets/includes/site_banner.php' ); ?>
 
 

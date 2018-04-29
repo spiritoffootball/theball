@@ -1,9 +1,9 @@
-<?php 
+<?php
 /*
 Template Name: RSS
 */
 
-get_header(); 
+get_header();
 
 ?>
 
@@ -11,15 +11,15 @@ get_header();
 
 <div id="content_wrapper" class="clearfix">
 
-	
-					
+
+
 <!-- site_banner.php -->
 
 <div id="site_banner" class="clearfix">
 <div id="site_banner_inner">
 
 
-	
+
 <?php include( get_template_directory() . '/assets/includes/join_in.php' ); ?>
 
 
@@ -44,16 +44,16 @@ get_header();
 
 </div><!-- /site_banner_inner -->
 </div><!-- /site_banner -->
-	
-	
-	
+
+
+
 <div id="cols" class="clearfix">
-					
+
 
 
 <div class="main_column clearfix">
 
-<?php 
+<?php
 
 // -----------------------------------------------------------------------------
 // Partners
@@ -66,65 +66,62 @@ $args = array(
 	'order' => 'ASC',
 	'post_type' => 'page',
 	'post_status' => 'publish',
-	'post_parent' => $post->ID
+	'post_parent' => $post->ID,
 );
 
 // do query
-query_posts($args);
-
-
+$subpages = new WP_Query( $args );
 
 // THE LOOP
-if (have_posts()) :
+if ( $subpages->have_posts() ) : ?>
 
-$tmp = 0;
+	<?php $tmp = 0; while ( $subpages->have_posts() ) : $subpages->the_post(); ?>
 
-while (have_posts()) : the_post(); ?>
+		<div class="main_column_inner"<?php if( $tmp == 0 ) { echo ' id="main_column_splash"'; } ?>>
 
+			<div class="post">
 
-<div class="main_column_inner"<?php if($tmp == 0) { echo ' id="main_column_splash"'; } ?>>
+			<h2 id="post-<?php the_ID(); ?>"><?php the_title(); ?></h2>
 
-<div class="post">
+				<div class="entrytext">
 
-<h2 id="post-<?php the_ID(); ?>"><?php the_title(); ?></h2>
+					<?php the_content( '<p class="serif">Read the rest of this page &raquo;</p>' ); ?>
 
-	<div class="entrytext">
-	
-		<?php the_content('<p class="serif">Read the rest of this page &raquo;</p>'); ?>
+					<?php
 
-		<?php
-		
-		// NOTE: Comment permalinks are filtered if the comment is not on the first page 
-		// in a multipage post... see: cp_multipage_comment_link in functions.php
-		
-		// set default behaviour
-		$defaults = array(
-			
-			'before' => '<div class="multipager">', // . __('Pages: '), 
-			'after' => '</div>',
-			'link_before' => '', 
-			'link_after' => '',
-			'next_or_number' => 'next', 
-			'nextpagelink' => '<span class="alignright">'.__('Next page').' &raquo;</span>', // <li class="alignright"></li>
-			'previouspagelink' => '<span class="alignleft">&laquo; '.__('Previous page').'</span>', // <li class="alignleft"></li>
-			'pagelink' => '%',
-			'more_file' => '', 
-			'echo' => 1
-			
-		);
-		
-		wp_link_pages( $defaults ); ?>
-		
-		<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
+					// set default behaviour
+					$defaults = array(
+						'before' => '<div class="multipager">',
+						'after' => '</div>',
+						'link_before' => '',
+						'link_after' => '',
+						'next_or_number' => 'next',
+						'nextpagelink' => '<span class="alignright">' . __( 'Next page' ) . ' &raquo;</span>',
+						'previouspagelink' => '<span class="alignleft">&laquo; ' . __( 'Previous page' ) . '</span>',
+						'pagelink' => '%',
+						'more_file' => '',
+						'echo' => 1,
+					);
 
-	</div>
-	
-</div><!-- /post -->
+					wp_link_pages( $defaults ); ?>
 
-</div><!-- /main_column_inner -->
+					<?php edit_post_link( 'Edit this entry.', '<p>', '</p>' ); ?>
 
-<?php $tmp++; endwhile; endif; ?>
-	
+				</div>
+
+			</div><!-- /post -->
+
+		</div><!-- /main_column_inner -->
+
+	<?php $tmp++; endwhile;
+
+	// prevent weirdness
+	wp_reset_postdata();
+
+	?>
+
+<?php endif; ?>
+
 
 
 </div><!-- /main_column -->
