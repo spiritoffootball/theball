@@ -93,94 +93,42 @@ function theball_enqueue_scripts_and_styles() {
 	// Stylesheets
 	// -------------------------------------------------------------------------
 
-	// register reset
-	wp_register_style(
-		'theball_reset_css', // unique id
-		get_template_directory_uri() . '/assets/css/reset.css', // src
-		array(), // dependencies
-		THEBALL_VERSION, // version
-		'all' // media
-	);
-
-	// init
-	$dev = '';
-
-	// check for dev
-	if ( defined( 'SCRIPT_DEBUG' ) AND SCRIPT_DEBUG === true ) {
-		//$dev = '.dev';
-	}
-
-	// add layout css
+	// enqueue screen styles
 	wp_enqueue_style(
 		'theball_screen_css',
-		get_template_directory_uri() . '/assets/css/screen' . $dev . '.css',
-		array( 'theball_reset_css' ),
+		get_template_directory_uri() . '/assets/css/screen.css',
+		array(),
 		THEBALL_VERSION, // version
 		'all' // media
 	);
 
-	// include on main site
+	// on main site
 	if ( is_main_site() ) {
 
-		// add homepage css
+		// add main site styles
 		wp_enqueue_style(
 			'theball_main_css',
-			get_template_directory_uri() . '/assets/css/main' . $dev . '.css',
+			get_template_directory_uri() . '/assets/css/main.css',
 			array( 'theball_screen_css' ),
 			THEBALL_VERSION, // version
 			'all' // media
 		);
 
-		// include on network home
+		// on network home
 		if ( is_front_page() ) {
 
-			// add homepage css
+			// add homepage styles
 			wp_enqueue_style(
 				'theball_home_css',
-				get_template_directory_uri() . '/assets/css/home' . $dev . '.css',
+				get_template_directory_uri() . '/assets/css/home.css',
 				array( 'theball_main_css' ),
 				THEBALL_VERSION, // version
 				'all' // media
 			);
 
-			/*
-			// add homepage css
-			wp_enqueue_style(
-				'theball_countdown_css',
-				get_template_directory_uri() . '/assets/css/countdown' . $dev . '.css',
-				array( 'theball_home_css' ),
-				THEBALL_VERSION, // version
-				'all' // media
-			);
-			*/
-
 		}
 
 	}
-
-	// -------------------------------------------------------------------------
-	// Overrides for styles - for child themes, dequeue these and add you own
-	// -------------------------------------------------------------------------
-
-	/*
-	// add Google Webfont "Lato"
-	wp_enqueue_style(
-		'theball_webfont_css',
-		'http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic',
-		array( 'theball_layout_css' ),
-		null, // no version, thanks
-		null // no media, thanks
-	);
-
-	// add colours css
-	wp_enqueue_style(
-		'theball_colours_css',
-		get_template_directory_uri() . '/assets/css/colours-01' . $dev . '.css',
-		array( 'theball_webfont_css' ),
-		THEBALL_VERSION, // version
-		'all' // media
-	);
-	*/
 
 	// -------------------------------------------------------------------------
 	// Javascript
@@ -196,7 +144,7 @@ function theball_enqueue_scripts_and_styles() {
 	);
 
 	/*
-	// utility script
+	// theme javascript
 	wp_enqueue_script(
 		'theball_general',
 		get_template_directory_uri() . '/assets/js/the-ball.js',
@@ -208,39 +156,15 @@ function theball_enqueue_scripts_and_styles() {
 	// include on network home
 	if ( is_main_site() AND is_front_page() ) {
 
-		/*
-		// add our countdown javascript
-		wp_enqueue_script(
-			'theball_countdown',
-			get_template_directory_uri() . '/assets/js/countdown.js',
-			array( 'jquery' ),
-			THEBALL_VERSION
-		);
-
-		// add our countdown init javascript
-		wp_enqueue_script(
-			'theball_countdown_init',
-			get_template_directory_uri() . '/assets/js/countdown-init.js',
-			array( 'theball_countdown' ),
-			THEBALL_VERSION
-		);
-		*/
-
 	}
 
 	// is it a post?
 	if ( is_single() ) {
 
-		// js is...
-		$move_form_js = 'assets/js/move_form.js';
-
-		// is it there?
-		$path = check_file_is_present( $move_form_js );
-
-		// add our javascript
+		// add our comment form javascript
 		wp_enqueue_script(
 			'theball_move_form',
-			get_template_directory_uri() . '/' . $move_form_js,
+			get_template_directory_uri() . '/assets/js/move_form.js',
 			array( 'jquery' ),
 			THEBALL_VERSION
 		);
@@ -263,22 +187,10 @@ if ( ! function_exists( 'theball_enqueue_print_styles' ) ):
  */
 function theball_enqueue_print_styles() {
 
-	// init
-	$dev = '';
-
-	// check for dev
-	if ( defined( 'SCRIPT_DEBUG' ) AND SCRIPT_DEBUG === true ) {
-		//$dev = '.dev';
-	}
-
-	// -------------------------------------------------------------------------
-	// Print stylesheet included last
-	// -------------------------------------------------------------------------
-
 	// add print css
 	wp_enqueue_style(
 		'theball_print_css',
-		get_template_directory_uri() . '/assets/css/print' . $dev . '.css',
+		get_template_directory_uri() . '/assets/css/print.css',
 		array( 'theball_screen_css' ), // dependencies
 		THEBALL_VERSION, // version
 		'print' // media
@@ -307,7 +219,7 @@ function cmw_add_admin_style() {
 
 		// add admin style overrides
 		echo '<!-- custom admin styles -->
-<link rel="stylesheet" type="text/css" media="screen" href="' . get_bloginfo( 'template_url' ) . '/assets/css/admin.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="' . get_template_directory_uri() . '/assets/css/admin.css" />
 ' . "\n\n";
 
 	}
@@ -334,7 +246,7 @@ function cmw_add_login_style() {
 
 		// add login style overrides
 		echo '<!-- custom login styles -->
-<link rel="stylesheet" type="text/css" media="screen" href="' . get_bloginfo( 'template_url' ) . '/assets/css/login.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="' . get_template_directory_uri() . '/assets/css/login.css" />
 ' . "\n\n";
 
 	}
@@ -347,25 +259,26 @@ add_action( 'login_head', 'cmw_add_login_style' );
 
 
 /**
- * Utility to check for presence of vital files.
+ * Utility to get the ID of the body tag.
  *
- * @since 1.0
+ * @since 2.4
  *
- * @param string $file The name of the file
- * @return string $filepath The absolute path to file
+ * @return string $body_id The ID of the body tag.
  */
-function check_file_is_present( $file ) {
+function theball_body_id() {
 
-	// construct path to our requested file
-	$filepath = get_template_directory() . '/' . $file;
+	// init
+	$body_id = '';
 
-	// die if the file isn't there
-	if ( ! is_file( $filepath ) ) {
-		die( 'File "' . $filepath . '" is missing from the theme directory.' );
+	// set main blog id on the main site
+	if ( function_exists( 'is_main_site' ) ) {
+		if ( is_main_site() ) {
+			$body_id = ' id="main_blog" ';
+		}
 	}
 
 	// --<
-	return $filepath;
+	return $body_id;
 
 }
 
@@ -714,12 +627,6 @@ function theball_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
-
-	// widget definitions
-	require( get_template_directory() . '/assets/widgets/widgets.php' );
-
-	// and the widget
-	register_widget( 'The_Ball_Widget' );
 
 }
 endif; // theball_widgets_init

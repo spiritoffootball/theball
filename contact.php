@@ -1,105 +1,101 @@
-<?php
-/*
+<?php /*
+================================================================================
 Template Name: Contact
-*/
-?>
+================================================================================
+AUTHOR: Christian Wach <needle@haystack.co.uk>
+--------------------------------------------------------------------------------
+NOTES
 
-<?php get_header(); ?>
+--------------------------------------------------------------------------------
+*/
+
+get_header(); ?>
 
 <!-- contact.php -->
 
 <div id="content_wrapper" class="clearfix">
 
-
-
 <?php include( get_stylesheet_directory() . '/assets/includes/site_banner.php' ); ?>
-
-
 
 <div class="main_column clearfix">
 
+	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
+		<div class="main_column_inner" id="main_column_splash">
 
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+			<div class="post" id="post-<?php the_ID(); ?>">
 
+				<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 
+			</div><!-- /post -->
 
-<div class="main_column_inner" id="main_column_splash">
+		</div><!-- /main_column_inner -->
 
-<div class="post" id="post-<?php the_ID(); ?>">
+		<div class="main_column_inner">
 
-<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+			<div class="post">
 
-</div><!-- /post -->
+				<div class="entrytext">
 
-</div><!-- /main_column_inner -->
+					<div class="entry_content clearfix">
 
+						<?php global $more; $more = false; the_content( '', true ); ?>
 
+						<?php
 
-<div class="main_column_inner">
+						// set default behaviour
+						$defaults = array(
+							'before' => '<div class="multipager">',
+							'after' => '</div>',
+							'link_before' => '',
+							'link_after' => '',
+							'next_or_number' => 'next',
+							'nextpagelink' => '<span class="alignright">' . __( 'Next page' ) . ' &raquo;</span>',
+							'previouspagelink' => '<span class="alignleft">&laquo; ' . __( 'Previous page' ) . '</span>',
+							'pagelink' => '%',
+							'more_file' => '',
+							'echo' => 1,
+						);
 
-<div class="post">
+						wp_link_pages( $defaults );
 
-<div class="entrytext">
+						?>
 
-<div class="entry_content clearfix">
+						<?php edit_post_link( 'Edit this entry', '<p class="edit_link">', '</p>' ); ?>
 
-<?php global $more; $more = false; the_content( '', true ); ?>
+					</div><!-- /entry_content -->
 
-<?php
+				</div><!-- /entrytext -->
 
-// NOTE: Comment permalinks are filtered if the comment is not on the first page
-// in a multipage post... see: cp_multipage_comment_link in functions.php
+			</div><!-- /post -->
 
-// set default behaviour
-$defaults = array(
-	'before' => '<div class="multipager">',
-	'after' => '</div>',
-	'link_before' => '',
-	'link_after' => '',
-	'next_or_number' => 'next',
-	'nextpagelink' => '<span class="alignright">' . __( 'Next page' ) . ' &raquo;</span>',
-	'previouspagelink' => '<span class="alignleft">&laquo; ' . __( 'Previous page' ) . '</span>',
-	'pagelink' => '%',
-	'more_file' => '',
-	'echo' => 1,
-);
+		</div><!-- /main_column_inner -->
 
-wp_link_pages( $defaults );
+	<?php endwhile; else: ?>
 
-?>
+		<div class="main_column_inner" id="main_column_splash">
 
-<?php edit_post_link( 'Edit this entry', '<p class="edit_link">', '</p>' ); ?>
+			<div class="post" id="post-<?php the_ID(); ?>">
+				<h2><?php _e( 'Page Not Found', 'theball' ); ?></h2>
+			</div><!-- /post -->
 
-</div><!-- /entry_content -->
+		</div><!-- /main_column_inner -->
 
-</div><!-- /entrytext -->
+		<div class="main_column_inner">
 
-</div><!-- /post -->
+			<div class="post">
 
+				<div class="entrytext">
 
+					<p><?php _e( 'Sorry, but you are looking for something that isn’t here.', 'theball' ); ?></p>
 
-<?php endwhile; else: ?>
+					<?php include( get_template_directory() . '/searchform.php' ); ?>
 
+				</div><!-- /entrytext -->
 
+			</div><!-- /post -->
 
-<div class="post">
-
-<h2><?php _e( 'Page Not Found', 'theball' ); ?></h2>
-
-<p><?php _e( 'Sorry, but you are looking for something that isn’t here.', 'theball' ); ?></p>
-
-<?php include( get_template_directory() . '/searchform.php' ); ?>
-
-</div><!-- /post -->
-
-
-
-<?php endif; ?>
-
-
-
-</div><!-- /main_column_inner -->
+	<?php endif; ?>
 
 </div><!-- /main_column -->
 

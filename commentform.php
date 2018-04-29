@@ -1,28 +1,24 @@
 <?php /*
-===============================================================
-Theme Comment Form
-===============================================================
+================================================================================
+Comment Form Template
+================================================================================
 AUTHOR: Christian Wach <needle@haystack.co.uk>
----------------------------------------------------------------
+--------------------------------------------------------------------------------
 NOTES
 
----------------------------------------------------------------
+This needs to be removed in favour of the comment_form() function
+
+--------------------------------------------------------------------------------
 */
-
-
 
 // Do not delete these lines
 if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) AND 'commentform.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
 	die( 'Please do not load this page directly. Thanks!' );
 }
 
-
-
 ?><!-- commentform.php -->
 
 <?php
-
-
 
 // access post
 global $post;

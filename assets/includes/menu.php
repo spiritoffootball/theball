@@ -1,10 +1,12 @@
 <?php /*
-===============================================================
-Global Menu for themes based on The Ball
-===============================================================
+================================================================================
+Global Menu for Themes based on The Ball
+================================================================================
+AUTHOR: Christian Wach <needle@haystack.co.uk>
+--------------------------------------------------------------------------------
+NOTES
 
-
----------------------------------------------------------------
+--------------------------------------------------------------------------------
 */
 
 /*
@@ -16,6 +18,9 @@ Global Menu for themes based on The Ball
 global $blog_id, $post;
 
 ?>
+
+<!-- assets/includes/menu.php -->
+
 <div id="site-navigation" class="main-navigation" role="navigation">
 	<span class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _e( 'Main Menu', 'theball' ); ?></span>
 	<div class="global-menu">

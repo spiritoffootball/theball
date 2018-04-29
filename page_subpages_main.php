@@ -1,99 +1,95 @@
-<?php
-/*
+<?php /*
+================================================================================
 Template Name: Subpages (Main)
+================================================================================
+AUTHOR: Christian Wach <needle@haystack.co.uk>
+--------------------------------------------------------------------------------
+NOTES
+
+--------------------------------------------------------------------------------
 */
 
-get_header();
-
-?>
+get_header(); ?>
 
 <!-- page_subpages_main.php -->
 
 <div id="content_wrapper" class="clearfix">
 
-
-
 <?php include( get_stylesheet_directory() . '/assets/includes/site_banner.php' ); ?>
-
-
 
 <div class="main_column clearfix">
 
+	<?php
 
+	// -----------------------------------------------------------------------------
+	// Subpages
+	// -----------------------------------------------------------------------------
+	global $post;
 
-<?php
+	// set params
+	$args = array(
+		'order_by' => 'menu_order',
+		'order' => 'ASC',
+		'post_type' => 'page',
+		'post_status' => 'publish',
+		'post_parent' => $post->ID,
+	);
 
-// -----------------------------------------------------------------------------
-// Subpages
-// -----------------------------------------------------------------------------
-global $post;
+	// do query
+	$subpages = new WP_Query( $args );
 
-// set params
-$args = array(
-	'order_by' => 'menu_order',
-	'order' => 'ASC',
-	'post_type' => 'page',
-	'post_status' => 'publish',
-	'post_parent' => $post->ID,
-);
+	// THE LOOP
+	if ( $subpages->have_posts() ) : ?>
 
-// do query
-$subpages = new WP_Query( $args );
+		<?php while ( $subpages->have_posts() ) : $subpages->the_post(); ?>
 
-// THE LOOP
-if ( $subpages->have_posts() ) : ?>
+			<div class="main_column_inner">
 
-	<?php while ( $subpages->have_posts() ) : $subpages->the_post(); ?>
+			<div class="post post-<?php the_ID(); ?>">
 
-		<div class="main_column_inner">
+				<div class="entrytext">
 
-		<div class="post post-<?php the_ID(); ?>">
+					<h3 id="post-<?php the_ID(); ?>"><?php the_title(); ?></h3>
 
-			<div class="entrytext">
+					<?php the_content( '<p class="serif">Read the rest of this page &raquo;</p>' ); ?>
 
-				<h3 id="post-<?php the_ID(); ?>"><?php the_title(); ?></h3>
+					<?php
 
-				<?php the_content( '<p class="serif">Read the rest of this page &raquo;</p>' ); ?>
+					// NOTE: Comment permalinks are filtered if the comment is not on the first page
+					// in a multipage post... see: cp_multipage_comment_link in functions.php
 
-				<?php
+					// set default behaviour
+					$defaults = array(
+						'before' => '<div class="multipager">',
+						'after' => '</div>',
+						'link_before' => '',
+						'link_after' => '',
+						'next_or_number' => 'next',
+						'nextpagelink' => '<span class="alignright">' . __( 'Next page' ) . ' &raquo;</span>',
+						'previouspagelink' => '<span class="alignleft">&laquo; ' . __( 'Previous page' ).'</span>',
+						'pagelink' => '%',
+						'more_file' => '',
+						'echo' => 1,
+					);
 
-				// NOTE: Comment permalinks are filtered if the comment is not on the first page
-				// in a multipage post... see: cp_multipage_comment_link in functions.php
+					wp_link_pages( $defaults ); ?>
 
-				// set default behaviour
-				$defaults = array(
-					'before' => '<div class="multipager">',
-					'after' => '</div>',
-					'link_before' => '',
-					'link_after' => '',
-					'next_or_number' => 'next',
-					'nextpagelink' => '<span class="alignright">' . __( 'Next page' ) . ' &raquo;</span>',
-					'previouspagelink' => '<span class="alignleft">&laquo; ' . __( 'Previous page' ).'</span>',
-					'pagelink' => '%',
-					'more_file' => '',
-					'echo' => 1,
-				);
+					<?php edit_post_link( 'Edit this entry', '<p>', '</p>' ); ?>
 
-				wp_link_pages( $defaults ); ?>
+				</div><!-- /entrytext -->
 
-				<?php edit_post_link( 'Edit this entry', '<p>', '</p>' ); ?>
+			</div><!-- /post -->
 
-			</div><!-- /entrytext -->
+			</div><!-- /main_column_inner -->
 
-		</div><!-- /post -->
+		<?php endwhile;
 
-		</div><!-- /main_column_inner -->
+		// prevent weirdness
+		wp_reset_postdata();
 
-	<?php endwhile;
+		?>
 
-	// prevent weirdness
-	wp_reset_postdata();
-
-	?>
-
-<?php endif; ?>
-
-
+	<?php endif; ?>
 
 </div><!-- /main_column -->
 

@@ -1,134 +1,104 @@
-<?php
+<?php /*
+================================================================================
+Site Banner Template
+================================================================================
+AUTHOR: Christian Wach <needle@haystack.co.uk>
+--------------------------------------------------------------------------------
+NOTES
 
-//die('here');
+--------------------------------------------------------------------------------
+*/
 
-?><!-- site_banner.php -->
+?><!-- assets/includes/site_banner.php -->
 
 <div id="site_banner" class="clearfix">
-<div id="site_banner_inner" class="clearfix">
 
+	<div id="site_banner_inner" class="clearfix">
 
+		<?php if ( is_front_page() ) { ?>
 
-<?php
+			<div class="splash_widget_col">
 
-global $post;
-//print_r( $post ); die();
+				<div class="splash_main_widget">
+					<?php dynamic_sidebar( 'SOF Homepage Top Main' ); ?>
+				</div>
 
-if ( is_front_page() ) {
+				<div class="splash_sub_widget">
+					<?php dynamic_sidebar( 'SOF Homepage Top Sub' ); ?>
+				</div>
 
-	?>
+			</div>
 
-	<div class="splash_widget_col">
+			<div class="splash_right_widget">
+				<?php dynamic_sidebar( 'SOF Homepage Top Right' ); ?>
+			</div>
 
-		<div class="splash_main_widget">
+		<?php } elseif ( is_page() AND empty( $post->post_parent ) ) { ?>
 
-			<?php dynamic_sidebar( 'SOF Homepage Top Main' ); ?>
+			<div class="splash_widget_col">
 
-		</div>
+				<div class="splash_main_widget">
 
-		<div class="splash_sub_widget">
+					<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-			<?php dynamic_sidebar( 'SOF Homepage Top Sub' ); ?>
+						$hidden_title = '';
+						if ( get_post_meta( get_the_ID(), 'show_heading', true ) == '1' ) {
+							$hidden_title = ' class="hidden"';
+						}
 
-		</div>
+						?>
 
-	</div>
+						<div class="post clearfix">
 
-	<div class="splash_right_widget">
+							<h2 id="post-<?php the_ID(); ?>"<?php echo $hidden_title; ?>><?php the_title(); ?> <?php edit_post_link( 'Edit this entry', '<span>', '</span>' ); ?></h2>
 
-		<?php dynamic_sidebar( 'SOF Homepage Top Right' ); ?>
+							<?php the_content( '<p class="serif">Read the rest of this page &raquo;</p>' ); ?>
 
-	</div>
+						</div><!-- /post -->
 
-	<?php
+					<?php endwhile; endif; ?>
 
-} elseif ( is_page() AND empty( $post->post_parent ) ) {
+				</div>
 
-	?>
+				<div class="splash_sub_widget">
+					<?php ?>
+				</div>
 
-	<div class="splash_widget_col">
+			</div>
 
-		<div class="splash_main_widget">
+			<div class="splash_right_widget">
+				<?php dynamic_sidebar( 'SOF Homepage Top Right' ); ?>
+			</div>
 
-			<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
+		<?php } else { ?>
 
-			$hidden_title = '';
-			if ( get_post_meta( get_the_ID(), 'show_heading', true ) == '1' ) { $hidden_title = ' class="hidden"'; }
+			<div class="splash_widget_col">
 
-			?>
+				<div class="splash_main_widget">
+					<?php dynamic_sidebar( 'SOF Homepage Top Main' ); ?>
+				</div>
 
-			<div class="post clearfix">
+				<div class="splash_sub_widget">
+					<?php dynamic_sidebar( 'SOF Homepage Top Sub' ); ?>
+				</div>
 
-			<h2 id="post-<?php the_ID(); ?>"<?php echo $hidden_title; ?>><?php the_title(); ?> <?php edit_post_link( 'Edit this entry', '<span>', '</span>' ); ?></h2>
+			</div>
 
-			<?php the_content( '<p class="serif">Read the rest of this page &raquo;</p>' ); ?>
+			<div class="splash_right_widget">
+				<?php //include( get_template_directory() . '/assets/includes/network.php' ); ?>
+				<?php dynamic_sidebar( 'SOF Homepage Top Right' ); ?>
+			</div>
 
-			</div><!-- /post -->
+		<?php } ?>
 
-			<?php endwhile; endif; ?>
+	</div><!-- /site_banner_inner -->
 
-		</div>
-
-		<div class="splash_sub_widget">
-
-			<?php ?>
-
-		</div>
-
-	</div>
-
-	<div class="splash_right_widget">
-
-		<?php dynamic_sidebar( 'SOF Homepage Top Right' ); ?>
-
-	</div>
-
-	<?php
-
-} else {
-
-	?>
-
-	<div class="splash_widget_col">
-
-		<div class="splash_main_widget">
-
-			<?php dynamic_sidebar( 'SOF Homepage Top Main' ); ?>
-
-		</div>
-
-		<div class="splash_sub_widget">
-
-			<?php dynamic_sidebar( 'SOF Homepage Top Sub' ); ?>
-
-		</div>
-
-	</div>
-
-	<div class="splash_right_widget">
-
-		<?php //include( get_template_directory() . '/assets/includes/network.php' ); ?>
-		<?php dynamic_sidebar( 'SOF Homepage Top Right' ); ?>
-
-	</div>
-
-	<?php
-
-	//include( get_template_directory() . '/assets/includes/banner_main.php' );
-
-}
-
-?>
-
-</div><!-- /site_banner_inner -->
 </div><!-- /site_banner -->
 
 
 
 <div id="cols" class="clearfix">
 <div class="cols_inner">
-
-
 
 <?php
 
