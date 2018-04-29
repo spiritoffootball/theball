@@ -16,7 +16,7 @@ NOTES
  *
  * @since 1.0
  */
-define( 'THEBALL_VERSION', '2.3.6' );
+define( 'THEBALL_VERSION', '2.4' );
 
 
 
