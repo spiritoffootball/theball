@@ -18,7 +18,7 @@ get_header(); ?>
 <div id="cols" class="clearfix">
 <div class="cols_inner">
 
-<?php include( get_stylesheet_directory() . '/assets/includes/page_list.php' ); ?>
+<?php include( get_template_directory() . '/assets/includes/page_list.php' ); ?>
 
 <div class="main_column clearfix">
 

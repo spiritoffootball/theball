@@ -99,7 +99,5 @@ NOTES
 <div id="cols" class="clearfix">
 <div class="cols_inner">
 
-	<?php include( get_stylesheet_directory() . '/assets/includes/page_list.php' ); ?>
-
 
 
