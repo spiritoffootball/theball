@@ -85,7 +85,6 @@ NOTES
 			</div>
 
 			<div class="splash_right_widget">
-				<?php //include( get_template_directory() . '/assets/includes/network.php' ); ?>
 				<?php dynamic_sidebar( 'SOF Homepage Top Right' ); ?>
 			</div>
 
@@ -100,20 +99,7 @@ NOTES
 <div id="cols" class="clearfix">
 <div class="cols_inner">
 
-<?php
-
-// get page list, blank by default
-$pagelist = apply_filters( 'theball_pagelist', '' );
-
-// did we get a page list?
-if ( $pagelist != '' ) {
-
-	// include it
-	include( $pagelist );
-
-}
-
-?>
+	<?php include( get_stylesheet_directory() . '/assets/includes/page_list.php' ); ?>
 
 
 
