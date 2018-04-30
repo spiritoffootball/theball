@@ -19,7 +19,7 @@ get_header(); ?>
 
 <div class="main_column clearfix">
 
-	<?php if (have_posts()) : ?>
+	<?php if ( have_posts() ) : ?>
 
 		<?php
 
@@ -71,54 +71,54 @@ get_header(); ?>
 
 		<div class="main_column_inner">
 
-			<?php while (have_posts()) : the_post(); ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-			<div class="post">
+				<div class="post">
 
-				<?php
+					<?php
 
-				// init
-				$has_feature_image = false;
-				$feature_image_class = '';
+					// init
+					$has_feature_image = false;
+					$feature_image_class = '';
 
-				// do we have a feature image?
-				if ( has_post_thumbnail() ) {
-					$has_feature_image = true;
-					$feature_image_class = ' has_feature_image';
-				}
+					// do we have a feature image?
+					if ( has_post_thumbnail() ) {
+						$has_feature_image = true;
+						$feature_image_class = ' has_feature_image';
+					}
 
-				?>
+					?>
 
-				<div class="post_header<?php echo $feature_image_class; ?>">
+					<div class="post_header<?php echo $feature_image_class; ?>">
 
-					<div class="post_header_inner">
+						<div class="post_header_inner">
 
-						<?php
+							<?php
 
-						// show feature image when we have one
-						if ( $has_feature_image ) {
-							echo get_the_post_thumbnail( get_the_ID(), 'medium-640' );
-						}
+							// show feature image when we have one
+							if ( $has_feature_image ) {
+								echo get_the_post_thumbnail( get_the_ID(), 'medium-640' );
+							}
 
-						?>
+							?>
 
-						<div class="post_header_text">
+							<div class="post_header_text">
 
-							<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link: <?php the_title(); ?>"><?php the_title(); ?></a></h2>
+								<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link: <?php the_title(); ?>"><?php the_title(); ?></a></h2>
 
-						</div><!-- /post_header_text -->
+							</div><!-- /post_header_text -->
 
-					</div><!-- /post_header_inner -->
+						</div><!-- /post_header_inner -->
 
-				</div><!-- /post_header -->
+					</div><!-- /post_header -->
 
-				<div class="entry clearfix">
-					<?php the_content( 'Read the rest of this entry &raquo;' ); ?>
+					<div class="entry clearfix">
+						<?php the_content( 'Read the rest of this entry &raquo;' ); ?>
+					</div>
+
+					<p class="postmetadata"><?php the_tags( 'Tags: ', ', ', '<br />' ); ?> Posted in <?php the_category( ', ' ) ?> | <?php comments_popup_link( 'No Comments &#187;', '1 Comment &#187;', '% Comments &#187;' ); ?></p>
+
 				</div>
-
-				<p class="postmetadata"><?php the_tags( 'Tags: ', ', ', '<br />' ); ?> Posted in <?php the_category( ', ' ) ?> | <?php comments_popup_link( 'No Comments &#187;', '1 Comment &#187;', '% Comments &#187;' ); ?></p>
-
-			</div>
 
 			<?php endwhile; ?>
 
