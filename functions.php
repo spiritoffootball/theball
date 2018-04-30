@@ -782,3 +782,40 @@ add_filter( 'the_author_posts_link', 'theball_author_posts_link', 10, 1 );
 
 
 
+if ( ! function_exists( 'theball_team_members' ) ):
+/**
+ * Get the team members as WordPress users.
+ *
+ * @since 2.4.1
+ *
+ * @return array $users_sorted The array of WordPress user objects for the team.
+ */
+function theball_team_members() {
+
+	// init with default set of team members
+	$default = array( 7, 2, 3, 5, 4 );
+
+	/**
+	 * Filter the default set to customise team per journey.
+	 *
+	 * @since 2.4.1
+	 *
+	 * @param array $default The default set of team members.
+	 * @return array $default The modified set of team members.
+	 */
+	$include_users = apply_filters( 'theball_team_members', $default );
+
+	// get the users by ID
+	$users = get_users( array(
+		'include' => $include_users,
+		'orderby' => 'include',
+	) );
+
+	// --<
+	return $users;
+
+}
+endif;
+
+
+
