@@ -819,19 +819,22 @@ Our Network
 
 	.sof_network ul li a.cic_icon
 	{
-		background: transparent url(../images/logos/sof_logo_75.png) no-repeat left top;
+		background: transparent url(../images/logos/sof-logo-200-black.png) no-repeat left top;
+		background-size: 75px;
 		height: 75px;
 	}
 
 	.sof_network ul li a.brazil_icon
 	{
-		background: transparent url(../images/logos/sof_brazil_logo_75.png) no-repeat left top;
+		background: transparent url(../images/logos/sof-brazil-logo-200-black.png) no-repeat -12px top;
+		background-size: 100px;
 		height: 100px;
 	}
 
 	.sof_network ul li a.germany_icon
 	{
-		background: transparent url(../images/logos/sof_germany_logo_75.png) no-repeat left top;
+		background: transparent url(../images/logos/sof-germany-logo-200-black.png) no-repeat -12px top;
+		background-size: 100px;
 		height: 100px;
 	}
 
@@ -851,19 +854,22 @@ Our Network
 
 	.sof_network.network_white ul li a.cic_icon
 	{
-		background: transparent url(../images/logos/sof_logo_75_white.png) no-repeat left top;
+		background: transparent url(../images/logos/sof-logo-200-white.png) no-repeat left top;
+		background-size: 75px;
 		height: 75px;
 	}
 
 	.sof_network.network_white ul li a.brazil_icon
 	{
-		background: transparent url(../images/logos/sof_brazil_logo_75_white.png) no-repeat left top;
+		background: transparent url(../images/logos/sof-brazil-logo-200-white.png) no-repeat -12px top;
+		background-size: 100px;
 		height: 100px;
 	}
 
 	.sof_network.network_white ul li a.germany_icon
 	{
-		background: transparent url(../images/logos/sof_germany_logo_75_white.png) no-repeat left top;
+		background: transparent url(../images/logos/sof-germany-logo-200-white.png) no-repeat -12px top;
+		background-size: 100px;
 		height: 100px;
 	}
 
