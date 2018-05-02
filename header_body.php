@@ -6,6 +6,8 @@ AUTHOR: Christian Wach <needle@haystack.co.uk>
 --------------------------------------------------------------------------------
 NOTES
 
+The "left-open elements" here are closed in footer.php
+
 --------------------------------------------------------------------------------
 */
 
@@ -24,7 +26,7 @@ NOTES
 			<?php
 
 			// default image
-			$default_ball_image = '<a href="' . get_option( 'home' ) . '" title="Home" class="ball_image"><img src="' . get_template_directory_uri() . '/assets/images/interface/the_ball_logo.png" alt="The Ball logo" title="The Ball logo" style="width: 100px; height: 100px;" id="the_ball_header" /></a>';
+			$default_ball_image = '<a href="' . get_option( 'home' ) . '" title="Home" class="ball_image"><img src="' . get_template_directory_uri() . '/assets/images/interface/the-ball-logo-200-white.png" alt="The Ball logo" title="The Ball logo" style="width: 100px; height: 100px;" id="the_ball_header" /></a>';
 
 			// image of The Ball for this site
 			echo apply_filters( 'theball_image', $default_ball_image );
