@@ -3573,6 +3573,7 @@ RESPONSIVENESS
 		float: none;
 		width: 100%;
 		height: auto;
+		padding: 0;
 	}
 
 	div.padded_br, object.padded_br, img.padded_br
