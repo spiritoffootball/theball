@@ -819,3 +819,41 @@ endif;
 
 
 
+if ( ! function_exists( 'theball_site_icon_meta_tags' ) ):
+/**
+ * Filters the site icon meta tags.
+ *
+ * To make this work, upload both black *and* white logos and leave the white
+ * logo in place. This function will replace the favicons with the black versions.
+ *
+ * @since 2.4.2
+ *
+ * @param array $meta_tags Existing Site Icon meta elements.
+ * @return array $meta_tags Modified Site Icon meta elements.
+ */
+function theball_site_icon_meta_tags( $meta_tags ) {
+
+	// bail if none
+	if ( empty( $meta_tags ) ) return $meta_tags;
+
+	// loop through them
+	foreach( $meta_tags AS $key => $meta_tag ) {
+
+		// replace white with black icons
+		if ( false !== strpos( $meta_tag, 'rel="icon"' ) ) {
+			$meta_tags[$key] = str_replace( 'white', 'black', $meta_tag );
+		}
+
+	}
+
+	// --<
+	return $meta_tags;
+
+}
+endif;
+
+// add filter for the above
+add_filter( 'site_icon_meta_tags', 'theball_site_icon_meta_tags', 10, 1 );
+
+
+

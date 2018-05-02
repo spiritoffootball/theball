@@ -51,10 +51,6 @@ The "left-open elements" here are closed in footer.php
 
 	?></title>
 
-	<!-- Favicons -->
-	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon.ico">
-	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon.png">
-
 	<!-- Syndication -->
 	<?php
 
