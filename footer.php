@@ -60,7 +60,7 @@ The "left-open elements" here were opened in header.php or header_body.php
 
 		<?php include( get_template_directory() . '/assets/includes/network-white.php' ); ?>
 
-		<p>&copy; <a href="http://www.spiritoffootball.com/">Spirit of Football CIC</a> 2002 &ndash; <?php echo date( 'Y' ); ?></p>
+		<p>&copy; <a href="https://spiritoffootball.com/">Spirit of Football CIC</a> 2002 &ndash; <?php echo date( 'Y' ); ?></p>
 
 	</div><!-- /#footer-inner -->
 </div><!-- /#footer -->
