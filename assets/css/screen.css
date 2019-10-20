@@ -1987,7 +1987,8 @@ div#respond
 	{
 	}
 
-	#respond_button input#submit
+	#respond_button input#submit,
+	.contact-form button.pushbutton-wide
 	{
 		font-size: 1em;
 		margin: 0;
@@ -1998,11 +1999,17 @@ div#respond
 		text-transform: uppercase;
 	}
 
-	#respond_button input#submit:hover
+	#respond_button input#submit:hover,
+	.contact-form button.pushbutton-wide:hover
 	{
 		color: #fff;
 		background-color: #202B6D;
 		cursor: pointer;
+	}
+
+	.contact-form p.contact-submit
+	{
+		margin-bottom: 0;
 	}
 
 
