@@ -2438,8 +2438,6 @@ Contact Form
 {
 	margin: 20px 0;
 	padding: 20px;
-	border: 2px solid #AFC2DC;
-	border: 2px solid #aaa;
 	-moz-border-radius: 12px;
 	-khtml-border-radius: 12px;
 	-webkit-border-radius: 12px;
@@ -2454,6 +2452,7 @@ Contact Form
 	padding: 0.5em;
 	font-size: 1em;
 	background-color: #eee;
+	border: none;
 }
 
 .post .contact-form textarea
@@ -2463,6 +2462,7 @@ Contact Form
 	width: 96%;
 	max-width: 96%;
 	background-color: #eee;
+	border: none;
 }
 
 .post .contact-form label span
