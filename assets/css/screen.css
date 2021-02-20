@@ -1858,7 +1858,11 @@ Comment Content
 	div#respond p a#cancel-comment-reply-link:link,
 	div#respond p a#cancel-comment-reply-link:hover,
 	div#respond p a#cancel-comment-reply-link:active,
-	div#respond p a#cancel-comment-reply-link:visited
+	div#respond p a#cancel-comment-reply-link:visited,
+	div#respond h3 a:link,
+	div#respond h3 a:hover,
+	div#respond h3 a:active,
+	div#respond h3 a:visited
 	{
 		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 		font-weight: normal;
@@ -1872,8 +1876,18 @@ Comment Content
 		padding: 6px 8px;
 	}
 
+	div#respond h3 a:link,
+	div#respond h3 a:hover,
+	div#respond h3 a:active,
+	div#respond h3 a:visited
+	{
+		float: right;
+		padding: 0;
+	}
+
 	a.comment-reply-link:hover,
-	div#respond p a#cancel-comment-reply-link:hover
+	div#respond p a#cancel-comment-reply-link:hover,
+	div#respond h3 a:hover
 	{
 		color: #202B6D;
 	}
@@ -1895,8 +1909,14 @@ div#respond
 {
 	background-color: #E2E8F4;
 	padding: 15px;
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 }
+
+	.comment-wrapper > div#respond
+	{
+		margin-top: -26px;
+		padding-top: 0;
+	}
 
 	/* Comment form title */
 	div#respond h3
@@ -1904,17 +1924,8 @@ div#respond
 		font-size: 1.6em;
 		font-weight: 400;
 		color: #202B6D;
-		margin: 0 0 0.5em 0;
+		margin: 0 0 0.2em 0;
 		text-transform: uppercase;
-	}
-
-	div#respond h3 a:link,
-	div#respond h3 a:hover,
-	div#respond h3 a:active,
-	div#respond h3 a:visited
-	{
-		color: #202B6D;
-		text-decoration: none;
 	}
 
 	div#respond p
@@ -1943,17 +1954,24 @@ div#respond
 		text-align: right;
 	}
 
-	#author_details
+	#respond label
+	{
+		font-size: 0.9em;
+	}
+
+	#respond .comment-form-author
 	{
 		padding-bottom: 0.5em;
 	}
 
-	#author_details input
+	#respond .comment-form-author input,
+	#respond .comment-form-email input,
+	#respond .comment-form-url input
 	{
-		padding: 3px;
-		font-size: 12px;
+		padding: 5px;
+		font-size: 1em;
 		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-		width: 90%;
+		width: 95%;
 	}
 
 	fieldset#comment_details
@@ -1961,18 +1979,25 @@ div#respond
 		margin: 0 0 8px 0;
 	}
 
-	.req
+	.comment-notes,
+	.logged-in-as
 	{
-		color: #202B6D;
+		font-size: 0.9em;
+	}
+
+	.req,
+	.required
+	{
+		color: #c73232;
 	}
 
 	/* comments */
 	textarea#comment
 	{
-		width: 90%;
-		padding: 5px;
+		width: 94%;
+		padding: 5px 10px;
 		margin: 0 0 5px 0;
-		font-size: 0.9em;
+		font-size: 1.1em;
 		line-height: 1.75;
 	}
 
@@ -1983,11 +2008,11 @@ div#respond
 		line-height: 1.6;
 	}
 
-	#respond_button
+	#respond .form-submit
 	{
 	}
 
-	#respond_button input#submit,
+	#respond .form-submit input#submit,
 	.contact-form button.pushbutton-wide
 	{
 		font-size: 1em;
@@ -1999,7 +2024,7 @@ div#respond
 		text-transform: uppercase;
 	}
 
-	#respond_button input#submit:hover,
+	#respond .form-submit input#submit:hover,
 	.contact-form button.pushbutton-wide:hover
 	{
 		color: #fff;
@@ -2012,7 +2037,16 @@ div#respond
 		margin-bottom: 0;
 	}
 
+	p.akismet_comment_form_privacy_notice
+	{
+		font-size: 0.9em;
+		margin: 0 0 15px 0;
+	}
 
+	p.akismet_comment_form_privacy_notice a
+	{
+		color: #202B6D;
+	}
 
 /*
 --------------------------------------------------------------------------------

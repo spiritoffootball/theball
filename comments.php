@@ -82,7 +82,9 @@ $oddcomment = 'class="alt" ';
 
 
 
-<?php include( get_template_directory() . '/commentform.php' ); ?>
+<div id="respond_wrapper">
+	<?php comment_form(); ?>
+</div><!-- /respond_wrapper -->
 
 
 

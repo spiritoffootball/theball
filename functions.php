@@ -159,16 +159,8 @@ function theball_enqueue_scripts_and_styles() {
 	}
 
 	// is it a post?
-	if ( is_single() ) {
-
-		// add our comment form javascript
-		wp_enqueue_script(
-			'theball_move_form',
-			get_template_directory_uri() . '/assets/js/move_form.js',
-			array( 'jquery' ),
-			THEBALL_VERSION
-		);
-
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
 	}
 
 }
