@@ -1,0 +1,487 @@
+# Copyright (C) 2021 Christian Wach
+# This file is distributed under the same license as the theball.tv Global Theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: theball.tv Global Theme 2.4.4\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/theball\n"
+"POT-Creation-Date: 2021-03-04 10:59:07+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: 404.php:28
+msgid "Offside!"
+msgstr ""
+
+#: 404.php:30
+msgid "A whistle for offside"
+msgstr ""
+
+#: 404.php:32
+msgid ""
+"The page you requested has not been found on this server. Perhaps you could "
+"use the search form below to look for it?"
+msgstr ""
+
+#: 404.php:34
+msgid ""
+"If we have got a broken link on this site, or you’re really really sure the "
+"page should be there, then mailing the details to the %1$swebmaster%2$s "
+"would be appreciated."
+msgstr ""
+
+#: about.php:56 page_subpages.php:68 page_subpages.php:128
+#: page_subpages_splash.php:73 page_subpages_splash.php:133 team.php:35
+msgid "Read the rest of this page &raquo;"
+msgstr ""
+
+#: about.php:67 contact.php:53 functions.php:554 page.php:54
+#: page_subpages.php:79 page_subpages.php:142 page_subpages_main.php:68
+#: page_subpages_splash.php:84 page_subpages_splash.php:147 single.php:96
+msgid "Next page"
+msgstr ""
+
+#: about.php:68 contact.php:54 functions.php:555 page.php:55
+#: page_subpages.php:80 page_subpages.php:143 page_subpages_main.php:69
+#: page_subpages_splash.php:85 page_subpages_splash.php:148 single.php:97
+msgid "Previous page"
+msgstr ""
+
+#: about.php:76 archive-sofvm_video.php:56 attachment.php:127 image.php:119
+#: page_subpages.php:88 page_subpages.php:151 page_subpages_splash.php:93
+#: page_subpages_splash.php:156 single.php:187 team.php:39
+msgid "Edit this entry"
+msgstr ""
+
+#: archive-sofvm_video.php:27 archive.php:27 index.php:27
+msgid "&laquo; Older Posts"
+msgstr ""
+
+#: archive-sofvm_video.php:28 archive.php:28 index.php:28
+msgid "Newer Posts &raquo;"
+msgstr ""
+
+#: archive-sofvm_video.php:48 archive.php:92 attachment.php:39 author.php:81
+#: contact.php:28 geo-mashup-full-post.php:22 geo-mashup-info-window-max.php:27
+#: geo-mashup-info-window.php:56 geo-mashup-info-window.php:65
+#: geo-mashup-info-window.php:75 geo-mashup-info-window.php:80 index.php:76
+#: page.php:27 search.php:60 single.php:67
+msgid "Permanent Link to: "
+msgstr ""
+
+#: archive-sofvm_video.php:49
+msgid "%1$s by %2$s"
+msgstr ""
+
+#: archive-sofvm_video.php:60 archive.php:104 index.php:88 single.php:105
+msgid "Tags: "
+msgstr ""
+
+#: archive-sofvm_video.php:60 archive.php:104 index.php:88
+msgid "Posted in "
+msgstr ""
+
+#: archive-sofvm_video.php:60 archive.php:104 index.php:88
+msgid "No Comments &#187;"
+msgstr ""
+
+#: archive-sofvm_video.php:60 archive.php:104 index.php:88
+msgid "1 Comment &#187;"
+msgstr ""
+
+#: archive-sofvm_video.php:60 archive.php:104 index.php:88
+msgid "% Comments &#187;"
+msgstr ""
+
+#: archive-sofvm_video.php:86
+msgid "No videos found"
+msgstr ""
+
+#: archive-sofvm_video.php:90
+msgid "Why not search for something?"
+msgstr ""
+
+#: archive.php:101 attachment.php:45 image.php:43 index.php:85
+msgid "Read the rest of this entry &raquo;"
+msgstr ""
+
+#: archive.php:133
+msgid "Nothing found"
+msgstr ""
+
+#: archive.php:147
+msgid "Try searching for something?"
+msgstr ""
+
+#: archives.php:56
+msgid "%s Archives"
+msgstr ""
+
+#: archives.php:67
+msgid "Topics"
+msgstr ""
+
+#: archives.php:111
+msgid "Archives by Month"
+msgstr ""
+
+#: assets/includes/menu.php:23
+msgid "Main Menu"
+msgstr ""
+
+#: assets/includes/network-white.php:18 assets/includes/network.php:18
+msgid "The SOF Network"
+msgstr ""
+
+#: assets/includes/network-white.php:21 assets/includes/network.php:21
+msgid "Spirit of Football Brazil"
+msgstr ""
+
+#: assets/includes/network-white.php:22 assets/includes/network.php:22
+msgid "Spirit of Football CIC"
+msgstr ""
+
+#: assets/includes/network-white.php:23 assets/includes/network.php:23
+msgid "Spirit of Football Germany"
+msgstr ""
+
+#: assets/includes/paypal.php:16
+msgid "Give The Ball a Kick!"
+msgstr ""
+
+#: attachment.php:48
+msgid "Pages:"
+msgstr ""
+
+#: attachment.php:56 image.php:48 single.php:116
+msgid "RSS 2.0"
+msgstr ""
+
+#: attachment.php:63 image.php:55 single.php:123
+msgid "You can follow any comments on this entry through the %s feed."
+msgstr ""
+
+#: attachment.php:75 attachment.php:94 image.php:67 image.php:86 single.php:135
+#: single.php:154
+msgid "trackback"
+msgstr ""
+
+#: attachment.php:82 image.php:74 single.php:142
+msgid "You can leave a comment, or %s from your own site."
+msgstr ""
+
+#: attachment.php:101 image.php:93 single.php:161
+msgid "Comments are currently closed, but you can %s from your own site."
+msgstr ""
+
+#: attachment.php:111 image.php:103 single.php:171
+msgid "You can leave a comment. Pinging is currently not allowed."
+msgstr ""
+
+#: attachment.php:119 image.php:111 single.php:179
+msgid "Both comments and pings are currently closed."
+msgstr ""
+
+#: attachment.php:141 image.php:133
+msgid "Not found"
+msgstr ""
+
+#: attachment.php:145
+msgid "Sorry, no attachments matched your criteria."
+msgstr ""
+
+#: author.php:83
+msgid "No recent posts by this author."
+msgstr ""
+
+#: comments.php:35
+msgid "<span>0</span> comments on this post"
+msgstr ""
+
+#: comments.php:36
+msgid "<span>1</span> comment on this post"
+msgstr ""
+
+#: comments.php:37
+msgid "<span>%</span> comments on this post"
+msgstr ""
+
+#: comments.php:45
+msgid "Reply to this comment"
+msgstr ""
+
+#: comments.php:59
+msgid "No comments yet"
+msgstr ""
+
+#: comments.php:61
+msgid "Be the first to leave one!"
+msgstr ""
+
+#: comments.php:69
+msgid "Comments are closed"
+msgstr ""
+
+#: contact.php:79 page.php:77
+msgid "Page Not Found"
+msgstr ""
+
+#: contact.php:90 geo-mashup-full-post.php:37 geo-mashup-info-window-max.php:42
+#: geo-mashup-info-window.php:92 page.php:79 single.php:216
+msgid "Sorry, but you are looking for something that isn’t here."
+msgstr ""
+
+#: functions.php:73
+msgid "Table of Contents"
+msgstr ""
+
+#: functions.php:490
+msgid "Edit comment"
+msgstr ""
+
+#: functions.php:492
+msgid "<cite class=\"fn\">%s</cite>"
+msgstr ""
+
+#: functions.php:494
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: functions.php:501
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:573
+msgid "Pages: "
+msgstr ""
+
+#: functions.php:597
+msgid "SOF Homepage Top Main"
+msgstr ""
+
+#: functions.php:599 functions.php:610 functions.php:621
+msgid "A widget area at the top of the site home page"
+msgstr ""
+
+#: functions.php:608
+msgid "SOF Homepage Top Right"
+msgstr ""
+
+#: functions.php:619
+msgid "SOF Homepage Top Sub"
+msgstr ""
+
+#: functions.php:630
+msgid "SOF Homepage Social Column"
+msgstr ""
+
+#: functions.php:632
+msgid "A widget area in the middle of the site home page"
+msgstr ""
+
+#: functions.php:641
+msgid "SOF Homepage About Column"
+msgstr ""
+
+#: functions.php:643
+msgid "A widget area in the middle right of the site home page"
+msgstr ""
+
+#. translators: %s: author's display name
+#: functions.php:786
+msgid "Posts by %s"
+msgstr ""
+
+#: geo-mashup-full-post.php:36 geo-mashup-info-window-max.php:41
+#: geo-mashup-info-window.php:91 single.php:214
+msgid "Not Found"
+msgstr ""
+
+#: geo-mashup-info-window.php:75 geo-mashup-info-window.php:80
+msgid "Read full story..."
+msgstr ""
+
+#: header_body.php:14
+msgid "Skip to Content"
+msgstr ""
+
+#: header_body.php:37
+msgid "Home"
+msgstr ""
+
+#: image.php:137
+msgid "Sorry, no images matched your criteria."
+msgstr ""
+
+#: index.php:111
+msgid "Page not found"
+msgstr ""
+
+#: index.php:113
+msgid "Sorry, but you are looking for something that isn’t here. Try a search?"
+msgstr ""
+
+#: search.php:97
+msgid "Try a different search?"
+msgstr ""
+
+#: searchform.php:16 searchform.php:17 searchform.php:18
+msgid "Search"
+msgstr ""
+
+#: sidebar.php:29
+msgid "The 2014 route"
+msgstr ""
+
+#: sidebar.php:31 sidebar.php:38
+msgid "The Ball 2014"
+msgstr ""
+
+#: sidebar.php:37
+msgid ""
+"%s left England on 9th Jan 2014 and headed to the World Cup in Sao Paulo, "
+"Brazil."
+msgstr ""
+
+#: sidebar.php:41
+msgid "More about 2014..."
+msgstr ""
+
+#: sidebar.php:42
+msgid "Go to the 2014 blog"
+msgstr ""
+
+#: sidebar.php:59
+msgid "The 2010 route"
+msgstr ""
+
+#: sidebar.php:61 sidebar.php:68
+msgid "The Ball 2010"
+msgstr ""
+
+#: sidebar.php:67
+msgid ""
+"%s left England on 24th Jan 2010 headed to the Opening Ceremony in "
+"Johannesburg, South Africa."
+msgstr ""
+
+#: sidebar.php:71
+msgid "More about 2010..."
+msgstr ""
+
+#: sidebar.php:72
+msgid "Go to the 2010 blog"
+msgstr ""
+
+#: sidebar.php:73
+msgid "Start reading from the kickoff"
+msgstr ""
+
+#: sidebar.php:90
+msgid "The 2006 route"
+msgstr ""
+
+#: sidebar.php:92 sidebar.php:99
+msgid "The Ball 2006"
+msgstr ""
+
+#: sidebar.php:98
+msgid "%s travelled from London to the Opening Ceremony in Munich, Germany."
+msgstr ""
+
+#: sidebar.php:102
+msgid "More about 2006..."
+msgstr ""
+
+#: sidebar.php:103 sidebar.php:134
+msgid "Start reading from the beginning"
+msgstr ""
+
+#: sidebar.php:104
+msgid "The Christmas Truce"
+msgstr ""
+
+#: sidebar.php:121
+msgid "The 2002 route"
+msgstr ""
+
+#: sidebar.php:123 sidebar.php:130
+msgid "The Ball 2002"
+msgstr ""
+
+#: sidebar.php:129
+msgid ""
+"%s was carried 7000 miles across Europe and Asia to the World Cup finals in "
+"Korea &amp; Japan."
+msgstr ""
+
+#: sidebar.php:133
+msgid "More about 2002..."
+msgstr ""
+
+#: sidebar.php:135
+msgid "Watch short videos of the journey"
+msgstr ""
+
+#: single.php:108
+msgid "Categories:"
+msgstr ""
+
+#: team.php:67
+msgid "Edit this profile"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "theball.tv Global Theme"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://theball.tv/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Home theme for theball.tv"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Christian Wach"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.haystack.co.uk"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "About"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Archives"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Contact"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Homepage New"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Subpages"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Subpages (Main)"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Subpages with Splash"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Team"
+msgstr ""
