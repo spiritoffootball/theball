@@ -26,9 +26,16 @@ The "left-open elements" here are closed in footer.php
 			<?php
 
 			// Default image.
-			$default_ball_image = '<a href="' . get_home_url( null, '/' ) . '" title="Home" class="ball_image"><img src="' . get_template_directory_uri() . '/assets/images/interface/the-ball-logo-200-white.png" alt="The Ball logo" title="The Ball logo" style="width: 100px; height: 100px;" id="the_ball_header" /></a>';
+			$default_ball_image = '<a href="' . get_home_url( null, '/' ) . '" title="Home" class="ball_image"><img src="' . get_template_directory_uri() . '/assets/images/interface/the-ball-logo-200-white.png" alt="The Ball logo" title="' . __( 'The Ball logo', 'theball' ) . '" style="width: 100px; height: 100px;" id="the_ball_header" /></a>';
 
-			// Image of The Ball for this site.
+			/**
+			 * Filter the image of The Ball for this site.
+			 *
+			 * @since 1.0
+			 *
+			 * @param string $default_ball_image The default image markup.
+			 * @return string $default_ball_image The modified image markup.
+			 */
 			echo apply_filters( 'theball_image', $default_ball_image );
 
 			?>

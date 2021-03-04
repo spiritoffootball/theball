@@ -43,7 +43,7 @@ $oddcomment = 'class="alt" ';
 				// List comments params.
 				'type'=> 'all', //'comment',
 				'reply_text' => __( 'Reply to this comment', 'theball' ),
-				'callback' => 'theball_comments',
+				'callback' => [ sof_the_ball_theme(), 'comment_markup' ],
 			] ); ?>
 
 		</ol>

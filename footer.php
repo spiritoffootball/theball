@@ -35,7 +35,19 @@ The "left-open elements" here were opened in header.php or header_body.php
 
 
 <?php if ( ! is_main_site() ) : ?>
-	<?php include apply_filters( 'theball_supporters', get_template_directory() . '/assets/includes/supporters_2014.php' ); ?>
+	<?php
+
+	/**
+	 * Filter the included Supporters file.
+	 *
+	 * @since 1.0
+	 *
+	 * @param string The default file path.
+	 * @return string The modified file path.
+	 */
+	include apply_filters( 'theball_supporters', get_template_directory() . '/assets/includes/supporters_2014.php' );
+
+	?>
 <?php endif; ?>
 
 

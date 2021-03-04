@@ -64,7 +64,19 @@ get_header();
 
 			<div class="archive_wrapper">
 
-				<h3><?php echo apply_filters( 'theball_topics_title', __( 'Topics', 'theball' ) ); ?></h3>
+				<h3><?php
+
+				/**
+				 * Filter the title of the "Topics" section.
+				 *
+				 * @since 1.0
+				 *
+				 * @param string The default title.
+				 * @return string The modified title.
+				 */
+				echo apply_filters( 'theball_topics_title', __( 'Topics', 'theball' ) );
+
+				?></h3>
 
 				<?php
 
