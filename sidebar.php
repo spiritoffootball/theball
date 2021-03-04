@@ -35,7 +35,7 @@ NOTES
 			<div class="ball_teaser_text">
 				<p><?php printf(
 					__( '%s left England on 9th Jan 2014 and headed to the World Cup in Sao Paulo, Brazil.', 'theball' ),
-					'<em>' . __( 'The Ball 2014', 'theball'  . '</em>'
+					'<em>' . __( 'The Ball 2014', 'theball' ) . '</em>'
 				); ?></p>
 				<ul class="actionlist">
 					<li><a href="/2014/"><?php _e( 'More about 2014...', 'theball' ); ?></a></li>
@@ -65,7 +65,7 @@ NOTES
 			<div class="ball_teaser_text">
 				<p><?php printf(
 					__( '%s left England on 24th Jan 2010 headed to the Opening Ceremony in Johannesburg, South Africa.', 'theball' ),
-					'<em>' . __( 'The Ball 2010', 'theball'  . '</em>'
+					'<em>' . __( 'The Ball 2010', 'theball' ) . '</em>'
 				); ?></p>
 				<ul class="actionlist">
 					<li><a href="/2010/"><?php _e( 'More about 2010...', 'theball' ); ?></a></li>
@@ -96,7 +96,7 @@ NOTES
 			<div class="ball_teaser_text">
 				<p><?php printf(
 					__( '%s travelled from London to the Opening Ceremony in Munich, Germany.', 'theball' ),
-					'<em>' . __( 'The Ball 2006', 'theball'  . '</em>'
+					'<em>' . __( 'The Ball 2006', 'theball' ) . '</em>'
 				); ?></p>
 				<ul class="actionlist">
 					<li><a href="/2006/"><?php _e( 'More about 2006...', 'theball' ); ?></a></li>
@@ -127,7 +127,7 @@ NOTES
 			<div class="ball_teaser_text">
 				<p><?php printf(
 					__( '%s was carried 7000 miles across Europe and Asia to the World Cup finals in Korea &amp; Japan.', 'theball' ),
-					'<em>' . __( 'The Ball 2002', 'theball'  . '</em>'
+					'<em>' . __( 'The Ball 2002', 'theball' ) . '</em>'
 				); ?></p>
 				<ul class="actionlist">
 					<li><a href="/2002/"><?php _e( 'More about 2002...', 'theball' ); ?></a></li>
