@@ -10,6 +10,7 @@ NOTES
 */
 
 ?><!-- Begin sponsors -->
+
 <div id="sponsors" class="clearfix">
 
 <div id="sponsor_logos">

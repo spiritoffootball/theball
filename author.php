@@ -11,34 +11,32 @@ Default author template.
 --------------------------------------------------------------------------------
 */
 
-// get author info
+// Get author info.
 if ( isset( $_GET['author_name'] ) ) {
 	$my_author = get_userdatabylogin( $author_name );
 } else {
 	$my_author = get_userdata( intval( $author ) );
 }
 
-// do we have an URL for this user? (can be 'http://' -> doh!))
+// Do we have an URL for this user? (can be 'http://' or 'https://' -> doh!))
 $authorURL = '';
-if ( $my_author->user_url != '' AND $my_author->user_url != 'http://' ) {
+if ( $my_author->user_url != '' AND $my_author->user_url != 'http://' AND $my_author->user_url != 'https://' ) {
 	$authorURL = $my_author->user_url;
 }
 
-// use full name (or nickname if missing)
+// Use full name - or nickname if missing.
 $full_name = theball_get_full_name( $my_author->first_name, $my_author->last_name );
 if ( $full_name == '' ) {
 	$full_name = $my_author->nickname;
 }
 
-?>
+get_header();
 
-<?php get_header(); ?>
-
-<!-- author.php -->
+?><!-- author.php -->
 
 <div id="content_wrapper" class="clearfix">
 
-<?php include( get_stylesheet_directory() . '/assets/includes/site_banner.php' ); ?>
+<?php include get_stylesheet_directory() . '/assets/includes/site_banner.php'; ?>
 
 <div class="main_column clearfix">
 
@@ -80,7 +78,7 @@ if ( $full_name == '' ) {
 
 					<ul>
 						<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-							<li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link: <?php the_title(); ?>"><?php the_title(); ?></a> on <?php the_time( 'j F Y' ); ?></li>
+							<li><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute( [ 'before' => __( 'Permanent Link to: ', 'theball' ), 'after'  => '' ] ); ?>"><?php the_title(); ?></a> on <?php the_time( 'j F Y' ); ?></li>
 						<?php endwhile; else: ?>
 							<li><?php _e( 'No recent posts by this author.', 'theball' ); ?></li>
 						<?php endif; ?>

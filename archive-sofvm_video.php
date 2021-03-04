@@ -9,13 +9,13 @@ NOTES
 --------------------------------------------------------------------------------
 */
 
-get_header(); ?>
+get_header();
 
-<!-- archive-sofvm_video.php -->
+?><!-- archive-sofvm_video.php -->
 
 <div id="content_wrapper" class="clearfix">
 
-<?php include( get_stylesheet_directory() . '/assets/includes/site_banner.php' ); ?>
+<?php include get_stylesheet_directory() . '/assets/includes/site_banner.php'; ?>
 
 <div class="main_column clearfix">
 
@@ -23,7 +23,7 @@ get_header(); ?>
 
 		<?php
 
-		// Search Nav
+		// Search Nav.
 		$pl = get_next_posts_link( __( '&laquo; Older Posts', 'theball' ) );
 		$nl = get_previous_posts_link( __( 'Newer Posts &raquo;', 'theball' ) );
 
@@ -45,19 +45,19 @@ get_header(); ?>
 			<div class="post">
 
 				<div class="post_header">
-					<h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-					<p class="postname"><?php the_time( 'F jS, Y' ) ?>  by <?php the_author_posts_link(); ?></p>
+					<h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute( [ 'before' => __( 'Permanent Link to: ', 'theball' ), 'after'  => '' ] ); ?>"><?php the_title(); ?></a></h3>
+					<p class="postname"><?php printf( __( '%1$s by %2$s', 'theball' ), get_the_time( 'F jS, Y' ), get_the_author_posts_link() ); ?></p>
 				</div><!-- /post_header -->
 
 				<div class="entry clearfix">
 
 					<?php the_content() ?>
 
-					<?php edit_post_link( __( 'Edit this entry' ), '<p class="edit_link">', '</p>' ); ?>
+					<?php edit_post_link( __( 'Edit this entry', 'theball' ), '<p class="edit_link">', '</p>' ); ?>
 
 				</div>
 
-				<p class="postmetadata"><?php the_tags( 'Tags: ', ', ', '<br />' ); ?> Posted in <?php the_category( ', ' ) ?> | <?php comments_popup_link( 'No Comments &#187;', '1 Comment &#187;', '% Comments &#187;' ); ?></p>
+				<p class="postmetadata"><?php the_tags( __( 'Tags: ', 'theball' ), ', ', '<br />' ); ?> <?php _e( 'Posted in ', 'theball' ) . the_category( ', ' ) ?> | <?php comments_popup_link( __( 'No Comments &#187;', 'theball' ), __( '1 Comment &#187;', 'theball' ), __( '% Comments &#187;', 'theball' ) ); ?></p>
 
 			</div>
 
@@ -88,7 +88,7 @@ get_header(); ?>
 
 			<div class="entry clearfix">
 				<p><?php _e( 'Why not search for something?', 'theball' ); ?></p>
-				<?php include( get_template_directory() . '/searchform.php' ); ?>
+				<?php include get_template_directory() . '/searchform.php'; ?>
 			</div>
 
 		</div><!-- /post -->

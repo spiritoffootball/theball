@@ -14,12 +14,10 @@ NOTES
 <li<?php if ( is_main_site() AND is_object( $post ) AND $post->ID == 22 ) { echo ' class="active-trail"'; } ?>><a href="/connect/" title="Connect with The Ball">Connect</a></li>
 */
 
-// access blog ID and post
+// Access blog ID and post.
 global $blog_id, $post;
 
-?>
-
-<!-- assets/includes/menu.php -->
+?><!-- assets/includes/menu.php -->
 
 <div id="site-navigation" class="main-navigation" role="navigation">
 	<span class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _e( 'Main Menu', 'theball' ); ?></span>

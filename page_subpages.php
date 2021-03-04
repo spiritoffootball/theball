@@ -9,13 +9,13 @@ NOTES
 --------------------------------------------------------------------------------
 */
 
-get_header(); ?>
+get_header();
 
-<!-- page_subpages.php -->
+?><!-- page_subpages.php -->
 
 <div id="content_wrapper" class="clearfix">
 
-<?php include( get_stylesheet_directory() . '/assets/includes/site_banner.php' ); ?>
+<?php include get_stylesheet_directory() . '/assets/includes/site_banner.php'; ?>
 
 <div class="main_column clearfix">
 
@@ -32,11 +32,11 @@ get_header(); ?>
 
 			<?php
 
-			// init
+			// Init.
 			$has_feature_image = false;
 			$feature_image_class = '';
 
-			// do we have a feature image?
+			// Do we have a feature image?
 			if ( has_post_thumbnail() ) {
 				$has_feature_image = true;
 				$feature_image_class = ' has_feature_image';
@@ -50,7 +50,7 @@ get_header(); ?>
 
 					<?php
 
-					// show feature image when we have one
+					// Show feature image when we have one.
 					if ( $has_feature_image ) {
 						echo get_the_post_thumbnail( get_the_ID(), 'medium-640' );
 					}
@@ -69,8 +69,8 @@ get_header(); ?>
 
 				<?php
 
-				// set default behaviour
-				$defaults = array(
+				// Set default behaviour.
+				$defaults = [
 					'before' => '<div class="multipager">',
 					'after' => '</div>',
 					'link_before' => '',
@@ -81,7 +81,7 @@ get_header(); ?>
 					'pagelink' => '%',
 					'more_file' => '',
 					'echo' => 1,
-				);
+				];
 
 				wp_link_pages( $defaults ); ?>
 
@@ -100,19 +100,19 @@ get_header(); ?>
 	// -----------------------------------------------------------------------------
 	global $post;
 
-	// set params
-	$args = array(
+	// Set params.
+	$args = [
 		'order_by' => 'menu_order',
 		'order' => 'ASC',
 		'post_type' => 'page',
 		'post_status' => 'publish',
 		'post_parent' => $post->ID,
-	);
+	];
 
-	// do query
+	// Do query.
 	$subpages = new WP_Query( $args );
 
-	// THE LOOP
+	// THE LOOP.
 	if ( $subpages->have_posts() ) : ?>
 
 		<?php while ( $subpages->have_posts() ) : $subpages->the_post(); ?>
@@ -130,10 +130,10 @@ get_header(); ?>
 					<?php
 
 					// NOTE: Comment permalinks are filtered if the comment is not on the first page
-					// in a multipage post... see: cp_multipage_comment_link in functions.php
+					// In a multipage post... see: cp_multipage_comment_link in functions.php
 
-					// set default behaviour
-					$defaults = array(
+					// Set default behaviour.
+					$defaults = [
 						'before' => '<div class="multipager">',
 						'after' => '</div>',
 						'link_before' => '',
@@ -144,7 +144,7 @@ get_header(); ?>
 						'pagelink' => '%',
 						'more_file' => '',
 						'echo' => 1,
-					);
+					];
 
 					wp_link_pages( $defaults ); ?>
 
@@ -158,7 +158,7 @@ get_header(); ?>
 
 		<?php endwhile;
 
-		// prevent weirdness
+		// Prevent weirdness.
 		wp_reset_postdata();
 
 		?>

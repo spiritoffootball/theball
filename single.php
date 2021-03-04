@@ -9,16 +9,16 @@ NOTES
 --------------------------------------------------------------------------------
 */
 
-get_header(); ?>
+get_header();
 
-<!-- single.php -->
+?><!-- single.php -->
 
 <div id="content_wrapper" class="clearfix">
 
 <div id="cols" class="clearfix">
 <div class="cols_inner">
 
-<?php include( get_template_directory() . '/assets/includes/page_list.php' ); ?>
+<?php include get_template_directory() . '/assets/includes/page_list.php'; ?>
 
 <div class="main_column clearfix">
 
@@ -37,11 +37,11 @@ get_header(); ?>
 
 			<?php
 
-			// init
+			// Init.
 			$has_feature_image = false;
 			$feature_image_class = '';
 
-			// do we have a feature image?
+			// Do we have a feature image?
 			if ( has_post_thumbnail() ) {
 				$has_feature_image = true;
 				$feature_image_class = ' has_feature_image';
@@ -55,16 +55,16 @@ get_header(); ?>
 
 					<?php
 
-					// show feature image when we have one
+					// Show feature image when we have one.
 					if ( $has_feature_image ) {
-						echo get_the_post_thumbnail( $post->ID, 'medium-640' );
+						echo get_the_post_thumbnail( get_the_ID(), 'medium-640' );
 					}
 
 					?>
 
 					<div class="post_header_text">
 
-						<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link: <?php the_title(); ?>"><?php the_title(); ?></a></h2>
+						<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute( [ 'before' => __( 'Permanent Link to: ', 'theball' ), 'after'  => '' ] ); ?>"><?php the_title(); ?></a></h2>
 
 						<?php theball_geomashup_map_link_get(); ?>
 
@@ -86,11 +86,8 @@ get_header(); ?>
 
 				<?php
 
-				// NOTE: Comment permalinks are filtered if the comment is not on the first page
-				// in a multipage post... see: cp_multipage_comment_link in functions.php
-
-				// set default behaviour
-				$defaults = array(
+				// Set default behaviour.
+				$defaults = [
 					'before' => '<div class="multipager">',
 					'after' => '</div>',
 					'link_before' => '',
@@ -101,41 +98,93 @@ get_header(); ?>
 					'pagelink' => '%',
 					'more_file' => '',
 					'echo' => 1,
-				);
+				];
 
 				wp_link_pages( $defaults ); ?>
 
+				<?php the_tags( '<div class="entry-meta"><p class="postmetadata">' . __( 'Tags: ', 'theball' ), '<span class="tag-divider">,</span> ', '</p></div>'); ?>
+
+				<div class="entry-category-meta clearfix">
+					<p class="postmetadata"><?php _e( 'Categories:', 'theball' ); ?> <?php echo get_the_category_list( ', ' ); ?></p>
+				</div>
+
 				<?php theball_geomashup_map_get(); ?>
 
-				<p class="postmetadata">This post is filed under <?php the_category( ', ' ) ?><?php the_tags( ' and tagged with ', ', ', '' ); ?>. You can follow any responses to this post through the <?php post_comments_feed_link( 'RSS 2.0' ); ?> feed. <?php
+				<p class="postmetadata"><?php
 
-				if ( ( 'open' == $post->comment_status ) && ( 'open' == $post->ping_status ) ) {
+					// Define RSS text.
+					$rss_text = __( 'RSS 2.0', 'theball' );
 
-					// Both Comments and Pings are open
-					?>You can leave a response, or <a href="<?php trackback_url(); ?>" rel="trackback">trackback</a> from your own site. <?php
+					// Construct RSS link.
+					$rss_link = '<a href="' . esc_url( get_post_comments_feed_link() ) . '">' . $rss_text . '</a>';
 
-				} elseif ( ! ( 'open' == $post->comment_status ) && ( 'open' == $post->ping_status )) {
+					// Show text.
+					printf(
+						__( 'You can follow any comments on this entry through the %s feed.', 'theball' ),
+						$rss_link
+					);
 
-					// Only Pings are Open
-					?>Comments are currently closed, but you can <a href="<?php trackback_url(); ?> " rel="trackback">trackback</a> from your own site. <?php
+					// Add trailing space.
+					echo ' ';
 
-				} elseif ( ( 'open' == $post->comment_status ) && ! ( 'open' == $post->ping_status ) ) {
+					if (('open' == $post->comment_status) AND ('open' == $post->ping_status)) {
 
-					// Comments are open, Pings are not
-					?>You can leave a comment. Pinging is currently not allowed. <?php
+						// Both comments and pings are open.
 
-				} elseif ( ! ( 'open' == $post->comment_status ) && ! ( 'open' == $post->ping_status ) ) {
+						// Define trackback text.
+						$trackback_text = __( 'trackback', 'theball' );
 
-					// Neither Comments, nor Pings are open
-					?>Both comments and pings are currently closed. <?php
+						// Construct RSS link.
+						$trackback_link = '<a href="' . esc_url( get_trackback_url() ) . '"rel="trackback">' . $trackback_text . '</a>';
 
-				}
+						// Write out.
+						printf(
+							__( 'You can leave a comment, or %s from your own site.', 'theball' ),
+							$trackback_link
+						);
 
-				// ShareThis
-				if ( function_exists( 'sharethis_button' ) ) {
-					//echo '<br/>';
-					sharethis_button();
-				}
+						// Add trailing space.
+						echo ' ';
+
+					} elseif ( ! ( 'open' == $post->comment_status ) AND ( 'open' == $post->ping_status ) ) {
+
+						// Only pings are open.
+
+						// Define trackback text.
+						$trackback_text = __( 'trackback', 'theball' );
+
+						// Construct RSS link.
+						$trackback_link = '<a href="' . esc_url( get_trackback_url() ) . '"rel="trackback">' . $trackback_text . '</a>';
+
+						// Write out.
+						printf(
+							__( 'Comments are currently closed, but you can %s from your own site.', 'theball' ),
+							$trackback_link
+						);
+
+						// Add trailing space.
+						echo ' ';
+
+					} elseif ( ( 'open' == $post->comment_status ) AND ! ( 'open' == $post->ping_status ) ) {
+
+						// Comments are open, pings are not.
+						_e( 'You can leave a comment. Pinging is currently not allowed.', 'theball' );
+
+						// Add trailing space.
+						echo ' ';
+
+					} elseif ( ! ( 'open' == $post->comment_status ) AND ! ( 'open' == $post->ping_status ) ) {
+
+						// Neither comments nor pings are open.
+						_e( 'Both comments and pings are currently closed.', 'theball' );
+
+						// Add trailing space.
+						echo ' ';
+
+					}
+
+					// Show edit link.
+					edit_post_link( __( 'Edit this entry', 'theball' ), '', '.' );
 
 				?></p>
 
@@ -166,7 +215,7 @@ get_header(); ?>
 
 			<p><?php _e( 'Sorry, but you are looking for something that isn’t here.', 'theball' ); ?></p>
 
-			<?php include( get_template_directory() . '/searchform.php' ); ?>
+			<?php include get_template_directory() . '/searchform.php'; ?>
 
 		</div><!-- /post -->
 

@@ -13,12 +13,10 @@ geo-mashup-custom directory.
 --------------------------------------------------------------------------------
 */
 
-// Avoid nested maps
-add_filter( 'the_content', array( 'GeoMashupQuery', 'strip_map_shortcodes' ), 1, 9 );
+// Avoid nested maps.
+add_filter( 'the_content', [ 'GeoMashupQuery', 'strip_map_shortcodes' ], 1, 9 );
 
-?>
-
-<!-- geo-mashup-info-window-max.php -->
+?><!-- geo-mashup-info-window-max.php -->
 
 <div class="info-window-max">
 
@@ -26,7 +24,7 @@ add_filter( 'the_content', array( 'GeoMashupQuery', 'strip_map_shortcodes' ), 1,
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<h2><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+			<h2><a href="<?php the_permalink() ?>" title="<?php the_title_attribute( [ 'before' => __( 'Permanent Link to: ', 'theball' ), 'after'  => '' ] ); ?>"><?php the_title(); ?></a></h2>
 			<p class="meta"><span class="blogdate"><?php the_time( 'F jS, Y' ) ?></span> <?php the_category( ', ' ) ?></p>
 			<?php if ( function_exists( 'has_post_thumbnail' ) and has_post_thumbnail() ) : ?>
 			<?php the_post_thumbnail( 'medium' ); ?>

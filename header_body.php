@@ -11,7 +11,7 @@ The "left-open elements" here are closed in footer.php
 --------------------------------------------------------------------------------
 */
 
-?><a href="#cols" class="skip"><?php __( 'Skip to Content', 'theball' ); ?></a>
+?><a href="#cols" class="screen-reader-shortcut"><?php _e( 'Skip to Content', 'theball' ); ?></a>
 
 <div id="container">
 
@@ -25,20 +25,20 @@ The "left-open elements" here are closed in footer.php
 
 			<?php
 
-			// default image
-			$default_ball_image = '<a href="' . get_option( 'home' ) . '" title="Home" class="ball_image"><img src="' . get_template_directory_uri() . '/assets/images/interface/the-ball-logo-200-white.png" alt="The Ball logo" title="The Ball logo" style="width: 100px; height: 100px;" id="the_ball_header" /></a>';
+			// Default image.
+			$default_ball_image = '<a href="' . get_home_url( null, '/' ) . '" title="Home" class="ball_image"><img src="' . get_template_directory_uri() . '/assets/images/interface/the-ball-logo-200-white.png" alt="The Ball logo" title="The Ball logo" style="width: 100px; height: 100px;" id="the_ball_header" /></a>';
 
-			// image of The Ball for this site
+			// Image of The Ball for this site.
 			echo apply_filters( 'theball_image', $default_ball_image );
 
 			?>
 
 			<div id="titlewrap">
-			<div id="title"><h1><a href="<?php echo get_option( 'home' ); ?>" title="Home"><?php bloginfo( 'title' ); ?></a></h1></div>
+			<div id="title"><h1><a href="<?php home_url( '/' ); ?>" title="<?php esc_attr_e( 'Home', 'theball' ); ?>"><?php bloginfo( 'title' ); ?></a></h1></div>
 			<div id="tagline"><?php bloginfo( 'description' ); ?></div>
 			</div><!-- /titlewrap -->
 
-			<?php include( get_template_directory() . '/assets/includes/join_in.php' ); ?>
+			<?php include get_template_directory() . '/assets/includes/join_in.php'; ?>
 
 		</div><!-- /header_top -->
 
@@ -50,7 +50,7 @@ The "left-open elements" here are closed in footer.php
 
 <div id="topnav">
 	<div id="topnav_inner" class="clearfix">
-		<?php include( get_template_directory() . '/assets/includes/menu.php' ); ?>
+		<?php include get_template_directory() . '/assets/includes/menu.php'; ?>
 	</div><!-- /topnav_inner -->
 </div><!-- /topnav -->
 
@@ -61,7 +61,7 @@ The "left-open elements" here are closed in footer.php
 
 	<div id="content_wrapper" class="clearfix">
 
-	<?php include( get_stylesheet_directory() . '/assets/includes/site_banner.php' ); ?>
+	<?php include get_stylesheet_directory() . '/assets/includes/site_banner.php'; ?>
 
 	<div class="main_column clearfix">
 

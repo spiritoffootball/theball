@@ -9,13 +9,11 @@ NOTES
 --------------------------------------------------------------------------------
 */
 
-get_header(); ?>
-
-<!-- homepage-new.php -->
+get_header(); ?><!-- homepage-new.php -->
 
 <div id="content_wrapper" class="clearfix">
 
-<?php include( get_stylesheet_directory() . '/assets/includes/site_banner.php' ); ?>
+<?php include get_stylesheet_directory() . '/assets/includes/site_banner.php'; ?>
 
 <div class="main_column clearfix">
 

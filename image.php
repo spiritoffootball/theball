@@ -9,13 +9,13 @@ NOTES
 --------------------------------------------------------------------------------
 */
 
-get_header(); ?>
+get_header();
 
-<!-- image.php -->
+?><!-- image.php -->
 
 <div id="content_wrapper" class="clearfix">
 
-<?php include( get_stylesheet_directory() . '/assets/includes/site_banner.php' ); ?>
+<?php include get_stylesheet_directory() . '/assets/includes/site_banner.php'; ?>
 
 <div class="main_column clearfix">
 
@@ -29,41 +29,96 @@ get_header(); ?>
 
 				<div class="entry clearfix">
 
-					<p><a href="<?php echo wp_get_attachment_url( $post->ID ); ?>"><?php echo wp_get_attachment_image( $post->ID, 'medium' ); ?></a></p>
+					<p><a href="<?php echo wp_get_attachment_url( get_the_ID() ); ?>"><?php echo wp_get_attachment_image( get_the_ID(), 'medium' ); ?></a></p>
 
 					<?php
 
-					// this is the "caption"
-					if ( ! empty( $post->post_excerpt ) ) the_excerpt();
+					// This is the "caption".
+					if ( ! empty( $post->post_excerpt ) ) {
+						the_excerpt();
+					}
 
 					?>
 
-					<?php the_content( 'Read the rest of this entry &raquo;' ); ?>
+					<?php the_content( __( 'Read the rest of this entry &raquo;', 'theball' ) ); ?>
 
-					<p class="postmetadata" style="clear: left;">
-						This entry was posted on <?php the_time( 'l, F jS, Y' ) ?> at <?php the_time() ?>
-						and is filed under <?php the_category( ', ' ) ?>.
-						<?php the_taxonomies(); ?>
-						You can follow any responses to this entry through the <?php post_comments_feed_link( 'RSS 2.0' ); ?> feed.
+					<p class="postmetadata"><?php
 
-						<?php if ( ( 'open' == $post->comment_status ) && ( 'open' == $post->ping_status ) ) {
-							// Both Comments and Pings are open ?>
-							You can <a href="#respond">leave a response</a>, or <a href="<?php trackback_url(); ?>" rel="trackback">trackback</a> from your own site.
+						// Define RSS text.
+						$rss_text = __( 'RSS 2.0', 'theball' );
 
-						<?php } elseif ( ! ( 'open' == $post->comment_status ) && ( 'open' == $post->ping_status ) ) {
-							// Only Pings are Open ?>
-							Responses are currently closed, but you can <a href="<?php trackback_url(); ?> " rel="trackback">trackback</a> from your own site.
+						// Construct RSS link.
+						$rss_link = '<a href="' . esc_url( get_post_comments_feed_link() ) . '">' . $rss_text . '</a>';
 
-						<?php } elseif ( ( 'open' == $post->comment_status ) && ! ( 'open' == $post->ping_status ) ) {
-							// Comments are open, Pings are not ?>
-							You can skip to the end and leave a response. Pinging is currently not allowed.
+						// Show text.
+						printf(
+							__( 'You can follow any comments on this entry through the %s feed.', 'theball' ),
+							$rss_link
+						);
 
-						<?php } elseif ( ! ( 'open' == $post->comment_status ) && ! ( 'open' == $post->ping_status ) ) {
-							// Neither Comments, nor Pings are open ?>
-							Both comments and pings are currently closed.
+						// Add trailing space.
+						echo ' ';
 
-						<?php } edit_post_link( 'Edit this entry', '', '' ); ?>
-					</p>
+						if (('open' == $post->comment_status) AND ('open' == $post->ping_status)) {
+
+							// Both comments and pings are open.
+
+							// Define trackback text.
+							$trackback_text = __( 'trackback', 'theball' );
+
+							// Construct RSS link.
+							$trackback_link = '<a href="' . esc_url( get_trackback_url() ) . '"rel="trackback">' . $trackback_text . '</a>';
+
+							// Write out.
+							printf(
+								__( 'You can leave a comment, or %s from your own site.', 'theball' ),
+								$trackback_link
+							);
+
+							// Add trailing space.
+							echo ' ';
+
+						} elseif ( ! ( 'open' == $post->comment_status ) AND ( 'open' == $post->ping_status ) ) {
+
+							// Only pings are open.
+
+							// Define trackback text.
+							$trackback_text = __( 'trackback', 'theball' );
+
+							// Construct RSS link.
+							$trackback_link = '<a href="' . esc_url( get_trackback_url() ) . '"rel="trackback">' . $trackback_text . '</a>';
+
+							// Write out.
+							printf(
+								__( 'Comments are currently closed, but you can %s from your own site.', 'theball' ),
+								$trackback_link
+							);
+
+							// Add trailing space.
+							echo ' ';
+
+						} elseif ( ( 'open' == $post->comment_status ) AND ! ( 'open' == $post->ping_status ) ) {
+
+							// Comments are open, pings are not.
+							_e( 'You can leave a comment. Pinging is currently not allowed.', 'theball' );
+
+							// Add trailing space.
+							echo ' ';
+
+						} elseif ( ! ( 'open' == $post->comment_status ) AND ! ( 'open' == $post->ping_status ) ) {
+
+							// Neither comments nor pings are open.
+							_e( 'Both comments and pings are currently closed.', 'theball' );
+
+							// Add trailing space.
+							echo ' ';
+
+						}
+
+						// Show edit link.
+						edit_post_link( __( 'Edit this entry', 'theball' ), '', '.' );
+
+					?></p>
 
 				</div><!-- /entry -->
 

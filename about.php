@@ -11,13 +11,11 @@ NOTES
 
 get_header();
 
-?>
-
-<!-- about.php -->
+?><!-- about.php -->
 
 <div id="content_wrapper" class="clearfix">
 
-<?php include( get_stylesheet_directory() . '/assets/includes/site_banner.php' ); ?>
+<?php include get_stylesheet_directory() . '/assets/includes/site_banner.php'; ?>
 
 <div class="main_column clearfix">
 
@@ -28,19 +26,19 @@ get_header();
 	// -----------------------------------------------------------------------------
 	global $post;
 
-	// set params
-	$args = array(
+	// Set params.
+	$args = [
 		'order_by' => 'menu_order',
 		'order' => 'ASC',
 		'post_type' => 'page',
 		'post_status' => 'publish',
 		'post_parent' => $post->ID
-	);
+	];
 
-	// do query
+	// Do query.
 	$parent_page = new WP_Query( $args );
 
-	// THE LOOP
+	// THE LOOP.
 	if ( $parent_page->have_posts() ) :
 
 	$tmp = 0;
@@ -59,22 +57,19 @@ get_header();
 
 				<?php
 
-				// NOTE: Comment permalinks are filtered if the comment is not on the first page
-				// in a multipage post... see: cp_multipage_comment_link in functions.php
-
-				// set default behaviour
-				$defaults = array(
+				// Set default behaviour.
+				$defaults = [
 					'before' => '<div class="multipager">',
 					'after' => '</div>',
 					'link_before' => '',
 					'link_after' => '',
 					'next_or_number' => 'next',
-					'nextpagelink' => '<span class="alignright">' . __( 'Next page' ) . ' &raquo;</span>',
-					'previouspagelink' => '<span class="alignleft">&laquo; ' . __( 'Previous page' ) . '</span>',
+					'nextpagelink' => '<span class="alignright">' . __( 'Next page', 'theball' ) . ' &raquo;</span>',
+					'previouspagelink' => '<span class="alignleft">&laquo; ' . __( 'Previous page', 'theball' ) . '</span>',
 					'pagelink' => '%',
 					'more_file' => '',
 					'echo' => 1,
-				);
+				];
 
 				wp_link_pages( $defaults ); ?>
 

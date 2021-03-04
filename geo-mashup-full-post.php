@@ -13,15 +13,13 @@ directory.
 --------------------------------------------------------------------------------
 */
 
-?>
-
-<!-- geo-mashup-full-post.php -->
+?><!-- geo-mashup-full-post.php -->
 
 <?php if ( have_posts() ) : ?>
 
 	<?php while ( have_posts() ) : the_post(); ?>
 
-		<h2><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+		<h2><a href="<?php the_permalink() ?>" title="<?php the_title_attribute( [ 'before' => __( 'Permanent Link to: ', 'theball' ), 'after'  => '' ] ); ?>"><?php the_title(); ?></a></h2>
 		<p class="meta"><span class="blogdate"><?php the_time( 'F jS, Y' ) ?></span> <?php the_category( ', ' ) ?></p>
 		<?php if ( function_exists( 'has_post_thumbnail' ) and has_post_thumbnail() ) : ?>
 		<?php the_post_thumbnail( 'medium' ); ?>

@@ -9,16 +9,16 @@ NOTES
 --------------------------------------------------------------------------------
 */
 
-// get team members array
+// Get team members array.
 $team = theball_team_members();
 
-get_header(); ?>
+get_header();
 
-<!-- team.php -->
+?><!-- team.php -->
 
 <div id="content_wrapper" class="clearfix">
 
-<?php include( get_stylesheet_directory() . '/assets/includes/site_banner.php' ); ?>
+<?php include get_stylesheet_directory() . '/assets/includes/site_banner.php'; ?>
 
 <div class="main_column clearfix">
 
@@ -32,11 +32,11 @@ get_header(); ?>
 
 				<div class="entrytext">
 
-					<?php the_content( '<p class="serif">Read the rest of this page &raquo;</p>' ); ?>
+					<?php the_content( '<p class="serif">' . __( 'Read the rest of this page &raquo;', 'theball' ) . '</p>' ); ?>
 
 					<?php echo theball_multipager(); ?>
 
-					<?php edit_post_link( 'Edit this entry', '<p>', '</p>' ); ?>
+					<?php edit_post_link( __( 'Edit this entry', 'theball' ), '<p>', '</p>' ); ?>
 
 				</div>
 
@@ -64,7 +64,7 @@ get_header(); ?>
 
 						<div id="author_desc">
 							<p><?php echo nl2br( $team_member->description ); ?></p>
-							<p><a class="post-edit-link" href="<?php echo get_edit_user_link( $team_member->ID ) ?>">Edit this profile</a></p>
+							<p><a class="post-edit-link" href="<?php echo get_edit_user_link( $team_member->ID ) ?>"><?php _e( 'Edit this profile', 'theball' ); ?></a></p>
 						</div>
 
 					</div>

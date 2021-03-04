@@ -117,41 +117,45 @@ div
 
 
 
-/*
---------------------------------------------------------------------------------
-.skip uses the off-left technique as described here:
-http://css-discuss.incutio.com/?page=ScreenreaderVisibility
-and here:
-http://www.defacto-cms.com/what-are-skip-links.html
-
-http://geek.focalcurve.com/archive/2005/03/accessibly-hiding-skiplinks/
-has a different approach again...
-.skip { visibility: hidden; position: absolute; left: -9999px; }
---------------------------------------------------------------------------------
-*/
-
-a.skip,
-a.skip:link,
-a.skip:visited
+/* Skip link */
+.screen-reader-text,
+.screen-reader-text span
 {
-	/* visibility: hidden; add this if tab-order is to be skipped */
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
 	position: absolute;
-	left: -9999px;
-	color: #fff;
-	font-size: 20px;
-	border: 3px #ddd solid;
-	background-color: #547DB4;
-	text-decoration: none;
-	padding: 4px 8px;
+	width: 1px;
+	word-wrap: normal !important;
 }
 
-a.skip:active,
-a.skip:focus
+.screen-reader-shortcut
 {
-	color: #fff;
-	top: 2em;
-	left: 45%;
-	z-index: 1000;
+	position: absolute;
+	top: -1000em;
+}
+
+.screen-reader-shortcut:focus
+{
+	left: 6px;
+	top: 7px;
+	height: auto;
+	width: auto;
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	padding: 15px 23px 14px;
+	background: #f1f1f1;
+	color: #0073aa;
+	z-index: 100000;
+	line-height: normal;
+	text-decoration: none;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 }
 
 
@@ -1340,6 +1344,11 @@ Post-related styles
 	color: #666;
 	border-top: 1px solid #bbb;
 	border-bottom: 3px solid #bbb;
+}
+
+.post .entry-category-meta p.postmetadata
+{
+	border-bottom: none;
 }
 
 .post .entrytext p.postmetadata
@@ -3204,55 +3213,55 @@ div.faded:after
 
 div.padded
 {
-	padding: 10px;
+	margin: 10px;
 }
 
 div.padded_b,
 #cols div.padded_b
 {
-	padding-bottom: 40px;
+	margin-bottom: 40px;
 }
 
 div.padded_y,
 #cols div.padded_y
 {
-	padding-top: 10px;
-	padding-bottom: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 div.padded_x
 {
-	padding-left: 10px;
-	padding-right: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 div.padded_tr, /* top right */
 img.padded_tr
 {
-	padding-right: 20px;
-	padding-top: 20px;
+	margin-right: 20px;
+	margin-top: 20px;
 }
 
 div.padded_tl, /* top left */
 img.padded_tl
 {
-	padding-left: 20px;
-	padding-top: 20px;
+	margin-left: 20px;
+	margin-top: 20px;
 }
 
 div.padded_br, /* bottom right */
 object.padded_br,
 img.padded_br
 {
-	padding-right: 20px;
-	padding-bottom: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
 }
 
 div.padded_bl, /* bottom left */
 img.padded_bl
 {
-	padding-left: 20px;
-	padding-bottom: 20px;
+	margin-left: 20px;
+	margin-bottom: 20px;
 }
 
 .hidden

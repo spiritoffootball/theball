@@ -9,13 +9,13 @@ NOTES
 --------------------------------------------------------------------------------
 */
 
-get_header(); ?>
+get_header();
 
-<!-- search.php -->
+?><!-- search.php -->
 
 <div id="content_wrapper" class="clearfix">
 
-<?php include( get_stylesheet_directory() . '/assets/includes/site_banner.php' ); ?>
+<?php include get_stylesheet_directory() . '/assets/includes/site_banner.php'; ?>
 
 <div class="main_column clearfix">
 
@@ -23,7 +23,7 @@ get_header(); ?>
 
 		<?php
 
-		// Search Nav
+		// Search Nav.
 		$nl = get_next_posts_link( 'Next &raquo;' );
 		$pl = get_previous_posts_link( '&laquo; Previous' );
 
@@ -57,7 +57,7 @@ get_header(); ?>
 
 				<div class="post search_result">
 
-					<h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+					<h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute( [ 'before' => __( 'Permanent Link to: ', 'theball' ), 'after'  => '' ] ); ?>"><?php the_title(); ?></a></h3>
 
 					<div class="search_meta">
 
@@ -96,7 +96,7 @@ get_header(); ?>
 
 				<p><?php _e( 'Try a different search?', 'theball' ); ?></p>
 
-				<?php include( get_template_directory() . '/searchform.php' ); ?>
+				<?php include get_template_directory() . '/searchform.php'; ?>
 
 			</div><!-- /post -->
 

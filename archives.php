@@ -9,13 +9,13 @@ NOTES
 --------------------------------------------------------------------------------
 */
 
-get_header(); ?>
+get_header();
 
-<!-- archives.php -->
+?><!-- archives.php -->
 
 <div id="content_wrapper" class="clearfix">
 
-<?php include( get_stylesheet_directory() . '/assets/includes/site_banner.php' ); ?>
+<?php include get_stylesheet_directory() . '/assets/includes/site_banner.php'; ?>
 
 <div class="main_column clearfix">
 
@@ -23,11 +23,11 @@ get_header(); ?>
 
 		<?php
 
-		// init
+		// Init.
 		$has_feature_image = false;
 		$feature_image_class = '';
 
-		// do we have a feature image?
+		// Do we have a feature image?
 		if ( has_post_thumbnail() ) {
 			$has_feature_image = true;
 			$feature_image_class = ' has_feature_image';
@@ -41,7 +41,7 @@ get_header(); ?>
 
 				<?php
 
-				// show feature image when we have one
+				// Show feature image when we have one.
 				if ( $has_feature_image ) {
 					echo get_the_post_thumbnail( get_the_ID(), 'medium-640' );
 				}
@@ -53,7 +53,7 @@ get_header(); ?>
 		</div><!-- /post_header -->
 
 		<div class="post">
-			<h2><?php bloginfo( 'title' ); ?> Archives</h2>
+			<h2><?php printf( __( '%s Archives', 'theball' ), get_bloginfo( 'title', 'display' ) ); ?></h2>
 		</div><!-- /post -->
 
 	</div><!-- /main_column_inner -->
@@ -64,12 +64,12 @@ get_header(); ?>
 
 			<div class="archive_wrapper">
 
-				<h3><?php echo apply_filters( 'theball_topics_title', __( 'Topics' ) ); ?></h3>
+				<h3><?php echo apply_filters( 'theball_topics_title', __( 'Topics', 'theball' ) ); ?></h3>
 
 				<?php
 
-				// configure categories
-				$defaults = array(
+				// Configure categories.
+				$defaults = [
 					'show_option_all' => '',
 					'orderby' => 'name',
 					'order' => 'ASC',
@@ -89,7 +89,7 @@ get_header(); ?>
 					'title_li' => '',
 					'echo' => 1,
 					'depth' => 0,
-				);
+				];
 
 				?>
 				<ul>
@@ -112,8 +112,8 @@ get_header(); ?>
 
 				<?php
 
-				// configure archives
-				$defaults = array(
+				// Configure archives.
+				$defaults = [
 					'type' => 'monthly',
 					'limit' => '',
 					'format' => 'html',
@@ -121,7 +121,7 @@ get_header(); ?>
 					'after' => '',
 					'show_post_count' => false,
 					'echo' => 1,
-				);
+				];
 
 				?>
 				<ul>

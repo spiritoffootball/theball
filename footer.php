@@ -35,7 +35,7 @@ The "left-open elements" here were opened in header.php or header_body.php
 
 
 <?php if ( ! is_main_site() ) : ?>
-	<?php include( apply_filters( 'theball_supporters', get_template_directory() . '/assets/includes/supporters_2014.php' ) ); ?>
+	<?php include apply_filters( 'theball_supporters', get_template_directory() . '/assets/includes/supporters_2014.php' ); ?>
 <?php endif; ?>
 
 
@@ -58,9 +58,9 @@ The "left-open elements" here were opened in header.php or header_body.php
 
 		</div><!-- /join_in -->
 
-		<?php include( get_template_directory() . '/assets/includes/network-white.php' ); ?>
+		<?php include get_template_directory() . '/assets/includes/network-white.php'; ?>
 
-		<p>&copy; <a href="https://spiritoffootball.com/">Spirit of Football CIC</a> 2002 &ndash; <?php echo date( 'Y' ); ?></p>
+		<p>&copy; <a href="https://spiritoffootball.com/">Spirit of Football</a> 2002 &ndash; <?php echo date( 'Y' ); ?></p>
 
 	</div><!-- /#footer-inner -->
 </div><!-- /#footer -->
@@ -71,7 +71,7 @@ The "left-open elements" here were opened in header.php or header_body.php
 
 
 
-<?php //include( get_template_directory().'/assets/includes/analytics.php' ); ?>
+<?php //include get_template_directory().'/assets/includes/analytics.php'; ?>
 
 <?php wp_footer(); ?>
 

@@ -9,13 +9,13 @@ NOTES
 --------------------------------------------------------------------------------
 */
 
-get_header(); ?>
+get_header();
 
-<!-- contact.php -->
+?><!-- contact.php -->
 
 <div id="content_wrapper" class="clearfix">
 
-<?php include( get_stylesheet_directory() . '/assets/includes/site_banner.php' ); ?>
+<?php include get_stylesheet_directory() . '/assets/includes/site_banner.php'; ?>
 
 <div class="main_column clearfix">
 
@@ -25,7 +25,7 @@ get_header(); ?>
 
 			<div class="post" id="post-<?php the_ID(); ?>">
 
-				<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+				<h2><a href="<?php the_permalink() ?>" title="<?php the_title_attribute( [ 'before' => __( 'Permanent Link to: ', 'theball' ), 'after'  => '' ] ); ?>"><?php the_title(); ?></a></h2>
 
 			</div><!-- /post -->
 
@@ -43,8 +43,8 @@ get_header(); ?>
 
 						<?php
 
-						// set default behaviour
-						$defaults = array(
+						// Set default behaviour.
+						$defaults = [
 							'before' => '<div class="multipager">',
 							'after' => '</div>',
 							'link_before' => '',
@@ -55,7 +55,7 @@ get_header(); ?>
 							'pagelink' => '%',
 							'more_file' => '',
 							'echo' => 1,
-						);
+						];
 
 						wp_link_pages( $defaults );
 
@@ -89,7 +89,7 @@ get_header(); ?>
 
 					<p><?php _e( 'Sorry, but you are looking for something that isn’t here.', 'theball' ); ?></p>
 
-					<?php include( get_template_directory() . '/searchform.php' ); ?>
+					<?php include get_template_directory() . '/searchform.php'; ?>
 
 				</div><!-- /entrytext -->
 

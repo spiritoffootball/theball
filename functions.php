@@ -45,17 +45,38 @@ function theball_setup() {
 		get_template_directory() . '/languages'
 	);
 
-	// use Featured Images (also known as post thumbnails)
+	// Use Featured Images (also known as post thumbnails)
 	add_theme_support( 'post-thumbnails' );
 
-	// to use wp_nav_menu() we first need to register one
+	/*
+	 * Let WordPress manage the document title.
+	 * This theme does not use a hard-coded <title> tag in the document head,
+	 * WordPress will provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
+
+	/*
+	// Let JetPack handle infinite scroll.
+	add_theme_support( 'infinite-scroll', [
+		//'type' => 'click',
+		'type' => 'scroll',
+		//'footer_widgets' => false,
+		'container' => 'main_column_inner',
+		'footer' => false,
+		//'wrapper' => true,
+		//'render' => false,
+		//'posts_per_page' => false,
+	] );
+	*/
+
+	// To use wp_nav_menu() we first need to register one.
 	register_nav_menu( 'theball_menu', __( 'Table of Contents', 'theball' ) );
 
 }
 
-endif; // theball_setup
+endif; // End theball_setup.
 
-// add an action for the above
+// Add an action for the above.
 add_action( 'after_setup_theme', 'theball_setup' );
 
 
@@ -71,12 +92,12 @@ add_action( 'after_setup_theme', 'theball_setup' );
  */
 function theball_content_width() {
 
-	// the annoying default content width
+	// The annoying default content width.
 	$GLOBALS['content_width'] = apply_filters( 'theball_content_width', 660 );
 
 }
 
-// add an action for the above
+// Add an action for the above.
 add_action( 'after_setup_theme', 'theball_content_width', 0 );
 
 
@@ -93,37 +114,37 @@ function theball_enqueue_scripts_and_styles() {
 	// Stylesheets
 	// -------------------------------------------------------------------------
 
-	// enqueue screen styles
+	// Enqueue screen styles.
 	wp_enqueue_style(
 		'theball_screen_css',
 		get_template_directory_uri() . '/assets/css/screen.css',
-		array(),
-		THEBALL_VERSION, // version
-		'all' // media
+		[],
+		THEBALL_VERSION, // Version.
+		'all' // Media.
 	);
 
-	// on main site
+	// On main site.
 	if ( is_main_site() ) {
 
-		// add main site styles
+		// Add main site styles.
 		wp_enqueue_style(
 			'theball_main_css',
 			get_template_directory_uri() . '/assets/css/main.css',
-			array( 'theball_screen_css' ),
-			THEBALL_VERSION, // version
-			'all' // media
+			[ 'theball_screen_css' ],
+			THEBALL_VERSION, // Version.
+			'all' // Media.
 		);
 
-		// on network home
+		// On network home.
 		if ( is_front_page() ) {
 
-			// add homepage styles
+			// Add homepage styles.
 			wp_enqueue_style(
 				'theball_home_css',
 				get_template_directory_uri() . '/assets/css/home.css',
-				array( 'theball_main_css' ),
-				THEBALL_VERSION, // version
-				'all' // media
+				[ 'theball_main_css' ],
+				THEBALL_VERSION, // Version.
+				'all' // Media.
 			);
 
 		}
@@ -134,39 +155,39 @@ function theball_enqueue_scripts_and_styles() {
 	// Javascript
 	// -------------------------------------------------------------------------
 
-	// navigation script
+	// Navigation script.
 	wp_enqueue_script(
 		'theball_navigation',
 		get_template_directory_uri() . '/assets/js/navigation.js',
-		array(),
+		[],
 		THEBALL_VERSION,
 		true
 	);
 
 	/*
-	// theme javascript
+	// Theme javascript.
 	wp_enqueue_script(
 		'theball_general',
 		get_template_directory_uri() . '/assets/js/the-ball.js',
-		array( 'jquery' ),
+		[ 'jquery' ],
 		THEBALL_VERSION
 	);
 	*/
 
-	// include on network home
+	// Include on network home.
 	if ( is_main_site() AND is_front_page() ) {
 
 	}
 
-	// is it a post?
+	// Is it a post?
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 }
-endif; // theball_enqueue_scripts_and_styles
+endif; // End theball_enqueue_scripts_and_styles.
 
-// add a filter for the above, very late so it (hopefully) is last in the queue
+// Add a filter for the above, very late so it (hopefully) is last in the queue.
 add_action( 'wp_enqueue_scripts', 'theball_enqueue_scripts_and_styles', 100 );
 
 
@@ -179,19 +200,19 @@ if ( ! function_exists( 'theball_enqueue_print_styles' ) ):
  */
 function theball_enqueue_print_styles() {
 
-	// add print css
+	// Add print CSS.
 	wp_enqueue_style(
 		'theball_print_css',
 		get_template_directory_uri() . '/assets/css/print.css',
-		array( 'theball_screen_css' ), // dependencies
-		THEBALL_VERSION, // version
-		'print' // media
+		[ 'theball_screen_css' ], // Dependencies.
+		THEBALL_VERSION, // Version.
+		'print' // Media.
 	);
 
 }
-endif; // theball_enqueue_print_styles
+endif; // End theball_enqueue_print_styles.
 
-// add a filter for the above, even later so it (hopefully) is last in the queue
+// Add a filter for the above, even later so it (hopefully) is last in the queue.
 add_action( 'wp_enqueue_scripts', 'theball_enqueue_print_styles', 110 );
 
 
@@ -203,13 +224,13 @@ add_action( 'wp_enqueue_scripts', 'theball_enqueue_print_styles', 110 );
  */
 function cmw_add_admin_style() {
 
-	// construct path to admin.css
+	// Construct path to admin.css.
 	$filepath = get_template_directory() . '/assets/css/admin.css';
 
-	// is our stylesheet present?
+	// Is our stylesheet present?
 	if ( file_exists( $filepath ) ) {
 
-		// add admin style overrides
+		// Add admin style overrides.
 		echo '<!-- custom admin styles -->
 <link rel="stylesheet" type="text/css" media="screen" href="' . get_template_directory_uri() . '/assets/css/admin.css" />
 ' . "\n\n";
@@ -218,7 +239,7 @@ function cmw_add_admin_style() {
 
 }
 
-// modify admin styles
+// Modify admin styles.
 //add_action( 'admin_head', 'cmw_add_admin_style' );
 
 
@@ -230,13 +251,13 @@ function cmw_add_admin_style() {
  */
 function cmw_add_login_style() {
 
-	// construct path to admin.css
+	// Construct path to admin.css.
 	$filepath = get_template_directory() . '/assets/css/login.css';
 
-	// is our stylesheet present?
+	// Is our stylesheet present?
 	if ( file_exists( $filepath ) ) {
 
-		// add login style overrides
+		// Add login style overrides.
 		echo '<!-- custom login styles -->
 <link rel="stylesheet" type="text/css" media="screen" href="' . get_template_directory_uri() . '/assets/css/login.css" />
 ' . "\n\n";
@@ -245,7 +266,7 @@ function cmw_add_login_style() {
 
 }
 
-// modify login styles
+// Modify login styles.
 add_action( 'login_head', 'cmw_add_login_style' );
 
 
@@ -259,10 +280,10 @@ add_action( 'login_head', 'cmw_add_login_style' );
  */
 function theball_body_id() {
 
-	// init
+	// Init.
 	$body_id = '';
 
-	// set main blog id on the main site
+	// Set main blog id on the main site.
 	if ( function_exists( 'is_main_site' ) ) {
 		if ( is_main_site() ) {
 			$body_id = ' id="main_blog" ';
@@ -283,8 +304,8 @@ function theball_body_id() {
  *
  * @since 1.0
  *
- * @param string $link The existing more jump link
- * @return string $link The modified more jump link
+ * @param string $link The existing more jump link.
+ * @return string $link The modified more jump link.
  */
 function remove_more_jump_link( $link ) {
 
@@ -303,7 +324,7 @@ function remove_more_jump_link( $link ) {
 
 }
 
-// add a filter for the above
+// Add a filter for the above.
 add_filter( 'the_content_more_link', 'remove_more_jump_link' );
 
 
@@ -313,12 +334,12 @@ add_filter( 'the_content_more_link', 'remove_more_jump_link' );
  *
  * @since 1.0
  *
- * @param string $link The existing more link
- * @return string $link The modified more link
+ * @param string $link The existing more link.
+ * @return string $link The modified more link.
  */
 function theball_more_link( $link ) {
 
-	// wrap in para tag
+	// Wrap in para tag.
 	$link = '<p>' . $link . '</p>';
 
 	// --<
@@ -326,7 +347,7 @@ function theball_more_link( $link ) {
 
 }
 
-// add a filter for the above
+// Add a filter for the above.
 add_filter( 'the_content_more_link', 'theball_more_link', 20, 1 );
 
 
@@ -336,12 +357,12 @@ add_filter( 'the_content_more_link', 'theball_more_link', 20, 1 );
  *
  * @since 1.0
  *
- * @param string $link The existing add jump link
- * @return string $link The modified add jump link
+ * @param string $link The existing add jump link.
+ * @return string $link The modified add jump link.
  */
 function theball_add_link_css( $link ) {
 
-	// add css
+	// Add CSS class.
 	$link = str_replace( '<a ', '<a class="css_btn" ', $link );
 
 	// --<
@@ -349,7 +370,7 @@ function theball_add_link_css( $link ) {
 
 }
 
-// add filter for next/previous links
+// Add filter for next/previous links.
 //add_filter( 'previous_post_link', 'theball_add_link_css' );
 //add_filter( 'next_post_link', 'theball_add_link_css' );
 
@@ -366,28 +387,30 @@ function theball_add_link_css( $link ) {
  */
 function theball_image_caption_shortcode( $empty = null, $attr, $content ) {
 
-	// get our shortcode vars
-	extract( shortcode_atts( array(
+	// Get our shortcode vars.
+	extract( shortcode_atts( [
 		'id'	=> '',
 		'align'	=> 'alignnone',
 		'width'	=> '',
 		'caption' => ''
-	), $attr) );
+	], $attr) );
 
 	if ( 1 > (int) $width || empty( $caption ) ) {
 		return $content;
 	}
 
-	// sanitise id
-	if ( $id ) $id = 'id="' . esc_attr( $id ) . '" ';
+	// Sanitise id.
+	if ( $id ) {
+		$id = 'id="' . esc_attr( $id ) . '" ';
+	}
 
-	// add space prior to alignment
+	// Add space prior to alignment.
 	$_alignment = ' ' . esc_attr( $align );
 
-	// get width
+	// Get width.
 	$_width = ( 0 + (int) $width );
 
-	// construct
+	// Construct.
 	$caption = '<div class="captioned_image' . $_alignment . '" style="width: ' . $_width . 'px"><span ' . $id . ' class="wp-caption">'
 	. do_shortcode( $content ) . '</span><small class="wp-caption-text">' . $caption . '</small></div>';
 
@@ -396,7 +419,7 @@ function theball_image_caption_shortcode( $empty = null, $attr, $content ) {
 
 }
 
-// add a filter for the above
+// Add a filter for the above.
 add_filter( 'img_caption_shortcode', 'theball_image_caption_shortcode', 10, 3 );
 
 
@@ -412,16 +435,20 @@ add_filter( 'img_caption_shortcode', 'theball_image_caption_shortcode', 10, 3 );
  */
 function theball_get_full_name( $forename, $surname ) {
 
-	// init return
+	// Init return.
 	$fullname = '';
 
-	// add forename
-	if ( $forename != '' ) { $fullname .= $forename; }
+	// Add forename.
+	if ( $forename != '' ) {
+		$fullname .= $forename;
+	}
 
-	// add surname
-	if ( $surname != '' ) { $fullname .= ' ' . $surname; }
+	// Add surname.
+	if ( $surname != '' ) {
+		$fullname .= ' ' . $surname;
+	}
 
-	// strip any whitespace
+	// Strip any whitespace.
 	$fullname = trim( $fullname );
 
 	// --<
@@ -442,7 +469,7 @@ function theball_get_full_name( $forename, $surname ) {
  */
 function theball_comments( $comment, $args, $depth ) {
 
-	// enable Wordpress API on comment
+	// Enable Wordpress API on comment.
 	$GLOBALS['comment'] = $comment;
 
 	// -------------------------------------------------------------------------
@@ -482,14 +509,14 @@ function theball_comments( $comment, $args, $depth ) {
 
 		<?php
 
-		// comment_reply_link
+		// USe comment_reply_link.
 		echo comment_reply_link(
 			array_merge(
 				$args,
-				array(
+				[
 					'depth' => $depth,
-					'max_depth' => $args['max_depth']
-				)
+					'max_depth' => $args['max_depth'],
+				]
 			)
 		);
 
@@ -501,15 +528,15 @@ function theball_comments( $comment, $args, $depth ) {
 
 		</div><!-- /comment-wrapper -->
 
-<?php
+	<?php
 
-} // end function
+} // End function.
 
 
 
 if ( ! function_exists( 'theball_multipager' ) ):
 /**
- * Adds some style to multipager elements
+ * Adds some style to multipager elements.
  *
  * @since 1.0
  *
@@ -517,8 +544,8 @@ if ( ! function_exists( 'theball_multipager' ) ):
  */
 function theball_multipager() {
 
-	// set default behaviour
-	$defaults = array(
+	// Set default behaviour.
+	$defaults = [
 		'before' => '<div class="multipager">',
 		'after' => '</div>',
 		'link_before' => '',
@@ -529,31 +556,31 @@ function theball_multipager() {
 		'pagelink' => '%',
 		'more_file' => '',
 		'echo' => 0,
-	);
+	];
 
-	// get page links
+	// Get page links.
 	$page_links = wp_link_pages( $defaults );
 
-	// add separator when there are two links
+	// Add separator when there are two links.
 	$page_links = str_replace(
 		'a><a',
 		'a> <span class="multipager_sep">|</span> <a',
 		$page_links
 	);
 
-	// get page links
-	$page_links .= wp_link_pages( array(
+	// Get page links.
+	$page_links .= wp_link_pages( [
 		'before' => '<div class="multipager multipager_all"><span>' . __( 'Pages: ','theball' ) . '</span>',
 		'after' => '</div>',
 		'pagelink' => '<span class="multipager_link">%</span>',
-		'echo' => 0
-	) );
+		'echo' => 0,
+	] );
 
 	// --<
 	return $page_links;
 
 }
-endif; // theball_multipager
+endif; // End theball_multipager.
 
 
 
@@ -565,8 +592,8 @@ if ( ! function_exists( 'theball_widgets_init' ) ):
  */
 function theball_widgets_init() {
 
-	// define an area where a widget may be placed
-	register_sidebar( array(
+	// Define an area where a widget may be placed.
+	register_sidebar( [
 		'name' => __( 'SOF Homepage Top Main', 'theball' ),
 		'id' => 'sof-home-top-main',
 		'description' => __( 'A widget area at the top of the site home page', 'theball' ),
@@ -574,10 +601,10 @@ function theball_widgets_init() {
 		'after_widget' => "</div>",
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
-	) );
+	] );
 
-	// define an area where a widget may be placed
-	register_sidebar( array(
+	// Define an area where a widget may be placed.
+	register_sidebar( [
 		'name' => __( 'SOF Homepage Top Right', 'theball' ),
 		'id' => 'sof-home-top-right',
 		'description' => __( 'A widget area at the top of the site home page', 'theball' ),
@@ -585,10 +612,10 @@ function theball_widgets_init() {
 		'after_widget' => "</div>",
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
-	) );
+	] );
 
-	// define an area where a widget may be placed
-	register_sidebar( array(
+	// Define an area where a widget may be placed.
+	register_sidebar( [
 		'name' => __( 'SOF Homepage Top Sub', 'theball' ),
 		'id' => 'sof-home-top-sub',
 		'description' => __( 'A widget area at the top of the site home page', 'theball' ),
@@ -596,10 +623,10 @@ function theball_widgets_init() {
 		'after_widget' => "</div>",
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
-	) );
+	] );
 
-	// define an area where a widget may be placed
-	register_sidebar( array(
+	// Define an area where a widget may be placed.
+	register_sidebar( [
 		'name' => __( 'SOF Homepage Social Column', 'theball' ),
 		'id' => 'sof-home-middle',
 		'description' => __( 'A widget area in the middle of the site home page', 'theball' ),
@@ -607,10 +634,10 @@ function theball_widgets_init() {
 		'after_widget' => "</div>",
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
-	) );
+	] );
 
-	// define an area where a widget may be placed
-	register_sidebar( array(
+	// Define an area where a widget may be placed.
+	register_sidebar( [
 		'name' => __( 'SOF Homepage About Column', 'theball' ),
 		'id' => 'sof-home-middle-right',
 		'description' => __( 'A widget area in the middle right of the site home page', 'theball' ),
@@ -618,14 +645,13 @@ function theball_widgets_init() {
 		'after_widget' => "</div>",
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
-	) );
+	] );
 
 }
-endif; // theball_widgets_init
+endif; // End theball_widgets_init.
 
-// add action for the above
+// Add action for the above.
 add_action( 'widgets_init', 'theball_widgets_init' );
-
 
 
 
@@ -637,13 +663,13 @@ if ( ! function_exists( 'theball_gallery_shortcode' ) ):
  */
 function theball_gallery_shortcode( $a, $b ) {
 
-	// stop Fancybox from triggering
+	// Stop Fancybox from triggering.
 	return str_replace( '<a ', '<a class="nolightbox" ', $a );
 
 }
 endif;
 
-// add filter for the above
+// Add filter for the above.
 add_filter( 'post_gallery', 'theball_gallery_shortcode', 1011, 2 );
 
 
@@ -656,13 +682,13 @@ if ( ! function_exists( 'theball_geomashup_map_link_get' ) ):
  */
 function theball_geomashup_map_link_get() {
 
-	// disable
+	// Disable.
 	return;
 
-	// init
+	// Init.
 	$map_link = '';
 
-	// do we have the plugin and some coordinates?
+	// Do we have the plugin and some coordinates?
 	if ( class_exists( 'GeoMashup' ) ) {
 		if ( GeoMashup::current_location( null, 'post' ) ) {
 			$map_link = ' <a href="#geomap">here</a>';
@@ -685,7 +711,7 @@ if ( ! function_exists( 'theball_geomashup_map_get' ) ):
  */
 function theball_geomashup_map_get() {
 
-	// do we have the plugin and some coordinates?
+	// Do we have the plugin and some coordinates?
 	if ( class_exists( 'GeoMashup' ) ) {
 		if ( GeoMashup::current_location( null, 'post' ) ) {
 
@@ -715,39 +741,45 @@ if ( ! function_exists( 'theball_author_posts_link' ) ):
  */
 function theball_author_posts_link( $link ) {
 
-	// bail if no Co-Authors Plus
-	if ( ! function_exists( 'get_coauthors' ) ) return $link;
+	// Bail if no Co-Authors Plus.
+	if ( ! function_exists( 'get_coauthors' ) ) {
+		return $link;
+	}
 
-	// get multiple authors
+	// Get multiple authors.
 	$authors = get_coauthors();
 
-	// bail if none
-	if ( empty( $authors ) ) return $link;
+	// Bail if none.
+	if ( empty( $authors ) ) {
+		return $link;
+	}
 
-	// construct in the form "name, name, name & name"
+	// Construct in the form "name, name, name & name".
 	$link = '';
 
-	// init counter
+	// Init counter.
 	$n = 1;
 
-	// find out how many author we have
+	// Find out how many author we have.
 	$author_count = count( $authors );
 
-	// loop
+	// Loop.
 	foreach( $authors AS $author ) {
 
-		// default to comma
-		$sep = __( ', ', 'theball' );
+		// Default to comma.
+		$sep = ', ';
 
-		// use ampersand if we're on the penultimate
+		// Use ampersand if we're on the penultimate.
 		if ( $n == ( $author_count - 1 ) ) {
-			$sep = __( ' &amp; ', 'theball' );
+			$sep = ' &amp; ';
 		}
 
-		// if we're on the last, don't add
-		if ( $n == $author_count ) $sep = '';
+		// If we're on the last, don't add.
+		if ( $n == $author_count ) {
+			$sep = '';
+		}
 
-		// construct link
+		// Construct link.
 		$link .= sprintf( '<a href="%1$s" title="%2$s" rel="author">%3$s</a>',
 			esc_url( get_author_posts_url( $author->ID, $author->user_nicename ) ),
 			/* translators: %s: author's display name */
@@ -755,10 +787,10 @@ function theball_author_posts_link( $link ) {
 			esc_html( $author->display_name )
 		);
 
-		// and separator
+		// And separator.
 		$link .= $sep;
 
-		// increment
+		// Increment.
 		$n++;
 
 	}
@@ -769,7 +801,7 @@ function theball_author_posts_link( $link ) {
 }
 endif;
 
-// add filter for the above
+// Add filter for the above.
 add_filter( 'the_author_posts_link', 'theball_author_posts_link', 10, 1 );
 
 
@@ -784,8 +816,8 @@ if ( ! function_exists( 'theball_team_members' ) ):
  */
 function theball_team_members() {
 
-	// init with default set of team members
-	$default = array( 7, 2, 3, 5, 4 );
+	// Init with default set of team members.
+	$default = [ 7, 2, 3, 5, 4 ];
 
 	/**
 	 * Filter the default set to customise team per journey.
@@ -797,11 +829,11 @@ function theball_team_members() {
 	 */
 	$include_users = apply_filters( 'theball_team_members', $default );
 
-	// get the users by ID
-	$users = get_users( array(
+	// Get the users by ID.
+	$users = get_users( [
 		'include' => $include_users,
 		'orderby' => 'include',
-	) );
+	] );
 
 	// --<
 	return $users;
@@ -825,13 +857,13 @@ if ( ! function_exists( 'theball_site_icon_meta_tags' ) ):
  */
 function theball_site_icon_meta_tags( $meta_tags ) {
 
-	// bail if none
+	// Bail if none.
 	if ( empty( $meta_tags ) ) return $meta_tags;
 
-	// loop through them
+	// Loop through them.
 	foreach( $meta_tags AS $key => $meta_tag ) {
 
-		// replace white with black icons
+		// Replace white with black icons.
 		if ( false !== strpos( $meta_tag, 'rel="icon"' ) ) {
 			$meta_tags[$key] = str_replace( 'white', 'black', $meta_tag );
 		}
@@ -844,7 +876,7 @@ function theball_site_icon_meta_tags( $meta_tags ) {
 }
 endif;
 
-// add filter for the above
+// Add filter for the above.
 //add_filter( 'site_icon_meta_tags', 'theball_site_icon_meta_tags', 10, 1 );
 
 

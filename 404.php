@@ -9,13 +9,13 @@ NOTES
 --------------------------------------------------------------------------------
 */
 
-get_header(); ?>
+get_header();
 
-<!-- 404.php -->
+?><!-- 404.php -->
 
 <div id="content_wrapper" class="clearfix">
 
-<?php include( get_stylesheet_directory() . '/assets/includes/site_banner.php' ); ?>
+<?php include get_stylesheet_directory() . '/assets/includes/site_banner.php'; ?>
 
 <div class="main_column clearfix">
 
@@ -27,11 +27,11 @@ get_header(); ?>
 
 				<h2><?php _e( 'Offside!', 'theball' ); ?></h2>
 
-				<img style="width: 200px; height: 150px; float: left;" class="padded_br" src="<?php echo get_template_directory_uri(); ?>/assets/images/interface/offside_200.jpg" alt="an offside whistle" />
+				<img style="width: 200px; height: 150px; float: left;" class="padded_br" src="<?php echo get_template_directory_uri(); ?>/assets/images/interface/offside_200.jpg" alt="<?php esc_attr_e( 'A whistle for offside', 'theball' ); ?>" />
 
 				<p><?php _e( 'The page you requested has not been found on this server. Perhaps you could use the search form below to look for it?', 'theball' ); ?></p>
 
-				<p><?php _e( 'If we have got a broken link on this site, or you’re really really sure the page should be there, then mailing the details to the <a href="mailto:webmaster@theball.tv">webmaster</a> would be appreciated.', 'theball' ); ?></p>
+				<p><?php printf( __( 'If we have got a broken link on this site, or you’re really really sure the page should be there, then mailing the details to the %1$swebmaster%2$s would be appreciated.', 'theball' ), '<a href="mailto:webmaster@theball.tv">', '</a>' ); ?></p>
 
 			</div><!-- /entrytext -->
 
@@ -46,7 +46,7 @@ get_header(); ?>
 
 			<div class="entrytext clearfix">
 
-				<?php include( get_template_directory() . '/searchform.php' ); ?>
+				<?php include get_template_directory() . '/searchform.php'; ?>
 
 			</div><!-- /entrytext -->
 

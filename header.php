@@ -16,59 +16,10 @@ The "left-open elements" here are closed in footer.php
 
 <head profile="https://gmpg.org/xfn/11">
 
-	<!-- Meta -->
-	<meta http-equiv="content-type" content="<?php bloginfo( 'html_type' ) ?>; charset=<?php bloginfo( 'charset' ) ?>" />
-	<meta name="description" content="<?php bloginfo( 'description' ) ?>" />
-	<meta name="MSSmartTagsPreventParsing" content="true" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<?php if ( is_search() ) { ?><meta name="robots" content="noindex, nofollow" /><?php } ?>
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<!-- Title -->
-	<title><?php
-
-	global $post;
-
-	if ( is_home() ) {
-		echo 'The Blog &laquo; ';
-	} elseif ( is_404() ) {
-		echo 'Not Found &laquo; ';
-	} elseif ( is_category() ) {
-		echo 'Category: '; wp_title( '' ); echo ' &laquo; ';
-	} elseif ( is_search() ) {
-		echo 'Search Results &laquo; ';
-	} elseif ( is_day() || is_month() || is_year() ) {
-		echo 'Archives: '; wp_title( '' ); echo ' &laquo; ';
-	} elseif ( is_single() ) {
-		wp_title( '&laquo;', true, 'right' );
-	} elseif ( is_page() ) {
-		wp_title( '&laquo;', true, 'right' );
-	} else {
-		wp_title( '&laquo;', true, 'right' );
-	}
-
-	echo bloginfo( 'name' );
-
-	?></title>
-
-	<!-- Syndication -->
-	<?php
-
-	// switch to 2014
-	//switch_to_blog(5);
-
-	?>
-	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo( 'name' ); ?> RSS Feed" href="<?php bloginfo( 'rss2_url' ); ?>" />
-	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo( 'name' ); ?> Comments RSS Feed" href="<?php bloginfo( 'comments_rss2_url' ); ?>" />
-	<?php
-
-	// switch back
-	//restore_current_blog();
-
-	?>
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
-	<!-- add Google webfonts prior to enqueued styles -->
+	<!-- Add Google fonts prior to enqueued styles -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300" rel="stylesheet" type="text/css">
 
 	<?php wp_head(); ?>
@@ -87,10 +38,11 @@ The "left-open elements" here are closed in footer.php
 
 
 <body<?php echo theball_body_id(); ?> <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 
 
 
-<?php include( get_template_directory() . '/header_body.php' ); ?>
+<?php include get_template_directory() . '/header_body.php'; ?>
 
 
 
