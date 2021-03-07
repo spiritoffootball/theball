@@ -15,7 +15,10 @@ get_header();
 
 <div id="content_wrapper" class="clearfix">
 
-<?php include get_stylesheet_directory() . '/assets/includes/site_banner.php'; ?>
+<?php $site_banner = locate_template( 'assets/includes/site_banner.php' ); ?>
+<?php if ( $site_banner ) : ?>
+	<?php load_template( $site_banner ); ?>
+<?php endif; ?>
 
 <div class="main_column clearfix">
 
@@ -69,7 +72,7 @@ get_header();
 				/**
 				 * Filter the title of the "Topics" section.
 				 *
-				 * @since 1.0
+				 * @since 1.0.0
 				 *
 				 * @param string The default title.
 				 * @return string The modified title.

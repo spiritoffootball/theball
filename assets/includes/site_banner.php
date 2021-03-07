@@ -20,17 +20,17 @@ NOTES
 			<div class="splash_widget_col">
 
 				<div class="splash_main_widget">
-					<?php dynamic_sidebar( 'SOF Homepage Top Main' ); ?>
+					<?php dynamic_sidebar( 'sof-top-left' ); ?>
 				</div>
 
 				<div class="splash_sub_widget">
-					<?php dynamic_sidebar( 'SOF Homepage Top Sub' ); ?>
+					<?php dynamic_sidebar( 'sof-top-sub' ); ?>
 				</div>
 
 			</div>
 
 			<div class="splash_right_widget">
-				<?php dynamic_sidebar( 'SOF Homepage Top Right' ); ?>
+				<?php dynamic_sidebar( 'sof-top-right' ); ?>
 			</div>
 
 		<?php } elseif ( is_page() AND empty( $post->post_parent ) ) { ?>
@@ -67,7 +67,7 @@ NOTES
 			</div>
 
 			<div class="splash_right_widget">
-				<?php dynamic_sidebar( 'SOF Homepage Top Right' ); ?>
+				<?php dynamic_sidebar( 'sof-top-right' ); ?>
 			</div>
 
 		<?php } else { ?>
@@ -75,17 +75,17 @@ NOTES
 			<div class="splash_widget_col">
 
 				<div class="splash_main_widget">
-					<?php dynamic_sidebar( 'SOF Homepage Top Main' ); ?>
+					<?php dynamic_sidebar( 'sof-top-left' ); ?>
 				</div>
 
 				<div class="splash_sub_widget">
-					<?php dynamic_sidebar( 'SOF Homepage Top Sub' ); ?>
+					<?php dynamic_sidebar( 'sof-top-sub' ); ?>
 				</div>
 
 			</div>
 
 			<div class="splash_right_widget">
-				<?php dynamic_sidebar( 'SOF Homepage Top Right' ); ?>
+				<?php dynamic_sidebar( 'sof-top-right' ); ?>
 			</div>
 
 		<?php } ?>

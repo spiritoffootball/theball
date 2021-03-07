@@ -90,7 +90,7 @@ NOTES
 	#sponsors,
 	#teasers,
 	#watch_2010_trailer,
-	p a.post-edit-link,
+	a.post-edit-link,
 	#comments_wrapper.no_comments
 	{
 		display: none !important;

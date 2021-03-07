@@ -19,7 +19,7 @@ to offer actions and filters instead.
 /**
  * Define a version for this theme, so that updates refresh stylesheets.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 define( 'THEBALL_VERSION', '2.4.4' );
 

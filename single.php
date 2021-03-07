@@ -18,7 +18,10 @@ get_header();
 <div id="cols" class="clearfix">
 <div class="cols_inner">
 
-<?php include get_template_directory() . '/assets/includes/page_list.php'; ?>
+<?php $page_list = locate_template( 'assets/includes/page_list.php' ); ?>
+<?php if ( $page_list ) : ?>
+	<?php load_template( $page_list ); ?>
+<?php endif; ?>
 
 <div class="main_column clearfix">
 
@@ -215,7 +218,10 @@ get_header();
 
 			<p><?php _e( 'Sorry, but you are looking for something that isn’t here.', 'theball' ); ?></p>
 
-			<?php include get_template_directory() . '/searchform.php'; ?>
+			<?php $searchform = locate_template( 'searchform.php' ); ?>
+			<?php if ( $searchform ) : ?>
+				<?php load_template( $searchform ); ?>
+			<?php endif; ?>
 
 		</div><!-- /post -->
 

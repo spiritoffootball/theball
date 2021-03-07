@@ -12,35 +12,57 @@ NOTES
 
 
 /**
- * When the DOM is ready.
+ * Pass the jQuery shortcut in.
  *
  * @since 2.2.14
+ *
+ * @param {Object} $ The jQuery object.
  */
-jQuery(document).ready( function() {
+(function($) {
 
 	/**
-	 * Short delay lets other scripts run first.
+	 * When the DOM is ready.
 	 *
 	 * @since 2.2.14
 	 */
-	setTimeout( function() {
+	$(document).ready( function() {
+
+		// First pass.
+		$('.post').fitVids({
+			customSelector: "iframe.dfb-video"
+		});
+
+		// Refresh after any AJAX event completes.
+		$(document).ajaxComplete( function() {
+			setTimeout( function() {
+				$('.post').fitVids();
+			}, 200 );
+		});
+
+		return;
 
 		/**
-		 * Remove Fancybox from JetPack galleries.
+		 * Short delay lets other scripts run first.
 		 *
 		 * @since 2.2.14
 		 */
-		jQuery('.tiled-gallery a.fancybox').each( function() {
-			jQuery(this).removeClass('fancybox').addClass('nofancybox');
-			if (jQuery(this).fancybox != undefined) {
-				jQuery(this).unbind('click.fb');
-				jQuery(this).fancybox = function() {};
-			}
-		});
+		setTimeout( function() {
 
-	}, 50 );
+			/**
+			 * Remove Fancybox from JetPack galleries.
+			 *
+			 * @since 2.2.14
+			 */
+			$('.tiled-gallery a.fancybox').each( function() {
+				$(this).removeClass('fancybox').addClass('nofancybox');
+				if ($(this).fancybox != undefined) {
+					$(this).unbind('click.fb');
+					$(this).fancybox = function() {};
+				}
+			});
 
-});
+		}, 50 );
 
+	});
 
-
+} )( jQuery );

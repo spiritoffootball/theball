@@ -31,7 +31,7 @@ The "left-open elements" here are closed in footer.php
 			/**
 			 * Filter the image of The Ball for this site.
 			 *
-			 * @since 1.0
+			 * @since 1.0.0
 			 *
 			 * @param string $default_ball_image The default image markup.
 			 * @return string $default_ball_image The modified image markup.
@@ -41,11 +41,14 @@ The "left-open elements" here are closed in footer.php
 			?>
 
 			<div id="titlewrap">
-			<div id="title"><h1><a href="<?php home_url( '/' ); ?>" title="<?php esc_attr_e( 'Home', 'theball' ); ?>"><?php bloginfo( 'title' ); ?></a></h1></div>
+			<div id="title"><h1><a href="<?php echo home_url( '/' ); ?>" title="<?php esc_attr_e( 'Home', 'theball' ); ?>"><?php bloginfo( 'title' ); ?></a></h1></div>
 			<div id="tagline"><?php bloginfo( 'description' ); ?></div>
 			</div><!-- /titlewrap -->
 
-			<?php include get_template_directory() . '/assets/includes/join_in.php'; ?>
+			<?php $paypal = locate_template( 'assets/includes/paypal.php' ); ?>
+			<?php if ( $paypal ) : ?>
+				<?php load_template( $paypal ); ?>
+			<?php endif; ?>
 
 		</div><!-- /header_top -->
 
@@ -57,7 +60,10 @@ The "left-open elements" here are closed in footer.php
 
 <div id="topnav">
 	<div id="topnav_inner" class="clearfix">
-		<?php include get_template_directory() . '/assets/includes/menu.php'; ?>
+		<?php $network_menu = locate_template( 'assets/includes/menu.php' ); ?>
+		<?php if ( $network_menu ) : ?>
+			<?php load_template( $network_menu ); ?>
+		<?php endif; ?>
 	</div><!-- /topnav_inner -->
 </div><!-- /topnav -->
 
@@ -68,7 +74,10 @@ The "left-open elements" here are closed in footer.php
 
 	<div id="content_wrapper" class="clearfix">
 
-	<?php include get_stylesheet_directory() . '/assets/includes/site_banner.php'; ?>
+	<?php $site_banner = locate_template( 'assets/includes/site_banner.php' ); ?>
+<?php if ( $site_banner ) : ?>
+	<?php load_template( $site_banner ); ?>
+<?php endif; ?>
 
 	<div class="main_column clearfix">
 

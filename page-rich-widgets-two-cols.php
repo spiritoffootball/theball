@@ -1,6 +1,6 @@
 <?php /*
 ================================================================================
-Template Name: Main Site Homepage
+Template Name: Page Rich Widgets Two Columns
 ================================================================================
 AUTHOR: Christian Wach <needle@haystack.co.uk>
 --------------------------------------------------------------------------------
@@ -9,7 +9,7 @@ NOTES
 --------------------------------------------------------------------------------
 */
 
-get_header(); ?><!-- homepage-new.php -->
+get_header(); ?><!-- page-rich-two-cols.php -->
 
 <div id="content_wrapper" class="clearfix">
 

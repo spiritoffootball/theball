@@ -1,0 +1,664 @@
+/*
+================================================================================
+Rich Design Template Styles
+================================================================================
+AUTHOR: Christian Wach <needle@haystack.co.uk>
+--------------------------------------------------------------------------------
+NOTES
+
+--------------------------------------------------------------------------------
+*/
+
+
+
+/*
+--------------------------------------------------------------------------------
+Content Wrapper layout
+--------------------------------------------------------------------------------
+*/
+
+#content_wrapper
+{
+	background: #000;
+}
+
+
+
+/*
+--------------------------------------------------------------------------------
+Sub-site Navigation
+--------------------------------------------------------------------------------
+*/
+
+	.splash_right_widget li
+	{
+		display: inline-block;
+		float: left;
+		clear: left;
+		width: 100%;
+		margin: 0 0 5px 0;
+	}
+
+	.splash_right_widget .widget_nav_menu a
+	{
+		font-size: 0.9em;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		color: #ddd;
+		background-color: #000;
+		background-color: rgba( 0, 0, 0, 0.33 );
+		text-transform: uppercase;
+		text-decoration: none;
+		display: block;
+		padding: 6px 12px;
+	}
+
+	.splash_right_widget .widget_nav_menu a:hover
+	{
+		color: #fff;
+		background-color: #2E3D9B;
+	}
+
+	/* highlights */
+	.splash_right_widget .widget_nav_menu .current-menu-item a
+	{
+		color: #fff;
+		background-color: #2E3D9B;
+	}
+
+
+
+/*
+--------------------------------------------------------------------------------
+Site Banner layout
+--------------------------------------------------------------------------------
+*/
+
+#site_banner.site_banner_rich
+{
+	padding: 40px 0 120px 0;
+	background: #0A0933 url("/wp-content/themes/theball/assets/images/interface/sunset-1000x360.jpg") left top no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50%;
+}
+
+	#site_banner.site_banner_rich .splash_widget_col
+	{
+		float: left;
+		width: 60%;
+	}
+
+	#site_banner.site_banner_rich .splash_main_widget
+	{
+	}
+
+	#site_banner.site_banner_rich .splash_right_widget
+	{
+		float: right;
+		width: 38%;
+	}
+
+
+
+/*
+--------------------------------------------------------------------------------
+Main column
+--------------------------------------------------------------------------------
+*/
+div#cols
+{
+	float: none;
+	width: auto;
+	margin: 0;
+	background: transparent;
+	background: transparent url("../images/decoration/sof_logo_muted_bg_800.png") no-repeat 50% top;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+	div#cols .cols_inner
+	{
+		width: 980px;
+		margin: 0 auto;
+	}
+
+		#cols div.main_column
+		{
+			background: transparent;
+		}
+
+		#cols.widget-cols div.main_column,
+		#cols.one-col div.main_column
+		{
+			width: 980px;
+			margin: 0 auto;
+		}
+
+			div.main_column .widget
+			{
+				margin: 0 0 40px 0;
+			}
+
+			/* middle right block */
+			div.main_column .about_widget
+			{
+				float: right;
+				width: 480px;
+			}
+
+			/* middle left block */
+			div.main_column .social_widget
+			{
+				float: left;
+				width: 466px;
+			}
+
+			#cols.one-col div.main_column .post,
+			#cols.two-cols div.main_column .post
+			{
+				margin: 0 0 40px 0;
+			}
+
+			#cols.two-cols div.right_column
+			{
+				background: transparent;
+			}
+
+
+
+/*
+--------------------------------------------------------------------------------
+Sponsors section
+--------------------------------------------------------------------------------
+*/
+#sponsors
+{
+	background: transparent;
+}
+
+
+
+/*
+--------------------------------------------------------------------------------
+Page with One Column
+--------------------------------------------------------------------------------
+*/
+
+#cols.one-col div.main_column .post
+{
+	width: 640px;
+	margin: 0 auto 40px auto;
+}
+
+div.main_column *
+{
+	color: #ddd;
+}
+
+div.main_column a.button
+{
+	color: #555;
+}
+
+div.main_column blockquote,
+div.main_column div.captioned_image
+{
+	background-color: #333;
+	background: rgba( 0, 0, 0, 0.44);
+	text-shadow: 0 0 15px #0A0933;
+	border: 1px solid #555;
+	font-size: 110%;
+	max-width: 100%;
+	width: 100% !important;
+    box-sizing: border-box;
+}
+
+div.main_column div.captioned_image img
+{
+	max-width: 100%;
+	width: 100% !important;
+	height: auto;
+}
+
+div.main_column .wp-caption-text
+{
+	text-align: left;
+	font-size: 80%;
+}
+
+
+
+/*
+--------------------------------------------------------------------------------
+Page with Two Columns
+--------------------------------------------------------------------------------
+*/
+
+
+
+
+
+/*
+--------------------------------------------------------------------------------
+Contact Form
+--------------------------------------------------------------------------------
+*/
+
+body .post .contact-form
+{
+	background-color: #333;
+	background: rgba( 0, 0, 0, 0.44);
+	text-shadow: 0 0 15px #0A0933;
+	border: 1px solid #555;
+	font-size: 110%;
+}
+
+body .post .contact-form input[type='text'],
+body .post .contact-form input[type='email'],
+body .post .contact-form textarea
+{
+	font-size: 110%;
+	color: #000;
+	background-color: rgb(238 238 238 / 66%);
+}
+
+body .post .contact-form input[type='text']:focus,
+body .post .contact-form input[type='email']:focus,
+body .post .contact-form textarea:focus
+{
+	background-color: #ccc;
+}
+
+body .post .contact-form input[type=submit],
+body .post .contact-form button[type=submit]
+{
+	color: #ddd;
+	background-color: #202B6D;
+}
+
+body .post .contact-form input[type=submit]:hover,
+body .post .contact-form button[type=submit]:hover
+{
+	color: #fff;
+	background-color: #2E3D9B;
+}
+
+
+
+/*
+--------------------------------------------------------------------------------
+Responsiveness
+--------------------------------------------------------------------------------
+*/
+
+/* Our design is 980px wide - when screens would struggle with this, then */
+@media all and (max-width: 980px) {
+
+	#site_banner
+	{
+		padding-bottom: 75px;
+	}
+
+	div#cols
+	{
+		float: none;
+		width: auto;
+		margin: 0;
+		background: transparent;
+		background: transparent url("../images/decoration/sof_logo_muted_bg_800.png") no-repeat 50% top;
+	}
+
+		div#cols .cols_inner
+		{
+			width: auto;
+			margin: 0;
+		}
+
+			/* Main column */
+			#cols.widget-cols div.main_column,
+			#cols.one-col div.main_column
+			{
+				width: auto;
+				margin: 0;
+			}
+
+			#cols.two-cols div.main_column
+			{
+				width: 640px;
+				margin: 0 auto;
+			}
+
+				#cols div.main_column .about_widget,
+				#cols div.main_column .social_widget
+				{
+					float: none;
+					width: 640px;
+					margin: 0 auto;
+					padding-top: 20px;
+				}
+
+}
+
+
+
+/* Next natural breakpoint */
+@media all and (max-width: 725px) {
+
+	#site_banner.site_banner_rich
+	{
+		padding-bottom: 120px;
+	}
+
+		#site_banner.site_banner_rich .splash_widget_col,
+		#cols.one-col div.main_column .post
+		{
+			float: none;
+			width: 600px;
+			margin: 0 auto;
+   		}
+
+		#cols.one-col div.main_column .post
+		{
+			margin: 0 auto 40px auto;
+		}
+
+			#site_banner.site_banner_rich .splash_main_widget
+			{
+				width: 600px;
+				margin: 0 auto 40px auto;
+			}
+
+			#site_banner.site_banner_rich .splash_right_widget
+			{
+				float: none;
+				width: 600px;
+				margin: 0 auto;
+			}
+
+}
+
+
+
+/* Next natural breakpoint */
+@media all and (max-width: 640px) {
+
+	#site_banner.site_banner_rich .splash_widget_col,
+	#site_banner.site_banner_rich .splash_main_widget,
+	#site_banner.site_banner_rich .splash_right_widget,
+	#cols div.main_column .about_widget,
+	#cols div.main_column .social_widget,
+	#cols.one-col div.main_column .post
+	{
+		width: 480px;
+	}
+
+	.splash_right_widget .widget-title
+	{
+		display: block;
+		width: auto;
+		margin: 0 auto 0.3em auto;
+	}
+
+}
+
+
+
+/* Next natural breakpoint */
+@media all and (max-width: 600px) {
+
+	#site_banner.site_banner_rich
+	{
+		padding-bottom: 75px;
+	}
+
+}
+
+
+
+/* Next natural breakpoint */
+@media all and (max-width: 520px) {
+
+	#site_banner
+	{
+		padding-top: 0;
+	}
+
+/*
+		#site_banner.site_banner_rich .splash_main_widget
+		{
+			width: auto;
+		}
+
+	#cols div.main_column .about_widget,
+	#cols div.main_column .social_widget
+	{
+		width: auto;
+	}
+ */
+
+}
+
+
+
+/* Next natural breakpoint */
+@media all and (max-width: 370px) {
+
+	#site_banner.site_banner_rich .splash_right_widget
+	{
+		width: 100%;
+	}
+
+}
+
+
+
+/*
+--------------------------------------------------------------------------------
+Featured Page Widget Support
+--------------------------------------------------------------------------------
+*/
+
+.widget_featured_page .post_inner {
+	position: relative;
+	line-height: 1;
+}
+
+.widget_featured_page .post_header {
+	margin-bottom: 0.5em;
+}
+
+.widget_featured_page .has_feature_video .post_header {
+	margin-bottom: 0;
+}
+
+.widget_featured_page .has_feature_image img {
+	width: 100%;
+	height: auto;
+	line-height: 1;
+}
+.widget_featured_page .has_feature_image img {
+	min-height: 200px;
+}
+
+.widget_featured_page .post_title {
+	position: absolute;
+	top: auto;
+	bottom: 0;
+	left: 0;
+	background: #000;
+	background: rgba( 0, 0, 0, 0.66 );
+	text-shadow: 0 0 15px #0a0933;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+.splash_main_widget .widget_featured_page .post_title {
+	top: 0;
+	bottom: auto;
+}
+
+.widget_featured_page .has_feature_video .post_title {
+	position: relative;
+	top: auto;
+	bottom: auto;
+	left: auto;
+	padding: 1px 0;
+	background: #333;
+	background: rgba( 30, 30, 30, 0.66 );
+}
+
+.widget_featured_page .has_feature_video.has_page_title .post_title {
+	margin: 0 0 8px 0;
+}
+
+.widget_featured_page .post_inner h2 {
+	margin: 0.3em 0.4em;
+	padding: 0;
+	font-size: 150%;
+	line-height: 1.3;
+	color: #fff;
+}
+.widget_featured_page .post_inner h2 a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.widget_featured_page .post_excerpt {
+	color: #fff;
+	padding: 0;
+	line-height: 1.5;
+}
+.widget_featured_page .post_excerpt a {
+	color: #fff;
+}
+
+.splash_main_widget .widget_featured_page .post_excerpt {
+	position: absolute;
+	box-sizing: border-box;
+	width: 100%;
+	bottom: 0;
+	padding: 1em;
+	background: #000;
+	background: rgba( 0, 0, 0, 0.46 );
+	text-shadow: 0 0 3px #0A0933;
+}
+
+.splash_right_widget .widget_featured_page .post_header {
+	margin: 0;
+}
+
+.widget_featured_page .post_video {
+	margin: 0 0 8px 0;
+}
+
+.widget_featured_page .has_page_title .post_video {
+	margin: 0;
+}
+
+.widget_featured_page .post_video iframe {
+	width: 100% !important;
+}
+
+.social_widget .widget_featured_page .post_video iframe {
+	height: 262px;
+}
+
+.about_widget .widget_featured_page .post_video iframe {
+	height: 270px;
+}
+
+.splash_right_widget .widget_featured_page .post_video iframe {
+	height: 208px;
+}
+
+.splash_right_widget .widget_featured_page .post_excerpt p {
+	font-size: 80%;
+	color: #000;
+	text-shadow: 0 0 1px #0a0933;
+	line-height: 1.9;
+	margin: 0 0 8px 5px;
+}
+
+.splash_right_widget .widget_featured_page .post_excerpt span {
+	color: #fff;
+	background: #000;
+	background: rgba( 0, 0, 0, 0.5 );
+	padding: 2px 0;
+	box-shadow: -5px 0 0 rgb(0 0 0 / 50%), 5px 0 0 rgb(0 0 0 / 50%);
+}
+
+.widget_featured_page .post_explore {
+	padding: 0.5em 0 0 0;
+	line-height: 2;
+}
+.widget_featured_page .post_explore a.button {
+	line-height: 2;
+}
+
+@media (max-width: 980px) {
+	.social_widget .widget_featured_page .post_video iframe,
+	.about_widget .widget_featured_page .post_video iframe {
+		height: 360px;
+	}
+	.splash_right_widget .widget_featured_page .post_video iframe {
+		height: 149px;
+	}
+	.splash_right_widget .widget_featured_page .post_excerpt img {
+		display: none;
+	}
+	.splash_right_widget .widget_featured_page .post_excerpt p {
+		font-size: 70%;
+	}
+}
+
+@media all and (max-width: 725px) {
+	.splash_right_widget .widget_featured_page .post_video {
+		float: left;
+		width: 370px;
+	}
+	.splash_right_widget .widget_featured_page .post_video iframe {
+		height: 208px;
+	}
+	.splash_right_widget .widget_featured_page .post_excerpt p {
+		margin-left: 390px;
+	}
+}
+
+@media all and (max-width: 640px) {
+	.social_widget .widget_featured_page .post_video iframe,
+	.about_widget .widget_featured_page .post_video iframe {
+		height: 270px;
+	}
+	.splash_right_widget .widget_featured_page .post_video {
+		float: none;
+		width: 100%;
+		margin: 0 0 0.5em 0;
+	}
+	.splash_right_widget .widget_featured_page .post_video iframe {
+		height: 270px;
+	}
+	.splash_right_widget .widget_featured_page .post_excerpt img {
+		display: inline-block;
+		float: left !important;
+		margin: 0 10px 0 0 !important;
+	}
+	.splash_right_widget .widget_featured_page .post_excerpt p {
+		margin-left: 0;
+	}
+}
+
+@media all and (max-width: 520px) {
+	.splash_right_widget .widget_featured_page .post_excerpt p {
+		margin-left: 0.5em;
+		margin-right: 0.5em;
+	}
+}
+
+

@@ -12,6 +12,7 @@ NOTES
 ?><!-- assets/includes/page_list.php -->
 
 <div class="sof_page_list">
+<div class="sof_page_list_inner">
 
 	<ul id="pages_ul">
 	<?php
@@ -37,6 +38,7 @@ NOTES
 	?>
 	</ul>
 
+</div>
 </div>
 
 

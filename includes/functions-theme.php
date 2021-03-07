@@ -73,7 +73,7 @@ function theball_team_members() {
 /**
  * Utility to concatenate names.
  *
- * @since 1.0
+ * @since 1.0.0
  *
  * @param string $forename The forename.
  * @param string $surname The surname.
@@ -108,7 +108,7 @@ if ( ! function_exists( 'theball_multipager' ) ) :
 /**
  * Adds some style to multipager elements.
  *
- * @since 1.0
+ * @since 1.0.0
  *
  * @return string $page_links The multipager page links.
  */

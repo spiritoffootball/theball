@@ -42,7 +42,10 @@ The "left-open elements" here are closed in footer.php
 
 
 
-<?php include get_template_directory() . '/header_body.php'; ?>
+<?php $header_body = locate_template( 'header_body.php' ); ?>
+<?php if ( $header_body ) : ?>
+	<?php load_template( $header_body ); ?>
+<?php endif; ?>
 
 
 

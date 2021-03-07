@@ -6,31 +6,10 @@ AUTHOR: Christian Wach <needle@haystack.co.uk>
 --------------------------------------------------------------------------------
 NOTES
 
-The "left-open elements" here were opened in header.php or header_body.php
-
 --------------------------------------------------------------------------------
 */
 
-?><!-- footer.php -->
-
-<?php if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) AND 'wp-signup.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) { ?>
-
-	</div><!-- /post -->
-
-	</div><!-- /main_column_inner -->
-
-	</div><!-- /main_column -->
-
-	<?php get_sidebar(); ?>
-
-<?php } ?>
-
-
-
-</div><!-- /.cols_inner -->
-</div><!-- /#cols -->
-
-</div><!-- /#content_wrapper -->
+?><!-- footer-page-rich.php -->
 
 
 

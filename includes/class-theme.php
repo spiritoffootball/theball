@@ -106,7 +106,7 @@ class SOF_The_Ball_Theme {
 		// Set up this theme's defaults.
 		add_action( 'after_setup_theme', [ $this, 'theme_setup' ] );
 
-		// Add CSS AND JS with high priority so they are late in the queue.
+		// Add CSS and JS with high priority so they are late in the queue.
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_styles' ], 1000 );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ], 1000 );
 
@@ -172,7 +172,7 @@ class SOF_The_Ball_Theme {
 	 * runs before the "init" hook. The "init" hook is too late for some features,
 	 * such as indicating support for post thumbnails.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function theme_setup() {
 
@@ -227,7 +227,7 @@ class SOF_The_Ball_Theme {
 	/**
 	 * Add our theme's CSS stylesheets.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function enqueue_styles() {
 
@@ -284,7 +284,7 @@ class SOF_The_Ball_Theme {
 	/**
 	 * Add our theme's JavaScript files.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function enqueue_scripts() {
 
@@ -297,15 +297,21 @@ class SOF_The_Ball_Theme {
 			true
 		);
 
-		/*
+		// Add responsive videos script.
+		wp_enqueue_script(
+			'theball_fitvids',
+			get_template_directory_uri() . '/assets/js/jquery.fitvids.js',
+			[ 'jquery' ],
+			THEBALL_VERSION
+		);
+
 		// Theme javascript.
 		wp_enqueue_script(
 			'theball_general',
 			get_template_directory_uri() . '/assets/js/the-ball.js',
-			[ 'jquery' ],
+			[ 'theball_fitvids' ],
 			THEBALL_VERSION
 		);
-		*/
 
 		// Include on network home.
 		if ( is_main_site() AND is_front_page() ) {
@@ -324,7 +330,7 @@ class SOF_The_Ball_Theme {
 	/**
 	 * Include login stylesheet.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function login_styles() {
 
@@ -348,7 +354,7 @@ class SOF_The_Ball_Theme {
 	/**
 	 * Wrap more link in a paragraph of its own.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @param string $link The existing more link.
 	 * @return string $link The modified more link.
@@ -370,7 +376,7 @@ class SOF_The_Ball_Theme {
 	 *
 	 * @see https://codex.wordpress.org/Customizing_the_Read_More
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @param string $link The existing more jump link.
 	 * @return string $link The modified more jump link.
@@ -399,7 +405,7 @@ class SOF_The_Ball_Theme {
 	 *
 	 * Note: Unused at present.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @param string $link The existing link.
 	 * @return string $link The modified link.
@@ -419,7 +425,7 @@ class SOF_The_Ball_Theme {
 	/**
 	 * Modify caption shortcode output.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @param array $attr Attributes attributed to the shortcode.
 	 * @param string $content Optional. Shortcode content.
@@ -464,15 +470,15 @@ class SOF_The_Ball_Theme {
 	/**
 	 * Register our widget areas.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function widget_areas_register() {
 
 		// Define an area where a widget may be placed.
 		register_sidebar( [
-			'name' => __( 'SOF Homepage Top Main', 'theball' ),
-			'id' => 'sof-home-top-main',
-			'description' => __( 'A widget area at the top of the site home page', 'theball' ),
+			'name' => __( 'Home Top Left', 'theball' ),
+			'id' => 'sof-top-left',
+			'description' => __( 'A widget area at the top left of the homepage', 'theball' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => "</div>",
 			'before_title' => '<h3 class="widget-title">',
@@ -481,9 +487,9 @@ class SOF_The_Ball_Theme {
 
 		// Define an area where a widget may be placed.
 		register_sidebar( [
-			'name' => __( 'SOF Homepage Top Right', 'theball' ),
-			'id' => 'sof-home-top-right',
-			'description' => __( 'A widget area at the top of the site home page', 'theball' ),
+			'name' => __( 'Home Top Right', 'theball' ),
+			'id' => 'sof-top-right',
+			'description' => __( 'A widget area at the top right of the homepage', 'theball' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => "</div>",
 			'before_title' => '<h3 class="widget-title">',
@@ -492,9 +498,9 @@ class SOF_The_Ball_Theme {
 
 		// Define an area where a widget may be placed.
 		register_sidebar( [
-			'name' => __( 'SOF Homepage Top Sub', 'theball' ),
-			'id' => 'sof-home-top-sub',
-			'description' => __( 'A widget area at the top of the site home page', 'theball' ),
+			'name' => __( 'Home Top Sub', 'theball' ),
+			'id' => 'sof-top-sub',
+			'description' => __( 'A widget area just below the top of the homepage', 'theball' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => "</div>",
 			'before_title' => '<h3 class="widget-title">',
@@ -503,9 +509,9 @@ class SOF_The_Ball_Theme {
 
 		// Define an area where a widget may be placed.
 		register_sidebar( [
-			'name' => __( 'SOF Homepage Social Column', 'theball' ),
-			'id' => 'sof-home-middle',
-			'description' => __( 'A widget area in the middle of the site home page', 'theball' ),
+			'name' => __( 'Home Middle Left', 'theball' ),
+			'id' => 'sof-middle-left',
+			'description' => __( 'A widget area in the middle left of the homepage', 'theball' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => "</div>",
 			'before_title' => '<h3 class="widget-title">',
@@ -514,9 +520,20 @@ class SOF_The_Ball_Theme {
 
 		// Define an area where a widget may be placed.
 		register_sidebar( [
-			'name' => __( 'SOF Homepage About Column', 'theball' ),
-			'id' => 'sof-home-middle-right',
-			'description' => __( 'A widget area in the middle right of the site home page', 'theball' ),
+			'name' => __( 'Home Middle Right', 'theball' ),
+			'id' => 'sof-middle-right',
+			'description' => __( 'A widget area in the middle right of the homepage', 'theball' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => "</div>",
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>',
+		] );
+
+		// Define an area where a widget may be placed.
+		register_sidebar( [
+			'name' => __( 'Page Top Right', 'theball' ),
+			'id' => 'sof-top-right-page',
+			'description' => __( 'A widget area at the top right of a single page', 'theball' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => "</div>",
 			'before_title' => '<h3 class="widget-title">',
@@ -530,7 +547,7 @@ class SOF_The_Ball_Theme {
 	/**
 	 * Filter the gallery shortcode after Jetpack does.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @param string $markup The gallery markup.
 	 * @param array $attr The shortcode attributes array.
@@ -659,7 +676,7 @@ class SOF_The_Ball_Theme {
 	/**
 	 * Customise the display of comments.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @param string $comment The comment.
 	 * @param array $args The comment arguments.
