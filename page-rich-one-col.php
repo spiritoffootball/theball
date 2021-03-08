@@ -13,6 +13,10 @@ get_header(); ?><!-- page-rich-one-col.php -->
 
 <div id="content_wrapper" class="clearfix">
 
+	<?php /* $page_list = locate_template( 'assets/includes/page_list.php' ); ?>
+	<?php if ( $page_list ) : ?>
+		<?php load_template( $page_list ); ?>
+	<?php endif; */ ?>
 
 
 	<?php if ( have_posts() ) : ?>
@@ -32,14 +36,20 @@ get_header(); ?><!-- page-rich-one-col.php -->
 
 								<?php
 
-								// Init.
-								$has_feature_image = false;
-								$feature_image_class = '';
+								// Get the Featured Video.
+								$header_video = get_field( 'header_video' );
 
-								// Do we have a Feature Image?
-								if ( has_post_thumbnail() ) {
-									$has_feature_image = true;
-									$feature_image_class = ' has_feature_image';
+								// Don't show Feature Image if we have a Video.
+								if ( $header_video ) {
+									$feature_image_class = ' has_feature_video';
+								} else {
+
+									// Do we have a Feature Image?
+									if (  $image_size != 'no-thumbnail' AND has_post_thumbnail() ) {
+										$has_feature_image = true;
+										$feature_image_class = ' has_feature_image';
+									}
+
 								}
 
 								$hidden_title = '';
@@ -60,6 +70,12 @@ get_header(); ?><!-- page-rich-one-col.php -->
 										<div class="post_title">
 											<h2<?php echo $hidden_title; ?>><?php the_title(); ?> <?php edit_post_link( 'Edit this entry', '<span>', '</span>' ); ?></h2>
 										</div><!-- /post_title -->
+
+										<?php if ( $header_video ) : ?>
+											<div class="post_video">
+												<?php the_field( 'header_video' ); ?>
+											</div><!-- /post_video -->
+										<?php endif; ?>
 
 									</div><!-- /post_header -->
 

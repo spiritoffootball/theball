@@ -220,7 +220,7 @@ Header
 	{
 		width: 980px;
 		margin: 0 auto;
-		background: #0A0933 url("../../../theball2018/assets/images/interface/2018_route_header.jpg") 0 -20px no-repeat;
+		background: #0A0933 url("../../../theball2022/assets/images/interface/2022_route_header.jpg") 20px top no-repeat;
 	}
 
 	#header_top
@@ -558,12 +558,14 @@ Main Menu
 		background-color: #202B6D;
 	}
 
-	#topnav li.active-trail
+	#topnav li.active-trail,
+	#topnav li.current_page_item
 	{
 		background-color: #202B6D;
 	}
 
-	#topnav li.active-trail a
+	#topnav li.active-trail a,
+	#topnav li.current_page_item a
 	{
 		color: #fff;
 		background-color: #2E3D9B;
@@ -1626,6 +1628,7 @@ a.post-edit-link:visited
     font-size: 20px;
     line-height: 1;
     font-weight: 700;
+    z-index: 50;
 }
 
 a.post-edit-link:before

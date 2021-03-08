@@ -24,15 +24,6 @@ $args = [
 // Do query.
 $subpages = new WP_Query( $args );
 
-$e = new Exception;
-$trace = $e->getTraceAsString();
-error_log( print_r( array(
-	'method' => __METHOD__,
-	'args' => $args,
-	'subpages' => $subpages,
-	//'backtrace' => $trace,
-), true ) );
-
 // THE LOOP.
 if ( $subpages->have_posts() ) : ?>
 

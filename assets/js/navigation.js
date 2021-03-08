@@ -1,13 +1,13 @@
 /*
 ================================================================================
-Navigation Javascript
+Main Menu Javascript
 ================================================================================
 AUTHOR: Christian Wach <needle@haystack.co.uk>
 --------------------------------------------------------------------------------
 NOTES
 
-Handles toggling the navigation menu for small screens and enables TAB key
-navigation support for dropdown menus.
+Handles toggling the Main Menu for small screens and enables TAB key navigation
+support for dropdown menus.
 
 --------------------------------------------------------------------------------
 */

@@ -210,7 +210,8 @@ class SOF_The_Ball_Theme {
 		] );
 		*/
 
-		// To use wp_nav_menu() we first need to register one.
+		// To use wp_nav_menu() we first need to register some.
+		register_nav_menu( 'theball_global_menu', __( 'Global Menu', 'theball' ) );
 		register_nav_menu( 'theball_menu', __( 'Table of Contents', 'theball' ) );
 
 		/**
