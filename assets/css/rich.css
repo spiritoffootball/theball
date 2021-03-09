@@ -49,12 +49,13 @@ Sub-site Navigation
 	{
 		display: block;
 		margin: 0 auto;
-		width: 100px;
+		width: 9em;
 		height: 30px;
 		background: transparent url(../images/interface/menu-toggle.png) 0 50% no-repeat;
 		cursor: pointer;
 		padding-left: 40px;
 		line-height: 1.8;
+		text-transform: uppercase;
 	}
 
 	.splash_right_widget .widget_nav_menu li

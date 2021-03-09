@@ -523,12 +523,13 @@ Main Menu
 		display: block;
 		color: #fff;
 		margin: 5px auto;
-		width: 88px;
+		width: 6.5em;
 		height: 30px;
 		background: transparent url("../images/interface/menu-toggle.png") 0 50% no-repeat;
 		cursor: pointer;
 		padding-left: 40px;
 		line-height: 1.8;
+		text-transform: uppercase;
 	}
 
 	.global-menu
