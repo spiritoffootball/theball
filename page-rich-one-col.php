@@ -68,7 +68,11 @@ get_header(); ?><!-- page-rich-one-col.php -->
 										<?php endif; ?>
 
 										<div class="post_title">
-											<h2<?php echo $hidden_title; ?>><?php the_title(); ?> <?php edit_post_link( 'Edit this entry', '<span>', '</span>' ); ?></h2>
+											<?php if ( get_field( 'header_title' ) ) : ?>
+												<h2<?php echo $hidden_title; ?>><?php the_field( 'header_title' ); ?> <?php edit_post_link( 'Edit this entry', '<span>', '</span>' ); ?></h2>
+											<?php else : ?>
+												<h2<?php echo $hidden_title; ?>><?php the_title(); ?> <?php edit_post_link( 'Edit this entry', '<span>', '</span>' ); ?></h2>
+											<?php endif; ?>
 										</div><!-- /post_title -->
 
 										<?php if ( $header_video ) : ?>
