@@ -93,7 +93,7 @@ get_header();
 
 				wp_link_pages( $defaults ); ?>
 
-				<?php edit_post_link( __( 'Edit this entry' ), '<p>', '</p>' ); ?>
+				<?php edit_post_link( __( 'Edit this entry' ), '', '' ); ?>
 
 			</div><!-- /post -->
 

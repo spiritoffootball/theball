@@ -101,8 +101,14 @@ Sub-site Navigation
 	.splash_right_widget .widget_nav_menu > div {
 		display: none;
 	}
-	.splash_right_widget .widget_nav_menu.toggled > div {
+	.splash_right_widget .toggled .widget_nav_menu > div {
 		display: block;
+	}
+	.splash_right_widget .widget_nav_menu a {
+		font-size: 16px;
+		padding-top: 0.8em;
+		padding-bottom: 0.8em;
+		text-align: center;
 	}
 }
 
@@ -239,6 +245,14 @@ Page with One Column
 div.main_column *
 {
 	color: #ddd;
+}
+
+div.main_column .post p,
+div.main_column.post ul li,
+div.main_column .post ol li
+{
+    font-size: 1em;
+    line-height: 1.85;
 }
 
 div.main_column a.button

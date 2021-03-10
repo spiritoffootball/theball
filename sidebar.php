@@ -19,14 +19,44 @@ NOTES
 
 		/*
 		--------------------------------------------------------------------------------
-		2014 Teaser
+		2018 Teaser
 		--------------------------------------------------------------------------------
 		*/
 
 		?><div class="post ball_teaser ball_teaser_row_start">
 
 			<div class="route_map">
-				<a href="/2014/"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/interface/2014_route-320x237.jpg" alt="<?php esc_attr_e( 'The 2014 route', 'theball' ); ?>" title="<?php esc_attr_e( 'The 2014 route', 'theball' ); ?>" width="320" height="237" class="alignnone size-thumbnail" /></a>
+				<a href="/2018/"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/interface/2018_route-320x238.jpg" alt="<?php esc_attr_e( 'The 2018 route', 'theball' ); ?>" title="<?php esc_attr_e( 'The 2018 route', 'theball' ); ?>" width="320" height="238" class="alignnone size-thumbnail" /></a>
+				<div class="route_map_text">
+					<h2><a href="/2018/" style="text-shadow: none"><?php _e( 'The Ball 2018', 'theball' ); ?></a></h2>
+				</div>
+			</div>
+
+			<div class="ball_teaser_text">
+				<p><?php printf(
+					__( '%s left England on 25th March 2018 and travelled to the World Cup in Russia.', 'theball' ),
+					'<em>' . __( 'The Ball 2018', 'theball' ) . '</em>'
+				); ?></p>
+				<ul class="actionlist">
+					<li><a href="/2018/"><?php _e( 'More about 2018...', 'theball' ); ?></a></li>
+					<li><a href="/2018/blog/"><?php _e( 'Go to the 2018 blog', 'theball' ); ?></a></a></li>
+				</ul>
+			</div>
+
+		</div><!-- /post ball_teaser -->
+
+		<?php
+
+		/*
+		--------------------------------------------------------------------------------
+		2014 Teaser
+		--------------------------------------------------------------------------------
+		*/
+
+		?><div class="post ball_teaser">
+
+			<div class="route_map">
+				<a href="/2014/"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/interface/2014_route-320x238.jpg" alt="<?php esc_attr_e( 'The 2014 route', 'theball' ); ?>" title="<?php esc_attr_e( 'The 2014 route', 'theball' ); ?>" width="320" height="238" class="alignnone size-thumbnail" /></a>
 				<div class="route_map_text">
 					<h2><a href="/2014/" style="text-shadow: none"><?php _e( 'The Ball 2014', 'theball' ); ?></a></h2>
 				</div>
@@ -34,7 +64,7 @@ NOTES
 
 			<div class="ball_teaser_text">
 				<p><?php printf(
-					__( '%s left England on 9th Jan 2014 and headed to the World Cup in Sao Paulo, Brazil.', 'theball' ),
+					__( '%s kicked off from England on 9th Jan 2014 and headed to the World Cup in Brazil.', 'theball' ),
 					'<em>' . __( 'The Ball 2014', 'theball' ) . '</em>'
 				); ?></p>
 				<ul class="actionlist">
@@ -53,7 +83,7 @@ NOTES
 		--------------------------------------------------------------------------------
 		*/
 
-		?><div class="post ball_teaser">
+		?><div class="post ball_teaser ball_teaser_row_start">
 
 			<div class="route_map">
 				<a href="/2010/"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/interface/2010_route-320x238.jpg" alt="<?php esc_attr_e( 'The 2010 route', 'theball' ); ?>" title="<?php esc_attr_e( 'The 2010 route', 'theball' ); ?>" width="320" height="238" class="alignnone size-thumbnail" /></a>
@@ -84,7 +114,7 @@ NOTES
 		--------------------------------------------------------------------------------
 		*/
 
-		?><div class="post ball_teaser ball_teaser_row_start">
+		?><div class="post ball_teaser">
 
 			<div class="route_map">
 				<a href="/2006/"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/interface/2006_route-320x240.jpg" alt="<?php esc_attr_e( 'The 2006 route', 'theball' ); ?>" title="<?php esc_attr_e( 'The 2006 route', 'theball' ); ?>" width="320" height="240" class="alignnone size-thumbnail" /></a>
@@ -115,7 +145,7 @@ NOTES
 		--------------------------------------------------------------------------------
 		*/
 
-		?><div class="post ball_teaser ball_teaser_2002">
+		?><div class="post ball_teaser ball_teaser_row_start ball_teaser_2002">
 
 			<div class="route_map">
 				<a href="/2002/"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/interface/2002_route-320x240.jpg" alt="<?php esc_attr_e( 'The 2002 route', 'theball' ); ?>" title="<?php esc_attr_e( 'The 2002 route', 'theball' ); ?>" width="320" height="240" class="alignnone size-thumbnail" /></a>

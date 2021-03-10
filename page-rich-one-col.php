@@ -102,7 +102,9 @@ get_header(); ?><!-- page-rich-one-col.php -->
 					</div>
 
 					<div class="splash_right_widget">
-						<?php dynamic_sidebar( 'sof-top-right-page' ); ?>
+						<div id="splash_right">
+							<?php dynamic_sidebar( 'sof-top-right-page' ); ?>
+						</div>
 					</div>
 
 				</div><!-- /site_banner_inner -->
