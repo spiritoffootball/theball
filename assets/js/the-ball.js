@@ -28,7 +28,7 @@ NOTES
 	$(document).ready( function() {
 
 		// First pass.
-		$('.post').fitVids({
+		$('.post, .splash_main_widget .has_feature_video').fitVids({
 			customSelector: "iframe.dfb-video"
 		});
 
