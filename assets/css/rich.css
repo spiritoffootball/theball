@@ -414,31 +414,38 @@ Responsiveness
 		padding-bottom: 120px;
 	}
 
-		#site_banner.site_banner_rich .splash_widget_col,
-		#cols.one-col div.main_column .post
+	#site_banner.site_banner_rich .splash_widget_col,
+	#cols.one-col div.main_column .post
+	{
+		float: none;
+		width: 600px;
+		margin: 0 auto;
+	}
+
+	#cols.one-col div.main_column .post
+	{
+		margin: 0 auto 40px auto;
+	}
+
+		#site_banner.site_banner_rich .splash_main_widget
+		{
+			width: 600px;
+			margin: 0 auto 40px auto;
+		}
+
+		#site_banner.site_banner_rich .splash_right_widget
 		{
 			float: none;
 			width: 600px;
 			margin: 0 auto;
-   		}
-
-		#cols.one-col div.main_column .post
-		{
-			margin: 0 auto 40px auto;
 		}
 
-			#site_banner.site_banner_rich .splash_main_widget
-			{
-				width: 600px;
-				margin: 0 auto 40px auto;
-			}
-
-			#site_banner.site_banner_rich .splash_right_widget
-			{
-				float: none;
-				width: 600px;
-				margin: 0 auto;
-			}
+	#cols.two-cols div.main_column
+	{
+		float: none;
+		width: 600px;
+		margin: 0 auto;
+	}
 
 }
 
@@ -453,6 +460,11 @@ Responsiveness
 	#cols div.main_column .about_widget,
 	#cols div.main_column .social_widget,
 	#cols.one-col div.main_column .post
+	{
+		width: 480px;
+	}
+
+	#cols.two-cols div.main_column
 	{
 		width: 480px;
 	}
@@ -494,6 +506,17 @@ Responsiveness
 	#site_banner.site_banner_rich .splash_main_widget
 	{
 		width: auto;
+	}
+
+	#cols.two-cols div.main_column
+	{
+		width: auto;
+	}
+
+	#cols.two-cols div.main_column .post
+	{
+		width: auto;
+		margin: 0 10px;
 	}
 
 }
