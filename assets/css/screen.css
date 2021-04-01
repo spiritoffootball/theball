@@ -560,12 +560,14 @@ Main Menu
 	}
 
 	#topnav li.active-trail,
+	#topnav li.current-page-ancestor,
 	#topnav li.current_page_item
 	{
 		background-color: #202B6D;
 	}
 
 	#topnav li.active-trail a,
+	#topnav li.current-page-ancestor a,
 	#topnav li.current_page_item a
 	{
 		color: #fff;

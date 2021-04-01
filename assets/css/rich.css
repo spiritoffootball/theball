@@ -26,7 +26,7 @@ Content Wrapper layout
 
 /*
 --------------------------------------------------------------------------------
-Sub-site Navigation
+Sub-page Static Menu Navigation
 --------------------------------------------------------------------------------
 */
 
@@ -105,6 +105,96 @@ Sub-site Navigation
 		display: block;
 	}
 	.splash_right_widget .widget_nav_menu a {
+		font-size: 16px;
+		padding-top: 0.8em;
+		padding-bottom: 0.8em;
+		text-align: center;
+	}
+}
+
+
+
+/*
+--------------------------------------------------------------------------------
+Sub-page Dynamic Menu Navigation
+--------------------------------------------------------------------------------
+*/
+
+.splash_right_widget .widget_child_pages h3
+{
+    display: none;
+	margin: 5px 0;
+    font-size: 16px;
+    height: 30px;
+	background-color: #000;
+	background-color: rgba( 0, 0, 0, 0.33 );
+    cursor: pointer;
+	padding: 6px 12px;
+    line-height: 1.8;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #ddd;
+}
+
+	.splash_right_widget .widget_child_pages h3 .menu-toggle
+	{
+		display: block;
+		margin: 0 auto;
+		width: 9em;
+		height: 30px;
+		background: transparent url(../images/interface/menu-toggle.png) 0 50% no-repeat;
+		cursor: pointer;
+		padding-left: 40px;
+		line-height: 1.8;
+		text-transform: uppercase;
+	}
+
+	.splash_right_widget .widget_child_pages li
+	{
+		display: inline-block;
+		float: left;
+		clear: left;
+		width: 100%;
+		margin: 0 0 5px 0;
+	}
+
+	.splash_right_widget .widget_child_pages a
+	{
+		font-size: 0.9em;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		color: #ddd;
+		background-color: #000;
+		background-color: rgba( 0, 0, 0, 0.33 );
+		text-transform: uppercase;
+		text-decoration: none;
+		display: block;
+		padding: 6px 12px;
+	}
+
+	.splash_right_widget .widget_child_pages a:hover
+	{
+		color: #fff;
+		background-color: #2E3D9B;
+	}
+
+	/* highlights */
+	.splash_right_widget .widget_child_pages .current_page_item a
+	{
+		color: #fff;
+		background-color: #2E3D9B;
+	}
+
+/* Next natural breakpoint */
+@media all and (max-width: 725px) {
+	.splash_right_widget .widget_child_pages h3 {
+		display: block;
+	}
+	.splash_right_widget .widget_child_pages > div {
+		display: none;
+	}
+	.splash_right_widget .toggled .widget_child_pages > div {
+		display: block;
+	}
+	.splash_right_widget .widget_child_pages a {
 		font-size: 16px;
 		padding-top: 0.8em;
 		padding-bottom: 0.8em;
