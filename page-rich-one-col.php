@@ -45,7 +45,7 @@ get_header(); ?><!-- page-rich-one-col.php -->
 								} else {
 
 									// Do we have a Feature Image?
-									if (  $image_size != 'no-thumbnail' AND has_post_thumbnail() ) {
+									if ( has_post_thumbnail() ) {
 										$has_feature_image = true;
 										$feature_image_class = ' has_feature_image';
 									}
