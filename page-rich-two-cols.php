@@ -108,11 +108,6 @@ get_header(); ?><!-- page-rich-two-cols.php -->
 						</div>
 					</div>
 
-					<?php $subpages_template = locate_template( 'assets/includes/subpages.php' ); ?>
-					<?php if ( $subpages_template ) : ?>
-						<?php load_template( $subpages_template ); ?>
-					<?php endif; ?>
-
 				</div><!-- /main_column -->
 
 				<?php get_sidebar(); ?>

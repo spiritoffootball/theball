@@ -39,7 +39,7 @@ get_header(); ?><!-- page-rich-one-col.php -->
 								// Get the Featured Video.
 								$header_video = get_field( 'header_video' );
 
-								// Don't show Feature Image if we have a Video.
+								// Do not show Feature Image if we have a Video.
 								if ( $header_video ) {
 									$feature_image_class = ' has_feature_video';
 								} else {
@@ -93,19 +93,19 @@ get_header(); ?><!-- page-rich-one-col.php -->
 
 							</div>
 
-						</div>
+						</div><!-- /splash_main_widget -->
 
 						<div class="splash_sub_widget">
 							<?php ?>
-						</div>
+						</div><!-- /splash_sub_widget -->
 
-					</div>
+					</div><!-- /splash_widget_col -->
 
 					<div class="splash_right_widget">
 						<div id="splash_right">
 							<?php dynamic_sidebar( 'sof-top-right-page' ); ?>
-						</div>
-					</div>
+						</div><!-- /splash_right -->
+					</div><!-- /splash_right_widget -->
 
 				</div><!-- /site_banner_inner -->
 
@@ -121,11 +121,6 @@ get_header(); ?><!-- page-rich-one-col.php -->
 					<div class="post page_content">
 						<?php the_content(); ?>
 					</div>
-
-					<?php $subpages_template = locate_template( 'assets/includes/subpages.php' ); ?>
-					<?php if ( $subpages_template ) : ?>
-						<?php load_template( $subpages_template ); ?>
-					<?php endif; ?>
 
 				</div><!-- /main_column -->
 
