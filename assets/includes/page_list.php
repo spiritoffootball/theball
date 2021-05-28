@@ -11,34 +11,29 @@ NOTES
 
 ?><!-- assets/includes/page_list.php -->
 
-<div class="sof_page_list">
-<div class="sof_page_list_inner">
+<div id="sof_page_list" class="sof_page_list">
+	<span class="menu-toggle" aria-controls="secondary-menu" aria-expanded="false"><?php _e( 'Submenu', 'theball' ); ?></span>
+	<div class="sof_page_list_inner">
 
-	<ul id="pages_ul">
-	<?php
+		<ul id="pages_ul">
+			<?php if ( has_nav_menu( 'theball_menu' ) ) : ?>
+				<?php
 
-	// Do we have a custom menu?
-	if ( has_nav_menu( 'theball_menu' ) ) {
+				// Try and use it.
+				wp_nav_menu( [
+					'theme_location' => 'theball_menu',
+					'echo' => true,
+					'container' => '',
+					'items_wrap' => '%3$s',
+				] );
 
-		// Try and use it.
-		wp_nav_menu( [
-			'theme_location' => 'theball_menu',
-			'echo' => true,
-			'container' => '',
-			'items_wrap' => '%3$s',
-		] );
+				?>
+			<?php else : ?>
+				<?php wp_list_pages( 'title_li=&depth=1' ); ?>
+			<?php endif; ?>
+		</ul>
 
-	} else {
-
-		// Our fallback is to show page list.
-		wp_list_pages( 'title_li=&depth=1' );
-
-	}
-
-	?>
-	</ul>
-
-</div>
+	</div>
 </div>
 
 
