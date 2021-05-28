@@ -24,6 +24,7 @@ global $blog_id, $post;
 	<div class="global-menu">
 		<ul id="primary-menu" class="menu nav-menu" aria-expanded="false">
 			<li class="menu-item<?php if (( is_main_site() AND is_front_page() ) ) { echo ' active-trail'; } ?>"><a href="/" title="<?php esc_attr_e( 'The Ball Home', 'theball' ); ?>"><?php _e( 'Home', 'theball' );?></a></li>
+			<li class="menu-item<?php if ( $blog_id == 16 ) { echo ' active-trail'; } ?>"><a href="/2022/" title="<?php esc_attr_e( 'The Ball 2022/23', 'theball' ); ?>"><?php _e( '2022/23', 'theball' ); ?></a></li>
 			<li class="menu-item<?php if ( $blog_id == 13 ) { echo ' active-trail'; } ?>"><a href="/2018/" title="<?php esc_attr_e( 'The Ball 2018', 'theball' ); ?>"><?php _e( '2018', 'theball' ); ?></a></li>
 			<li class="menu-item<?php if ( $blog_id == 8 ) { echo ' active-trail'; } ?>"><a href="/2014/" title="<?php esc_attr_e( 'The Ball 2014', 'theball' ); ?>"><?php _e( '2014', 'theball' ); ?></a></li>
 			<li class="menu-item<?php if ( $blog_id == 9 ) { echo ' active-trail'; } ?>"><a href="/2010/" title="<?php esc_attr_e( 'The Ball 2010', 'theball' ); ?>"><?php _e( '2010', 'theball' ); ?></a></li>
