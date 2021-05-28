@@ -176,6 +176,7 @@ Right block
 
 	#main_blog #site_banner .splash_right_widget .widget
 	{
+		margin: 0 0 1em 0;
 	}
 
 
@@ -441,7 +442,6 @@ Responsiveness
 
 	.splash_right_widget .widget-title
 	{
-		display: block;
 		width: auto;
 		margin: 0 auto 0.3em auto;
 	}

@@ -870,6 +870,12 @@ Our Network
 	border-radius: 12px;
 }
 
+.splash_right_widget .sof_network
+{
+	float: none;
+	background: rgba( 255, 255, 255, 0.1);
+}
+
 	.sof_network h3
 	{
 		padding: 4px 0;
@@ -4131,14 +4137,6 @@ NMA widget
 		width: 100%;
 	}
 
-	.nma_widget iframe
-	{
-		float: none;
-		width: 100%;
-		height: 180px;
-		margin: 0 0 0.5em 0;
-	}
-
 	.nma_widget p
 	{
 		margin-left: 0.5em;
@@ -4149,6 +4147,21 @@ NMA widget
 	{
 		clear: left;
 		text-align: center;
+	}
+
+}
+
+
+
+/* next natural breakpoint */
+@media all and (max-width: 370px) {
+
+	.nma_widget iframe
+	{
+		float: none;
+		width: 100%;
+		height: 180px;
+		margin: 0 0 0.5em 0;
 	}
 
 }
