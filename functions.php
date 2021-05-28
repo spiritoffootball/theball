@@ -21,7 +21,7 @@ to offer actions and filters instead.
  *
  * @since 1.0.0
  */
-define( 'THEBALL_VERSION', '3.0.2' );
+define( 'THEBALL_VERSION', '3.0.3' );
 
 
 
