@@ -126,7 +126,14 @@ get_header();
 
 				<div class="entrytext">
 
-					<h3 id="post-<?php the_ID(); ?>"><?php the_title(); ?></h3>
+					<?php
+					$hidden_title = '';
+					if ( get_post_meta( get_the_ID(), 'show_heading', true ) == '1' ) {
+						$hidden_title = ' class="hidden"';
+					}
+					?>
+
+					<h3 id="post-<?php the_ID(); ?>"<?php echo $hidden_title; ?>><?php the_title(); ?></h3>
 
 					<?php the_content( '<p class="serif">' . __( 'Read the rest of this page &raquo;', 'theball' ) . '</p>' ); ?>
 
