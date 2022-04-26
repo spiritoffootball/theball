@@ -6,7 +6,15 @@ A WordPress parent theme for The Ball.
 
 This repo holds the code for the WordPress parent theme for The Ball website.
 
-Child themes exist for each subsite.
+Child themes exist for each journey subsite:
+
+* [The Ball 2002](https://github.com/spiritoffootball/theball2002)
+* [The Ball 2006](https://github.com/spiritoffootball/theball2006)
+* [The Ball 2010](https://github.com/spiritoffootball/theball2010)
+* [The Ball 2014](https://github.com/spiritoffootball/theball2014)
+* [The Ball 2018](https://github.com/spiritoffootball/theball2018)
+* [The Ball 2022](https://github.com/spiritoffootball/theball2022)
+* [The Ball 2026](https://github.com/spiritoffootball/theball2026)
 
 ## Installation
 
@@ -16,7 +24,7 @@ There are two ways to install from GitHub:
 
 If you have downloaded The Ball as a ZIP file from the GitHub repository, do the following to install the plugin:
 
-1. Unzip the .zip file and, if needed, rename the enclosing folder so that the plugin's files are located directly inside `/wp-content/themes/theball`
+1. Unzip the .zip file and, if needed, rename the enclosing folder so that the theme's files are located directly inside `/wp-content/themes/theball`
 2. Activate the theme
 3. You're done.
 
