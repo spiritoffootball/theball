@@ -1,13 +1,10 @@
-<?php /*
-================================================================================
-Template Name: Subpages (Main)
-================================================================================
-AUTHOR: Christian Wach <needle@haystack.co.uk>
---------------------------------------------------------------------------------
-NOTES
-
---------------------------------------------------------------------------------
-*/
+<?php
+/**
+ * Template Name: Subpages (Main)
+ *
+ * @since 1.0.0
+ * @package The_Ball
+ */
 
 get_header();
 
@@ -42,9 +39,12 @@ get_header();
 	$subpages = new WP_Query( $args );
 
 	// THE LOOP.
-	if ( $subpages->have_posts() ) : ?>
+	if ( $subpages->have_posts() ) :
 
-		<?php while ( $subpages->have_posts() ) : $subpages->the_post(); ?>
+		?>
+
+		<?php while ( $subpages->have_posts() ) : ?>
+			<?php $subpages->the_post(); ?>
 
 			<div class="main_column_inner">
 
@@ -58,8 +58,10 @@ get_header();
 
 					<?php
 
-					// NOTE: Comment permalinks are filtered if the comment is not on the first page
-					// In a multipage post... see: cp_multipage_comment_link in functions.php
+					/*
+					 * NOTE: Comment permalinks are filtered if the comment is not on the first page
+					 * In a multipage post... see: cp_multipage_comment_link in functions.php
+					 */
 
 					// Set default behaviour.
 					$defaults = [
@@ -68,16 +70,18 @@ get_header();
 						'link_before' => '',
 						'link_after' => '',
 						'next_or_number' => 'next',
-						'nextpagelink' => '<span class="alignright">' . __( 'Next page' ) . ' &raquo;</span>',
-						'previouspagelink' => '<span class="alignleft">&laquo; ' . __( 'Previous page' ).'</span>',
+						'nextpagelink' => '<span class="alignright">' . __( 'Next page', 'theball' ) . ' &raquo;</span>',
+						'previouspagelink' => '<span class="alignleft">&laquo; ' . __( 'Previous page', 'theball' ) . '</span>',
 						'pagelink' => '%',
 						'more_file' => '',
 						'echo' => 1,
 					];
 
-					wp_link_pages( $defaults ); ?>
+					wp_link_pages( $defaults );
 
-					<?php edit_post_link( 'Edit this entry', '<p>', '</p>' ); ?>
+					?>
+
+					<?php edit_post_link( __( 'Edit this entry', 'theball' ), '<p>', '</p>' ); ?>
 
 				</div><!-- /entrytext -->
 
@@ -85,7 +89,9 @@ get_header();
 
 			</div><!-- /main_column_inner -->
 
-		<?php endwhile;
+		<?php endwhile; ?>
+
+		<?php
 
 		// Prevent weirdness.
 		wp_reset_postdata();
@@ -96,10 +102,6 @@ get_header();
 
 </div><!-- /main_column -->
 
-
-
 <?php get_sidebar(); ?>
-
-
 
 <?php get_footer(); ?>

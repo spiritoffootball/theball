@@ -1,28 +1,26 @@
-<?php /*
-================================================================================
-Geo Mashup Full Post Template
-================================================================================
-AUTHOR: Christian Wach <needle@haystack.co.uk>
---------------------------------------------------------------------------------
-NOTES
-
-This is a copy of the default template for full post display of a clicked
-marker in a Geo Mashup map. See "full-post.php" in your geo-mashup-custom
-directory.
-
---------------------------------------------------------------------------------
-*/
+<?php
+/**
+ * Geo Mashup Full Post Template.
+ *
+ * This is a copy of the default template for full post display of a clicked
+ * marker in a Geo Mashup map. See "full-post.php" in your geo-mashup-custom
+ * directory.
+ *
+ * @since 1.0.0
+ * @package The_Ball
+ */
 
 ?><!-- geo-mashup-full-post.php -->
 
 <?php if ( have_posts() ) : ?>
 
-	<?php while ( have_posts() ) : the_post(); ?>
+	<?php while ( have_posts() ) : ?>
+		<?php the_post(); ?>
 
-		<h2><a href="<?php the_permalink() ?>" title="<?php the_title_attribute( [ 'before' => __( 'Permanent Link to: ', 'theball' ), 'after'  => '' ] ); ?>"><?php the_title(); ?></a></h2>
-		<p class="meta"><span class="blogdate"><?php the_time( 'F jS, Y' ) ?></span> <?php the_category( ', ' ) ?></p>
-		<?php if ( function_exists( 'has_post_thumbnail' ) and has_post_thumbnail() ) : ?>
-		<?php the_post_thumbnail( 'medium' ); ?>
+		<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( [ 'before' => __( 'Permanent Link to: ', 'theball' ), 'after' => '' ] ); ?>"><?php the_title(); ?></a></h2>
+		<p class="meta"><span class="blogdate"><?php the_time( 'F jS, Y' ); ?></span> <?php the_category( ', ' ); ?></p>
+		<?php if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail() ) : ?>
+			<?php the_post_thumbnail( 'medium' ); ?>
 		<?php endif; ?>
 
 		<div class="storycontent">
@@ -33,10 +31,7 @@ directory.
 
 <?php else : ?>
 
-	<h2 class="center"><?php _e( 'Not Found', 'theball' ); ?></h2>
-	<p class="center"><?php _e( 'Sorry, but you are looking for something that isn’t here.', 'theball' ); ?></p>
+	<h2 class="center"><?php esc_html_e( 'Not Found', 'theball' ); ?></h2>
+	<p class="center"><?php esc_html_e( 'Sorry, but you are looking for something that isn’t here.', 'theball' ); ?></p>
 
 <?php endif; ?>
-
-
-

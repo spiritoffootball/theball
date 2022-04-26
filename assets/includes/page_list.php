@@ -1,18 +1,15 @@
-<?php /*
-================================================================================
-Page List Template
-================================================================================
-AUTHOR: Christian Wach <needle@haystack.co.uk>
---------------------------------------------------------------------------------
-NOTES
-
---------------------------------------------------------------------------------
-*/
+<?php
+/**
+ * The Ball Page List Template.
+ *
+ * @since 1.0.0
+ * @package The_Ball
+ */
 
 ?><!-- assets/includes/page_list.php -->
 
 <div id="sof_page_list" class="sof_page_list">
-	<span class="menu-toggle" aria-controls="secondary-menu" aria-expanded="false"><?php _e( 'Submenu', 'theball' ); ?></span>
+	<span class="menu-toggle" aria-controls="secondary-menu" aria-expanded="false"><?php esc_html_e( 'Submenu', 'theball' ); ?></span>
 	<div class="sof_page_list_inner">
 
 		<ul id="pages_ul">
@@ -35,6 +32,3 @@ NOTES
 
 	</div>
 </div>
-
-
-

@@ -1,24 +1,18 @@
-<?php /*
-================================================================================
-Template Name: Page Rich Two Columns
-================================================================================
-AUTHOR: Christian Wach <needle@haystack.co.uk>
---------------------------------------------------------------------------------
-NOTES
-
---------------------------------------------------------------------------------
-*/
+<?php
+/**
+ * Template Name: Page Rich Two Columns
+ *
+ * @since 1.0.0
+ * @package The_Ball
+ */
 
 get_header(); ?><!-- page-rich-two-cols.php -->
 
 <div id="content_wrapper" class="clearfix">
 
-
-
 	<?php if ( have_posts() ) : ?>
-		<?php while ( have_posts() ) : the_post(); ?>
-
-
+		<?php while ( have_posts() ) : ?>
+			<?php the_post(); ?>
 
 			<div id="site_banner" class="site_banner_rich clearfix">
 
@@ -59,9 +53,9 @@ get_header(); ?><!-- page-rich-two-cols.php -->
 
 										<div class="post_title">
 											<?php if ( get_field( 'header_title' ) ) : ?>
-												<h2<?php echo $hidden_title; ?>><?php the_field( 'header_title' ); ?> <?php edit_post_link( 'Edit this entry', '<span>', '</span>' ); ?></h2>
+												<h2<?php echo $hidden_title; ?>><?php the_field( 'header_title' ); ?> <?php edit_post_link( __( 'Edit this entry', 'theball' ), '<span>', '</span>' ); ?></h2>
 											<?php else : ?>
-												<h2<?php echo $hidden_title; ?>><?php the_title(); ?> <?php edit_post_link( 'Edit this entry', '<span>', '</span>' ); ?></h2>
+												<h2<?php echo $hidden_title; ?>><?php the_title(); ?> <?php edit_post_link( __( 'Edit this entry', 'theball' ), '<span>', '</span>' ); ?></h2>
 											<?php endif; ?>
 										</div><!-- /post_title -->
 
@@ -80,7 +74,6 @@ get_header(); ?><!-- page-rich-two-cols.php -->
 						</div>
 
 						<div class="splash_sub_widget">
-							<?php ?>
 						</div>
 
 					</div>
@@ -94,8 +87,6 @@ get_header(); ?><!-- page-rich-two-cols.php -->
 				</div><!-- /site_banner_inner -->
 
 			</div><!-- /site_banner -->
-
-
 
 			<div id="cols" class="two-cols clearfix">
 			<div class="cols_inner">
@@ -115,16 +106,9 @@ get_header(); ?><!-- page-rich-two-cols.php -->
 			</div><!-- /.cols_inner -->
 			</div><!-- /#cols -->
 
-
-
 		<?php endwhile; ?>
 	<?php endif; ?>
 
-
 </div><!-- /#content_wrapper -->
-
-
-
-
 
 <?php get_footer( 'page-rich' ); ?>

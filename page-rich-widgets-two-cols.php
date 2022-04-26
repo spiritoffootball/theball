@@ -1,15 +1,14 @@
-<?php /*
-================================================================================
-Template Name: Page Rich Widgets Two Columns
-================================================================================
-AUTHOR: Christian Wach <needle@haystack.co.uk>
---------------------------------------------------------------------------------
-NOTES
+<?php
+/**
+ * Template Name: Page Rich Widgets Two Columns
+ *
+ * @since 1.0.0
+ * @package The_Ball
+ */
 
---------------------------------------------------------------------------------
-*/
+get_header();
 
-get_header(); ?><!-- page-rich-two-cols.php -->
+?><!-- page-rich-two-cols.php -->
 
 <div id="content_wrapper" class="clearfix">
 
@@ -29,7 +28,5 @@ get_header(); ?><!-- page-rich-two-cols.php -->
 	</div>
 
 </div><!-- /main_column -->
-
-
 
 <?php get_footer(); ?>

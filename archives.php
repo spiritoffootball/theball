@@ -1,13 +1,10 @@
-<?php /*
-================================================================================
-Template Name: Archives
-================================================================================
-AUTHOR: Christian Wach <needle@haystack.co.uk>
---------------------------------------------------------------------------------
-NOTES
-
---------------------------------------------------------------------------------
-*/
+<?php
+/**
+ * Template Name: Archives
+ *
+ * @since 1.0.0
+ * @package The_Ball
+ */
 
 get_header();
 
@@ -67,7 +64,8 @@ get_header();
 
 			<div class="archive_wrapper">
 
-				<h3><?php
+				<h3>
+				<?php
 
 				/**
 				 * Filter the title of the "Topics" section.
@@ -79,7 +77,8 @@ get_header();
 				 */
 				echo apply_filters( 'theball_topics_title', __( 'Topics', 'theball' ) );
 
-				?></h3>
+				?>
+				</h3>
 
 				<?php
 
@@ -123,7 +122,7 @@ get_header();
 
 			<div class="archive_wrapper">
 
-				<h3><?php _e( 'Archives by Month', 'theball' ); ?></h3>
+				<h3><?php esc_html_e( 'Archives by Month', 'theball' ); ?></h3>
 
 				<?php
 
@@ -151,10 +150,6 @@ get_header();
 
 </div><!-- /main_column -->
 
-
-
 <?php get_sidebar(); ?>
-
-
 
 <?php get_footer(); ?>

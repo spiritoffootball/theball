@@ -1,26 +1,27 @@
-<?php /*
-================================================================================
-Author Template
-================================================================================
-AUTHOR: Christian Wach <needle@haystack.co.uk>
---------------------------------------------------------------------------------
-NOTES
+<?php
+/**
+ * Author Template.
+ *
+ * Default author template.
+ *
+ * @since 1.0.0
+ * @package The_Ball
+ */
 
-Default author template.
-
---------------------------------------------------------------------------------
-*/
-
-// Get author info.
-if ( isset( $_GET['author_name'] ) ) {
-	$my_author = get_userdatabylogin( $author_name );
+// Let's try to get the User from the $author global.
+if ( ! empty( $author ) && is_numeric( $author ) ) {
+	$my_author = get_userdata( (int) $author );
 } else {
-	$my_author = get_userdata( intval( $author ) );
+	// Try to get author info from input vars.
+	$author_name = empty( $_GET['author_name'] ) ? '' : wp_unslash( $_GET['author_name'] );
+	if ( ! empty( $author_name ) ) {
+		$my_author = get_user_by( 'login', $author_name );
+	}
 }
 
-// Do we have an URL for this user? (can be 'http://' or 'https://' -> doh!))
+// Get URL for this user - exclude 'http://' or 'https://'.
 $authorURL = '';
-if ( $my_author->user_url != '' AND $my_author->user_url != 'http://' AND $my_author->user_url != 'https://' ) {
+if ( ! empty( $my_author->user_url ) && $my_author->user_url != 'http://' && $my_author->user_url != 'https://' ) {
 	$authorURL = $my_author->user_url;
 }
 
@@ -50,7 +51,7 @@ get_header();
 		<div class="post clearfix">
 
 			<div id="author_avatar">
-				<?php echo get_avatar( $my_author->user_email, $size='200' ); ?>
+				<?php echo get_avatar( $my_author->user_email, '200' ); ?>
 			</div>
 
 			<div id="author_desc">
@@ -80,10 +81,13 @@ get_header();
 					<h3>Most recent posts by <?php echo $full_name; ?></h3>
 
 					<ul>
-						<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-							<li><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute( [ 'before' => __( 'Permanent Link to: ', 'theball' ), 'after'  => '' ] ); ?>"><?php the_title(); ?></a> on <?php the_time( 'j F Y' ); ?></li>
-						<?php endwhile; else: ?>
-							<li><?php _e( 'No recent posts by this author.', 'theball' ); ?></li>
+						<?php if ( have_posts() ) : ?>
+							<?php while ( have_posts() ) : ?>
+								<?php the_post(); ?>
+								<li><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute( [ 'before' => __( 'Permanent Link to: ', 'theball' ), 'after' => '' ] ); ?>"><?php the_title(); ?></a> on <?php the_time( 'j F Y' ); ?></li>
+							<?php endwhile; ?>
+						<?php else : ?>
+							<li><?php esc_html_e( 'No recent posts by this author.', 'theball' ); ?></li>
 						<?php endif; ?>
 					</ul>
 
@@ -97,10 +101,6 @@ get_header();
 
 </div><!-- /main_column -->
 
-
-
 <?php get_sidebar(); ?>
-
-
 
 <?php get_footer(); ?>

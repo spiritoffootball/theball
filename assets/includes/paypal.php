@@ -1,19 +1,16 @@
-<?php /*
-================================================================================
-Paypal Template
-================================================================================
-AUTHOR: Christian Wach <needle@haystack.co.uk>
---------------------------------------------------------------------------------
-NOTES
-
---------------------------------------------------------------------------------
-*/
+<?php
+/**
+ * PayPal Template.
+ *
+ * @since 1.0.0
+ * @package The_Ball
+ */
 
 ?><!--assets/includes/paypal.php -->
 
 <div class="paypal_donate clearfix">
 
-	<h3><?php _e( 'Give The Ball a Kick!', 'theball' ); ?></h3>
+	<h3><?php esc_html_e( 'Give The Ball a Kick!', 'theball' ); ?></h3>
 
 	<form class="paypal_donate" action="https://www.paypal.com/cgi-bin/webscr" method="post" style="width: 93px; height: 32px;">
 		<input type="hidden" name="cmd" value="_s-xclick" />
@@ -22,6 +19,3 @@ NOTES
 	</form>
 
 </div><!-- /paypal_donate -->
-
-
-

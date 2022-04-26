@@ -1,15 +1,10 @@
-<?php /*
-================================================================================
-Main Theme Class
-================================================================================
-AUTHOR: Christian Wach <needle@haystack.co.uk>
---------------------------------------------------------------------------------
-NOTES
-
---------------------------------------------------------------------------------
-*/
-
-
+<?php
+/**
+ * The Ball Theme Class.
+ *
+ * @since 2.4.4
+ * @package The_Ball
+ */
 
 /**
  * The Ball Theme Class.
@@ -19,8 +14,6 @@ NOTES
  * @since 2.4.4
  */
 class SOF_The_Ball_Theme {
-
-
 
 	/**
 	 * Initialises this object.
@@ -47,8 +40,6 @@ class SOF_The_Ball_Theme {
 
 	}
 
-
-
 	/**
 	 * Include files.
 	 *
@@ -58,7 +49,7 @@ class SOF_The_Ball_Theme {
 
 		// Only do this once.
 		static $done;
-		if ( isset( $done ) AND $done === true ) {
+		if ( isset( $done ) && $done === true ) {
 			return;
 		}
 
@@ -71,8 +62,6 @@ class SOF_The_Ball_Theme {
 
 	}
 
-
-
 	/**
 	 * Set up this plugin's objects.
 	 *
@@ -82,7 +71,7 @@ class SOF_The_Ball_Theme {
 
 		// Only do this once.
 		static $done;
-		if ( isset( $done ) AND $done === true ) {
+		if ( isset( $done ) && $done === true ) {
 			return;
 		}
 
@@ -91,8 +80,6 @@ class SOF_The_Ball_Theme {
 
 	}
 
-
-
 	/**
 	 * Register WordPress hooks.
 	 *
@@ -100,7 +87,7 @@ class SOF_The_Ball_Theme {
 	 */
 	public function register_hooks() {
 
-	 	// Define the annoying content width.
+		// Define the annoying content width.
 		add_action( 'after_setup_theme', [ $this, 'theme_content_width' ], 0 );
 
 		// Set up this theme's defaults.
@@ -138,8 +125,6 @@ class SOF_The_Ball_Theme {
 
 	}
 
-
-
 	/**
 	 * Set the content width in pixels, based on the theme's design and stylesheet.
 	 *
@@ -163,8 +148,6 @@ class SOF_The_Ball_Theme {
 
 	}
 
-
-
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -178,7 +161,6 @@ class SOF_The_Ball_Theme {
 
 		/*
 		 * Make theme available for translation.
-		 *
 		 * Translations can be added to the /languages/ directory of the child theme.
 		 */
 		load_theme_textdomain(
@@ -186,7 +168,7 @@ class SOF_The_Ball_Theme {
 			get_template_directory() . '/languages'
 		);
 
-		// Use Featured Images (also known as post thumbnails)
+		// Use Featured Images - also known as post thumbnails.
 		add_theme_support( 'post-thumbnails' );
 
 		/*
@@ -222,8 +204,6 @@ class SOF_The_Ball_Theme {
 		do_action( 'sof/theme/the_ball/theme/setup' );
 
 	}
-
-
 
 	/**
 	 * Add our theme's CSS stylesheets.
@@ -280,8 +260,6 @@ class SOF_The_Ball_Theme {
 
 	}
 
-
-
 	/**
 	 * Add our theme's JavaScript files.
 	 *
@@ -303,7 +281,8 @@ class SOF_The_Ball_Theme {
 			'theball_fitvids',
 			get_template_directory_uri() . '/assets/js/jquery.fitvids.js',
 			[ 'jquery' ],
-			THEBALL_VERSION
+			THEBALL_VERSION,
+			true
 		);
 
 		// Theme javascript.
@@ -311,22 +290,21 @@ class SOF_The_Ball_Theme {
 			'theball_general',
 			get_template_directory_uri() . '/assets/js/the-ball.js',
 			[ 'theball_fitvids' ],
-			THEBALL_VERSION
+			THEBALL_VERSION,
+			true
 		);
 
 		// Include on network home.
-		if ( is_main_site() AND is_front_page() ) {
-
+		if ( is_main_site() && is_front_page() ) {
+			// Nothing yet.
 		}
 
 		// Is it a commentable Post?
-		if ( is_singular() AND comments_open() AND get_option( 'thread_comments' ) ) {
+		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
 
 	}
-
-
 
 	/**
 	 * Include login stylesheet.
@@ -335,22 +313,17 @@ class SOF_The_Ball_Theme {
 	 */
 	public function login_styles() {
 
-		// Construct path to admin.css.
+		// Add login style overrides if our stylesheet is present.
 		$filepath = get_template_directory() . '/assets/css/login.css';
-
-		// Is our stylesheet present?
-		if ( file_exists( $filepath ) ) {
-
-			// Add login style overrides.
-			echo '<!-- custom login styles -->
-	<link rel="stylesheet" type="text/css" media="screen" href="' . get_template_directory_uri() . '/assets/css/login.css" />
-	' . "\n\n";
-
+		if ( ! file_exists( $filepath ) ) {
+			return;
 		}
 
+		echo '<!-- custom login styles -->' . "\n";
+		// phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedStylesheet
+		echo '<link rel="stylesheet" type="text/css" media="screen" href="' . get_template_directory_uri() . '/assets/css/login.css" />' . "\n\n";
+
 	}
-
-
 
 	/**
 	 * Wrap more link in a paragraph of its own.
@@ -370,8 +343,6 @@ class SOF_The_Ball_Theme {
 
 	}
 
-
-
 	/**
 	 * Disable more link jump.
 	 *
@@ -387,19 +358,17 @@ class SOF_The_Ball_Theme {
 		$offset = strpos( $link, '#more-' );
 
 		if ( $offset ) {
-			$end = strpos( $link, '"',$offset );
+			$end = strpos( $link, '"', $offset );
 		}
 
 		if ( $end ) {
-			$link = substr_replace( $link, '', $offset, $end-$offset );
+			$link = substr_replace( $link, '', $offset, $end - $offset );
 		}
 
 		// --<
 		return $link;
 
 	}
-
-
 
 	/**
 	 * Utility to add button class to blog navigation links.
@@ -421,26 +390,25 @@ class SOF_The_Ball_Theme {
 
 	}
 
-
-
 	/**
 	 * Modify caption shortcode output.
 	 *
 	 * @since 1.0.0
 	 *
+	 * @param string $empty The existing caption.
 	 * @param array $attr Attributes attributed to the shortcode.
 	 * @param string $content Optional. Shortcode content.
 	 * @return string $caption The customised caption.
 	 */
-	function image_caption_shortcode_filter( $empty = null, $attr, $content ) {
+	public function image_caption_shortcode_filter( $empty = null, $attr, $content ) {
 
 		// Get our shortcode vars.
 		extract( shortcode_atts( [
-			'id'	=> '',
-			'align'	=> 'alignnone',
-			'width'	=> '',
-			'caption' => ''
-		], $attr) );
+			'id' => '',
+			'align' => 'alignnone',
+			'width' => '',
+			'caption' => '',
+		], $attr ) );
 
 		if ( 1 > (int) $width || empty( $caption ) ) {
 			return $content;
@@ -466,8 +434,6 @@ class SOF_The_Ball_Theme {
 
 	}
 
-
-
 	/**
 	 * Register our widget areas.
 	 *
@@ -481,7 +447,7 @@ class SOF_The_Ball_Theme {
 			'id' => 'sof-top-left',
 			'description' => __( 'A widget area at the top left of the homepage', 'theball' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => "</div>",
+			'after_widget' => '</div>',
 			'before_title' => '<h3 class="widget-title">',
 			'after_title' => '</h3>',
 		] );
@@ -492,7 +458,7 @@ class SOF_The_Ball_Theme {
 			'id' => 'sof-top-right',
 			'description' => __( 'A widget area at the top right of the homepage', 'theball' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => "</div>",
+			'after_widget' => '</div>',
 			'before_title' => '<h3 class="widget-title">',
 			'after_title' => '</h3>',
 		] );
@@ -503,7 +469,7 @@ class SOF_The_Ball_Theme {
 			'id' => 'sof-top-sub',
 			'description' => __( 'A widget area just below the top of the homepage', 'theball' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => "</div>",
+			'after_widget' => '</div>',
 			'before_title' => '<h3 class="widget-title">',
 			'after_title' => '</h3>',
 		] );
@@ -514,7 +480,7 @@ class SOF_The_Ball_Theme {
 			'id' => 'sof-middle-left',
 			'description' => __( 'A widget area in the middle left of the homepage', 'theball' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => "</div>",
+			'after_widget' => '</div>',
 			'before_title' => '<h3 class="widget-title">',
 			'after_title' => '</h3>',
 		] );
@@ -525,7 +491,7 @@ class SOF_The_Ball_Theme {
 			'id' => 'sof-middle-right',
 			'description' => __( 'A widget area in the middle right of the homepage', 'theball' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => "</div>",
+			'after_widget' => '</div>',
 			'before_title' => '<h3 class="widget-title">',
 			'after_title' => '</h3>',
 		] );
@@ -536,14 +502,12 @@ class SOF_The_Ball_Theme {
 			'id' => 'sof-top-right-page',
 			'description' => __( 'A widget area at the top right of a single page', 'theball' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => "</div>",
+			'after_widget' => '</div>',
 			'before_title' => '<h3 class="widget-title">',
 			'after_title' => '</h3>',
 		] );
 
 	}
-
-
 
 	/**
 	 * Filter the gallery shortcode after Jetpack does.
@@ -568,8 +532,6 @@ class SOF_The_Ball_Theme {
 		return $markup;
 
 	}
-
-
 
 	/**
 	 * Filter the author link to accommodate Co-Authors Plus.
@@ -604,7 +566,7 @@ class SOF_The_Ball_Theme {
 		$author_count = count( $authors );
 
 		// Loop.
-		foreach( $authors AS $author ) {
+		foreach ( $authors as $author ) {
 
 			// Default to comma.
 			$sep = ', ';
@@ -623,7 +585,7 @@ class SOF_The_Ball_Theme {
 			$link .= sprintf( '<a href="%1$s" title="%2$s" rel="author">%3$s</a>',
 				esc_url( get_author_posts_url( $author->ID, $author->user_nicename ) ),
 				/* translators: %s: author's display name */
-				esc_attr( sprintf( __( 'Posts by %s' ), $author->display_name ) ),
+				esc_attr( sprintf( __( 'Posts by %s', 'theball' ), $author->display_name ) ),
 				esc_html( $author->display_name )
 			);
 
@@ -639,8 +601,6 @@ class SOF_The_Ball_Theme {
 		return $link;
 
 	}
-
-
 
 	/**
 	 * Filters the site icon meta tags.
@@ -661,9 +621,9 @@ class SOF_The_Ball_Theme {
 		}
 
 		// Loop through them and replace white with black icons.
-		foreach( $meta_tags AS $key => $meta_tag ) {
+		foreach ( $meta_tags as $key => $meta_tag ) {
 			if ( false !== strpos( $meta_tag, 'rel="icon"' ) ) {
-				$meta_tags[$key] = str_replace( 'white', 'black', $meta_tag );
+				$meta_tags[ $key ] = str_replace( 'white', 'black', $meta_tag );
 			}
 		}
 
@@ -671,8 +631,6 @@ class SOF_The_Ball_Theme {
 		return $meta_tags;
 
 	}
-
-
 
 	/**
 	 * Customise the display of comments.
@@ -685,7 +643,7 @@ class SOF_The_Ball_Theme {
 	 */
 	public function comment_markup( $comment, $args, $depth ) {
 
-		// Enable Wordpress API on comment.
+		// Enable WordPress API on comment.
 		$GLOBALS['comment'] = $comment;
 
 		?>
@@ -698,23 +656,23 @@ class SOF_The_Ball_Theme {
 
 			<div class="comment-identifier clearfix">
 
-			<?php echo get_avatar( $comment, $size='50' ); ?>
+			<?php echo get_avatar( $comment, '50' ); ?>
 
 			<?php edit_comment_link( __( 'Edit comment', 'theball' ), '<span class="alignright">', '</span>' ); ?>
 
-			<?php printf( __( '<cite class="fn">%s</cite>', 'theball' ), get_comment_author_link() ); ?>
+			<cite class="fn"><?php echo get_comment_author_link(); ?></cite>
 
-			<a class="comment_permalink" href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf( __( '%1$s at %2$s', 'theball' ), get_comment_date(),  get_comment_time()) ?></a>
+			<a class="comment_permalink" href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf( __( '%1$s at %2$s', 'theball' ), get_comment_date(), get_comment_time() ); ?></a>
 
 			</div><!-- /comment-identifier -->
 
 			<div class="comment-content">
 
 			<?php if ( $comment->comment_approved == '0' ) { ?>
-			<p><em><?php _e( 'Your comment is awaiting moderation.', 'theball' ); ?></em></p>
+			<p><em><?php esc_html_e( 'Your comment is awaiting moderation.', 'theball' ); ?></em></p>
 			<?php } ?>
 
-			<?php comment_text() ?>
+			<?php comment_text(); ?>
 
 			</div><!-- /comment-content -->
 
@@ -725,7 +683,10 @@ class SOF_The_Ball_Theme {
 			// Use comment_reply_link.
 			echo comment_reply_link( array_merge(
 				$args,
-				[ 'depth' => $depth, 'max_depth' => $args['max_depth'] ]
+				[
+					'depth' => $depth,
+					'max_depth' => $args['max_depth'],
+				]
 			) );
 
 			?>
@@ -740,9 +701,4 @@ class SOF_The_Ball_Theme {
 
 	}
 
-
-
 } // Class ends.
-
-
-

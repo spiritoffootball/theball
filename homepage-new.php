@@ -1,13 +1,10 @@
-<?php /*
-================================================================================
-Template Name: Main Site Homepage
-================================================================================
-AUTHOR: Christian Wach <needle@haystack.co.uk>
---------------------------------------------------------------------------------
-NOTES
-
---------------------------------------------------------------------------------
-*/
+<?php
+/**
+ * Template Name: Main Site Homepage
+ *
+ * @since 1.0.0
+ * @package The_Ball
+ */
 
 get_header(); ?><!-- homepage-new.php -->
 
@@ -29,7 +26,5 @@ get_header(); ?><!-- homepage-new.php -->
 	</div>
 
 </div><!-- /main_column -->
-
-
 
 <?php get_footer(); ?>

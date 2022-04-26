@@ -1,28 +1,29 @@
-<?php /*
-================================================================================
-Template Name: Page Rich One Column
-================================================================================
-AUTHOR: Christian Wach <needle@haystack.co.uk>
---------------------------------------------------------------------------------
-NOTES
+<?php
+/**
+ * Template Name: Page Rich One Column
+ *
+ * @since 1.0.0
+ * @package The_Ball
+ */
 
---------------------------------------------------------------------------------
-*/
+get_header();
 
-get_header(); ?><!-- page-rich-one-col.php -->
+?><!-- page-rich-one-col.php -->
 
 <div id="content_wrapper" class="clearfix">
 
-	<?php /* $page_list = locate_template( 'assets/includes/page_list.php' ); ?>
+	<?php
+	/*
+	$page_list = locate_template( 'assets/includes/page_list.php' ); ?>
 	<?php if ( $page_list ) : ?>
 		<?php load_template( $page_list ); ?>
-	<?php endif; */ ?>
-
+	<?php endif;
+	*/
+	?>
 
 	<?php if ( have_posts() ) : ?>
-		<?php while ( have_posts() ) : the_post(); ?>
-
-
+		<?php while ( have_posts() ) : ?>
+			<?php the_post(); ?>
 
 			<div id="site_banner" class="site_banner_rich clearfix">
 
@@ -69,9 +70,9 @@ get_header(); ?><!-- page-rich-one-col.php -->
 
 										<div class="post_title">
 											<?php if ( get_field( 'header_title' ) ) : ?>
-												<h2<?php echo $hidden_title; ?>><?php the_field( 'header_title' ); ?> <?php edit_post_link( 'Edit this entry', '<span>', '</span>' ); ?></h2>
+												<h2<?php echo $hidden_title; ?>><?php the_field( 'header_title' ); ?> <?php edit_post_link( __( 'Edit this entry', 'theball' ), '<span>', '</span>' ); ?></h2>
 											<?php else : ?>
-												<h2<?php echo $hidden_title; ?>><?php the_title(); ?> <?php edit_post_link( 'Edit this entry', '<span>', '</span>' ); ?></h2>
+												<h2<?php echo $hidden_title; ?>><?php the_title(); ?> <?php edit_post_link( __( 'Edit this entry', 'theball' ), '<span>', '</span>' ); ?></h2>
 											<?php endif; ?>
 										</div><!-- /post_title -->
 
@@ -96,7 +97,6 @@ get_header(); ?><!-- page-rich-one-col.php -->
 						</div><!-- /splash_main_widget -->
 
 						<div class="splash_sub_widget">
-							<?php ?>
 						</div><!-- /splash_sub_widget -->
 
 					</div><!-- /splash_widget_col -->
@@ -110,8 +110,6 @@ get_header(); ?><!-- page-rich-one-col.php -->
 				</div><!-- /site_banner_inner -->
 
 			</div><!-- /site_banner -->
-
-
 
 			<div id="cols" class="one-col clearfix">
 			<div class="cols_inner">
@@ -127,16 +125,9 @@ get_header(); ?><!-- page-rich-one-col.php -->
 			</div><!-- /.cols_inner -->
 			</div><!-- /#cols -->
 
-
-
 		<?php endwhile; ?>
 	<?php endif; ?>
 
-
 </div><!-- /#content_wrapper -->
-
-
-
-
 
 <?php get_footer( 'page-rich' ); ?>

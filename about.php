@@ -1,13 +1,10 @@
-<?php /*
-================================================================================
-Template Name: About
-================================================================================
-AUTHOR: Christian Wach <needle@haystack.co.uk>
---------------------------------------------------------------------------------
-NOTES
-
---------------------------------------------------------------------------------
-*/
+<?php
+/**
+ * Template Name: About
+ *
+ * @since 1.0.0
+ * @package The_Ball
+ */
 
 get_header();
 
@@ -35,7 +32,7 @@ get_header();
 		'order' => 'ASC',
 		'post_type' => 'page',
 		'post_status' => 'publish',
-		'post_parent' => $post->ID
+		'post_parent' => $post->ID,
 	];
 
 	// Do query.
@@ -44,47 +41,60 @@ get_header();
 	// THE LOOP.
 	if ( $parent_page->have_posts() ) :
 
-	$tmp = 0;
+		$tmp = 0;
 
-	while ( $parent_page->have_posts()) : $parent_page->the_post(); ?>
+		while ( $parent_page->have_posts() ) :
+			$parent_page->the_post();
 
-	<div class="main_column_inner"<?php if ( $tmp == 0 ) { echo ' id="main_column_splash"'; } ?>>
+			?>
 
-		<div class="post">
+			<div class="main_column_inner"<?php echo ( $tmp == 0 ) ? ' id="main_column_splash"' : ''; ?>>
 
-			<div class="entrytext">
+				<div class="post">
 
-				<h2 id="post-<?php the_ID(); ?>"><?php the_title(); ?></h2>
+					<div class="entrytext">
 
-				<?php the_content( '<p class="serif">' . __( 'Read the rest of this page &raquo;', 'theball' ) . '</p>' ); ?>
+						<h2 id="post-<?php the_ID(); ?>"><?php the_title(); ?></h2>
 
-				<?php
+						<?php the_content( '<p class="serif">' . __( 'Read the rest of this page &raquo;', 'theball' ) . '</p>' ); ?>
 
-				// Set default behaviour.
-				$defaults = [
-					'before' => '<div class="multipager">',
-					'after' => '</div>',
-					'link_before' => '',
-					'link_after' => '',
-					'next_or_number' => 'next',
-					'nextpagelink' => '<span class="alignright">' . __( 'Next page', 'theball' ) . ' &raquo;</span>',
-					'previouspagelink' => '<span class="alignleft">&laquo; ' . __( 'Previous page', 'theball' ) . '</span>',
-					'pagelink' => '%',
-					'more_file' => '',
-					'echo' => 1,
-				];
+						<?php
 
-				wp_link_pages( $defaults ); ?>
+						// Set default behaviour.
+						$defaults = [
+							'before' => '<div class="multipager">',
+							'after' => '</div>',
+							'link_before' => '',
+							'link_after' => '',
+							'next_or_number' => 'next',
+							'nextpagelink' => '<span class="alignright">' . __( 'Next page', 'theball' ) . ' &raquo;</span>',
+							'previouspagelink' => '<span class="alignleft">&laquo; ' . __( 'Previous page', 'theball' ) . '</span>',
+							'pagelink' => '%',
+							'more_file' => '',
+							'echo' => 1,
+						];
 
-				<?php edit_post_link( __( 'Edit this entry', 'theball' ), '<p>', '</p>' ); ?>
+						wp_link_pages( $defaults );
 
-			</div>
+						?>
 
-		</div><!-- /post -->
+						<?php edit_post_link( __( 'Edit this entry', 'theball' ), '<p>', '</p>' ); ?>
 
-	</div><!-- /main_column_inner -->
+					</div>
 
-	<?php $tmp++; endwhile; endif; ?>
+				</div><!-- /post -->
+
+			</div><!-- /main_column_inner -->
+
+			<?php
+
+			$tmp++;
+
+		endwhile;
+
+		?>
+
+	<?php endif; ?>
 
 </div><!-- /main_column -->
 

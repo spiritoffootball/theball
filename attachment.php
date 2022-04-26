@@ -1,13 +1,10 @@
-<?php /*
-================================================================================
-Attachment Template
-================================================================================
-AUTHOR: Christian Wach <needle@haystack.co.uk>
---------------------------------------------------------------------------------
-NOTES
-
---------------------------------------------------------------------------------
-*/
+<?php
+/**
+ * Attachment Template.
+ *
+ * @since 1.0.0
+ * @package The_Ball
+ */
 
 get_header();
 
@@ -22,145 +19,141 @@ get_header();
 
 <div class="main_column clearfix">
 
-	<div class="main_column_inner">
+	<?php if ( have_posts() ) : ?>
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		<?php while ( have_posts() ) : ?>
+			<?php the_post(); ?>
 
-		<?php
+			<div class="main_column_inner" id="main_column_splash">
 
-		// This also populates the iconsize for the next line.
-		$attachment_link = get_the_attachment_link( get_the_ID(), true, [ 450, 800 ] );
+				<div class="post" id="post-<?php the_ID(); ?>">
+					<h2><a href="<?php echo get_permalink( $post->post_parent ); ?>" rev="attachment"><?php echo get_the_title( $post->post_parent ); ?></a> &raquo; <a href="<?php echo get_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute( [ 'before' => __( 'Permanent Link to: ', 'theball' ), 'after' => '' ] ); ?>"><?php the_title(); ?></a></h2>
+				</div><!-- /post -->
 
-		// This lets us style narrow icons specially.
-		$post_tmp = get_post( get_the_ID() );
-		$classname = ( $post_tmp->iconsize[0] <= 128 ? 'small' : '' ) . 'attachment';
+			</div><!-- /main_column_inner -->
 
-		?>
+			<div class="main_column_inner">
 
-		<div class="post" id="post-<?php the_ID(); ?>">
+				<div class="post">
 
-			<h2><a href="<?php echo get_permalink( $post->post_parent ); ?>" rev="attachment"><?php echo get_the_title( $post->post_parent ); ?></a> &raquo; <a href="<?php echo get_permalink() ?>" rel="bookmark" title="<?php the_title_attribute( [ 'before' => __( 'Permanent Link to: ', 'theball' ), 'after'  => '' ] ); ?>"><?php the_title(); ?></a></h2>
+					<div class="entrytext clearfix">
 
-			<div class="entry clearfix">
+						<p class="attachment">
+							<?php echo wp_get_attachment_link( get_the_ID(), 'thumbnail' ); ?><br />
+							<a href="<?php echo wp_get_attachment_url( get_the_ID() ); ?>"><?php echo basename( $post->guid ); ?></a>
+						</p>
 
-				<p class="<?php echo $classname; ?>"><?php echo $attachment_link; ?><br /><?php echo basename( $post->guid ); ?></p>
+						<?php the_content( __( 'Read the rest of this entry &raquo;', 'theball' ) ); ?>
 
-				<?php the_content( __( 'Read the rest of this entry &raquo;', 'theball' ) ); ?>
+						<?php
 
-				<?php wp_link_pages( [
-					'before' => '<p><strong>' .  __( 'Pages:', 'theball' ) . '</strong> ',
-					'after' => '</p>',
-					'next_or_number' => 'number',
-				] ); ?>
+						wp_link_pages( [
+							'before' => '<p><strong>' . __( 'Pages:', 'theball' ) . '</strong> ',
+							'after' => '</p>',
+							'next_or_number' => 'number',
+						] );
 
-				<p class="postmetadata"><?php
+						?>
 
-					// Define RSS text.
-					$rss_text = __( 'RSS 2.0', 'theball' );
+						<p class="postmetadata"><?php
 
-					// Construct RSS link.
-					$rss_link = '<a href="' . esc_url( get_post_comments_feed_link() ) . '">' . $rss_text . '</a>';
-
-					// Show text.
-					printf(
-						__( 'You can follow any comments on this entry through the %s feed.', 'theball' ),
-						$rss_link
-					);
-
-					// Add trailing space.
-					echo ' ';
-
-					if (('open' == $post->comment_status) AND ('open' == $post->ping_status)) {
-
-						// Both comments and pings are open.
-
-						// Define trackback text.
-						$trackback_text = __( 'trackback', 'theball' );
+						// Define RSS text.
+						$rss_text = __( 'RSS 2.0', 'theball' );
 
 						// Construct RSS link.
-						$trackback_link = '<a href="' . esc_url( get_trackback_url() ) . '"rel="trackback">' . $trackback_text . '</a>';
+						$rss_link = '<a href="' . esc_url( get_post_comments_feed_link() ) . '">' . $rss_text . '</a>';
 
-						// Write out.
-						printf(
-							__( 'You can leave a comment, or %s from your own site.', 'theball' ),
-							$trackback_link
-						);
+						// Show text.
+						printf( __( 'You can follow any comments on this entry through the %s feed.', 'theball' ), $rss_link );
 
 						// Add trailing space.
 						echo ' ';
 
-					} elseif ( ! ( 'open' == $post->comment_status ) AND ( 'open' == $post->ping_status ) ) {
+						if ( ( 'open' == $post->comment_status ) && ( 'open' == $post->ping_status ) ) {
 
-						// Only pings are open.
+							// Both comments and pings are open.
 
-						// Define trackback text.
-						$trackback_text = __( 'trackback', 'theball' );
+							// Define trackback text.
+							$trackback_text = __( 'trackback', 'theball' );
 
-						// Construct RSS link.
-						$trackback_link = '<a href="' . esc_url( get_trackback_url() ) . '"rel="trackback">' . $trackback_text . '</a>';
+							// Construct RSS link.
+							$trackback_link = '<a href="' . esc_url( get_trackback_url() ) . '"rel="trackback">' . $trackback_text . '</a>';
 
-						// Write out.
-						printf(
-							__( 'Comments are currently closed, but you can %s from your own site.', 'theball' ),
-							$trackback_link
-						);
+							// Write out.
+							printf( __( 'You can leave a comment, or %s from your own site.', 'theball' ), $trackback_link );
 
-						// Add trailing space.
-						echo ' ';
+							// Add trailing space.
+							echo ' ';
 
-					} elseif ( ( 'open' == $post->comment_status ) AND ! ( 'open' == $post->ping_status ) ) {
+						} elseif ( ! ( 'open' == $post->comment_status ) && ( 'open' == $post->ping_status ) ) {
 
-						// Comments are open, pings are not.
-						_e( 'You can leave a comment. Pinging is currently not allowed.', 'theball' );
+							// Only pings are open.
 
-						// Add trailing space.
-						echo ' ';
+							// Define trackback text.
+							$trackback_text = __( 'trackback', 'theball' );
 
-					} elseif ( ! ( 'open' == $post->comment_status ) AND ! ( 'open' == $post->ping_status ) ) {
+							// Construct RSS link.
+							$trackback_link = '<a href="' . esc_url( get_trackback_url() ) . '"rel="trackback">' . $trackback_text . '</a>';
 
-						// Neither comments nor pings are open.
-						_e( 'Both comments and pings are currently closed.', 'theball' );
+							// Write out.
+							printf( __( 'Comments are currently closed, but you can %s from your own site.', 'theball' ), $trackback_link );
 
-						// Add trailing space.
-						echo ' ';
+							// Add trailing space.
+							echo ' ';
 
-					}
+						} elseif ( ( 'open' == $post->comment_status ) && ! ( 'open' == $post->ping_status ) ) {
 
-					// Show edit link.
-					edit_post_link( __( 'Edit this entry', 'theball' ), '', '.' );
+							// Comments are open, pings are not.
+							esc_html_e( 'You can leave a comment. Pinging is currently not allowed.', 'theball' );
 
-				?></p>
+							// Add trailing space.
+							echo ' ';
 
-			</div><!-- /entry -->
+						} elseif ( ! ( 'open' == $post->comment_status ) && ! ( 'open' == $post->ping_status ) ) {
 
-		</div><!-- /post -->
+							// Neither comments nor pings are open.
+							esc_html_e( 'Both comments and pings are currently closed.', 'theball' );
 
-		<?php comments_template(); ?>
+							// Add trailing space.
+							echo ' ';
 
-	<?php endwhile; else: ?>
+						}
 
-		<div class="post" id="post-<?php the_ID(); ?>">
+						// Show edit link.
+						edit_post_link( __( 'Edit this entry', 'theball' ), '', '', get_the_ID() );
 
-			<h2><?php _e( 'Not found', 'theball' ); ?></h2>
+						?></p>
 
-			<div class="entry clearfix">
+					</div><!-- /entrytext -->
 
-				<p><?php _e( 'Sorry, no attachments matched your criteria.', 'theball' ); ?></p>
+				</div><!-- /post -->
 
-			</div><!-- /entry -->
+			</div><!-- /main_column_inner -->
 
-		</div><!-- /post -->
+			<div class="main_column_inner">
+				<?php comments_template(); ?>
+			</div><!-- /main_column_inner -->
+
+		<?php endwhile; ?>
+
+	<?php else : ?>
+
+		<div class="main_column_inner">
+
+			<div class="post">
+
+				<h2><?php esc_html_e( 'Not found', 'theball' ); ?></h2>
+
+				<p><?php esc_html_e( 'Sorry, no attachments matched your criteria.', 'theball' ); ?></p>
+
+			</div><!-- /post -->
+
+		</div><!-- /main_column_inner -->
 
 	<?php endif; ?>
 
-	</div><!-- /main_column_inner -->
-
 </div><!-- /main_column -->
 
-
-
 <?php get_sidebar(); ?>
-
-
 
 <?php get_footer(); ?>

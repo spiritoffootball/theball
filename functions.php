@@ -1,20 +1,15 @@
-<?php /*
-================================================================================
-Theme Functions
-================================================================================
-AUTHOR: Christian Wach <needle@haystack.co.uk>
---------------------------------------------------------------------------------
-NOTES
-
-This file will get loaded AFTER the child theme's "functions.php" file so that
-the child theme can override any global scope functions define here - as long as
-they are wrapped in "function_exists" checks. I don't like that much and prefer
-to offer actions and filters instead.
-
---------------------------------------------------------------------------------
-*/
-
-
+<?php
+/**
+ * The Ball Theme Functions.
+ *
+ * This file will get loaded AFTER the child theme's "functions.php" file so that
+ * the child theme can override any global scope functions define here - as long as
+ * they are wrapped in "function_exists" checks. I don't like that much and prefer
+ * to offer actions and filters instead.
+ *
+ * @since 1.0.0
+ * @package The_Ball
+ */
 
 /**
  * Define a version for this theme, so that updates refresh stylesheets.
@@ -22,8 +17,6 @@ to offer actions and filters instead.
  * @since 1.0.0
  */
 define( 'THEBALL_VERSION', '3.0.3' );
-
-
 
 /**
  * Load theme class if not yet loaded and return instance.
@@ -50,6 +43,3 @@ function sof_the_ball_theme() {
 
 // Init immediately.
 sof_the_ball_theme();
-
-
-

@@ -1,15 +1,10 @@
-<?php /*
-================================================================================
-Theme Functions
-================================================================================
-AUTHOR: Christian Wach <needle@haystack.co.uk>
---------------------------------------------------------------------------------
-NOTES
-
---------------------------------------------------------------------------------
-*/
-
-
+<?php
+/**
+ * Theme Functions.
+ *
+ * @since 1.0.0
+ * @package The_Ball
+ */
 
 /**
  * Utility to get the ID of the body tag.
@@ -24,7 +19,7 @@ function theball_body_id() {
 	$body_id = '';
 
 	// Set main blog id on the main site.
-	if ( function_exists( 'is_main_site' ) AND  is_main_site() ) {
+	if ( function_exists( 'is_main_site' ) && is_main_site() ) {
 		$body_id = ' id="main_blog" ';
 	}
 
@@ -32,8 +27,6 @@ function theball_body_id() {
 	return $body_id;
 
 }
-
-
 
 /**
  * Get the team members as WordPress users.
@@ -68,8 +61,6 @@ function theball_team_members() {
 
 }
 
-
-
 /**
  * Utility to concatenate names.
  *
@@ -102,55 +93,50 @@ function theball_get_full_name( $forename, $surname ) {
 
 }
 
-
-
 if ( ! function_exists( 'theball_multipager' ) ) :
-/**
- * Adds some style to multipager elements.
- *
- * @since 1.0.0
- *
- * @return string $page_links The multipager page links.
- */
-function theball_multipager() {
+	/**
+	 * Adds some style to multipager elements.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string $page_links The multipager page links.
+	 */
+	function theball_multipager() {
 
-	// Set default behaviour.
-	$defaults = [
-		'before' => '<div class="multipager">',
-		'after' => '</div>',
-		'link_before' => '',
-		'link_after' => '',
-		'next_or_number' => 'next',
-		'nextpagelink' => '<span class="alignright">' . __( 'Next page', 'theball' ) . ' &raquo;</span>',
-		'previouspagelink' => '<span class="alignleft">&laquo; ' . __( 'Previous page', 'theball' ) . '</span>',
-		'pagelink' => '%',
-		'more_file' => '',
-		'echo' => 0,
-	];
+		// Set default behaviour.
+		$defaults = [
+			'before' => '<div class="multipager">',
+			'after' => '</div>',
+			'link_before' => '',
+			'link_after' => '',
+			'next_or_number' => 'next',
+			'nextpagelink' => '<span class="alignright">' . __( 'Next page', 'theball' ) . ' &raquo;</span>',
+			'previouspagelink' => '<span class="alignleft">&laquo; ' . __( 'Previous page', 'theball' ) . '</span>',
+			'pagelink' => '%',
+			'more_file' => '',
+			'echo' => 0,
+		];
 
-	// Get page links.
-	$page_links = wp_link_pages( $defaults );
+		// Get page links.
+		$page_links = wp_link_pages( $defaults );
 
-	// Add separator when there are two links.
-	$page_links = str_replace(
-		'a><a',
-		'a> <span class="multipager_sep">|</span> <a',
-		$page_links
-	);
+		// Add separator when there are two links.
+		$page_links = str_replace(
+			'a><a',
+			'a> <span class="multipager_sep">|</span> <a',
+			$page_links
+		);
 
-	// Get page links.
-	$page_links .= wp_link_pages( [
-		'before' => '<div class="multipager multipager_all"><span>' . __( 'Pages: ', 'theball' ) . '</span>',
-		'after' => '</div>',
-		'pagelink' => '<span class="multipager_link">%</span>',
-		'echo' => 0,
-	] );
+		// Get page links.
+		$page_links .= wp_link_pages( [
+			'before' => '<div class="multipager multipager_all"><span>' . __( 'Pages: ', 'theball' ) . '</span>',
+			'after' => '</div>',
+			'pagelink' => '<span class="multipager_link">%</span>',
+			'echo' => 0,
+		] );
 
-	// --<
-	return $page_links;
+		// --<
+		return $page_links;
 
-}
+	}
 endif; // End theball_multipager.
-
-
-
