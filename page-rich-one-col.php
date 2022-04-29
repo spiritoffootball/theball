@@ -38,6 +38,7 @@ get_header();
 								<?php
 
 								// Get the Featured Video.
+								$has_feature_image = false;
 								$header_video = get_field( 'header_video' );
 
 								// Do not show Feature Image if we have a Video.
