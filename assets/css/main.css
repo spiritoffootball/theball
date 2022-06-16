@@ -99,6 +99,11 @@ Site Banner post
 {
 }
 
+	#main_blog .splash_main_widget > div
+	{
+		position: relative;
+	}
+
 	#main_blog .widget .widget-title
 	{
 		color: #fff;

@@ -87,13 +87,15 @@ body
 }
 
 /*
-This saves having to declare each div's position as 'relative' and
-allows absolutely positioned elements inside them
-*/
+ * This saves having to declare each div's position as 'relative' and
+ * allows absolutely positioned elements inside them.
+ *
+ * Note: this breaks WordPress modals.
 div
 {
 	position: relative;
 }
+ */
 
 #container
 {
@@ -1073,6 +1075,11 @@ div.main_column
 	{
 		padding: 0;
 	}
+
+		.post .post_header.has_feature_image .post_header_inner
+		{
+			position: relative;
+		}
 
 		.post .post_header.has_feature_image img
 		{
@@ -2982,6 +2989,7 @@ div.right_column
 	div.right_column div.route_map
 	{
 		margin: 0;
+		position: relative;
 	}
 
 	div.right_column div.route_map a
