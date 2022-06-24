@@ -1059,6 +1059,11 @@ div.main_column
 		clear: left;
 	}
 
+		div.main_column_inner > .post
+		{
+			position: relative;
+		}
+
 
 
 	/* Entry Header styling */
