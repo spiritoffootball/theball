@@ -16,7 +16,7 @@
  *
  * @since 1.0.0
  */
-define( 'THEBALL_VERSION', '3.0.4' );
+define( 'THEBALL_VERSION', '3.0.5' );
 
 /**
  * Load theme class if not yet loaded and return instance.
