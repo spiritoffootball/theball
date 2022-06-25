@@ -116,6 +116,12 @@ NOTES
 		padding: 0;
 	}
 
+	#main_blog.home .has_feature_image .post_header img
+	{
+		width: 100%;
+		height: auto;
+	}
+
 	#main_blog.home .post .post_header.has_feature_image
 	{
 		margin: 0 0 0.4em 0;
