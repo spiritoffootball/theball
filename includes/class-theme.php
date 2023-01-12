@@ -400,7 +400,7 @@ class SOF_The_Ball_Theme {
 	 * @param string $content Optional. Shortcode content.
 	 * @return string $caption The customised caption.
 	 */
-	public function image_caption_shortcode_filter( $empty = null, $attr, $content ) {
+	public function image_caption_shortcode_filter( $empty, $attr, $content ) {
 
 		// Get our shortcode vars.
 		extract( shortcode_atts( [
