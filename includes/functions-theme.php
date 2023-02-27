@@ -6,6 +6,9 @@
  * @package The_Ball
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Utility to get the ID of the body tag.
  *

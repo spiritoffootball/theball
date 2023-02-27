@@ -6,6 +6,9 @@
  * @package The_Ball
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 if ( ! function_exists( 'theball_geomashup_map_link_get' ) ) :
 	/**
 	 * Get a link to the map if the current post has a location set.

@@ -6,7 +6,11 @@
  * @package The_Ball
  */
 
-?><!-- sidebar.php -->
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+?>
+<!-- sidebar.php -->
 
 <div class="right_column clearfix">
 

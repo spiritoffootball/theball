@@ -6,6 +6,9 @@
  * @package The_Ball
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 /*
 <li<?php if ( is_main_site() && is_object( $post ) && $post->ID == 207 ) { echo ' class="active-trail"'; } ?>><a href="/press/" title="Press Coverage of The Ball">Press</a></li>
 <li<?php if ( is_main_site() && is_object( $post ) && $post->ID == 22 ) { echo ' class="active-trail"'; } ?>><a href="/connect/" title="Connect with The Ball">Connect</a></li>
@@ -14,7 +17,8 @@
 // Access blog ID and post.
 global $blog_id, $post;
 
-?><!-- assets/includes/menu.php -->
+?>
+<!-- assets/includes/menu.php -->
 
 <div id="site-navigation" class="main-navigation" role="navigation">
 	<span class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Main Menu', 'theball' ); ?></span>

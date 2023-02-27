@@ -6,7 +6,11 @@
  * @package The_Ball
  */
 
-?><!--assets/includes/paypal.php -->
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+?>
+<!--assets/includes/paypal.php -->
 
 <div class="paypal_donate clearfix">
 

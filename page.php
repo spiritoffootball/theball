@@ -6,9 +6,13 @@
  * @package The_Ball
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 get_header();
 
-?><!-- page.php -->
+?>
+<!-- page.php -->
 
 <div id="content_wrapper" class="clearfix">
 

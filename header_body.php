@@ -8,7 +8,11 @@
  * @package The_Ball
  */
 
-?><a href="#cols" class="screen-reader-shortcut"><?php esc_html_e( 'Skip to Content', 'theball' ); ?></a>
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+?>
+<a href="#cols" class="screen-reader-shortcut"><?php esc_html_e( 'Skip to Content', 'theball' ); ?></a>
 
 <div id="container">
 

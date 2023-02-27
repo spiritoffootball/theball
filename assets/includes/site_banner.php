@@ -6,7 +6,11 @@
  * @package The_Ball_2022
  */
 
-?><!-- assets/includes/site_banner.php -->
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+?>
+<!-- assets/includes/site_banner.php -->
 
 <div id="site_banner" class="clearfix">
 

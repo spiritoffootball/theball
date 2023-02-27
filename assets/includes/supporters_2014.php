@@ -8,7 +8,11 @@
  * @package The_Ball
  */
 
-?><!-- Begin sponsors -->
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+?>
+<!-- Begin sponsors -->
 
 <div id="sponsors" class="clearfix">
 

@@ -6,9 +6,13 @@
  * @package The_Ball
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 get_header();
 
-?><!-- archive-sofvm_video.php -->
+?>
+<!-- archive-sofvm_video.php -->
 
 <div id="content_wrapper" class="clearfix">
 

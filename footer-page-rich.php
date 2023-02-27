@@ -6,7 +6,11 @@
  * @package The_Ball
  */
 
-?><!-- footer-page-rich.php -->
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+?>
+<!-- footer-page-rich.php -->
 
 		<?php if ( ! is_main_site() ) : ?>
 			<?php

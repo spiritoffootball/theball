@@ -6,7 +6,13 @@
  * @package The_Ball
  */
 
-get_header(); ?><!-- page-rich-two-cols.php -->
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+get_header();
+
+?>
+<!-- page-rich-two-cols.php -->
 
 <div id="content_wrapper" class="clearfix">
 

@@ -6,7 +6,11 @@
  * @package The_Ball
  */
 
-?><!-- assets/includes/page_list.php -->
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+?>
+<!-- assets/includes/page_list.php -->
 
 <div id="sof_page_list" class="sof_page_list">
 	<span class="menu-toggle" aria-controls="secondary-menu" aria-expanded="false"><?php esc_html_e( 'Submenu', 'theball' ); ?></span>

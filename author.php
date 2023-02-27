@@ -8,6 +8,9 @@
  * @package The_Ball
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 // Let's try to get the User from the $author global.
 if ( ! empty( $author ) && is_numeric( $author ) ) {
 	$my_author = get_userdata( (int) $author );
@@ -33,7 +36,8 @@ if ( $full_name == '' ) {
 
 get_header();
 
-?><!-- author.php -->
+?>
+<!-- author.php -->
 
 <div id="content_wrapper" class="clearfix">
 

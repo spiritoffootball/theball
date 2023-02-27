@@ -6,7 +6,11 @@
  * @package The_Ball
  */
 
-?><!-- assets/includes/network.php -->
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+?>
+<!-- assets/includes/network.php -->
 
 <div class="sof_network clearfix">
 

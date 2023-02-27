@@ -8,7 +8,11 @@
  * @package The_Ball
  */
 
-?><!-- footer.php -->
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+?>
+<!-- footer.php -->
 
 					<?php if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && 'wp-signup.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) : ?>
 

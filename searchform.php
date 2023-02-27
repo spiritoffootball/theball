@@ -6,7 +6,11 @@
  * @package The_Ball
  */
 
-?><!-- searchform.php -->
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+?>
+<!-- searchform.php -->
 
 <form method="get" id="searchform" action="<?php bloginfo( 'url' ); ?>/">
 

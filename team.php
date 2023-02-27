@@ -6,12 +6,16 @@
  * @package The_Ball
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 // Get team members array.
 $team = theball_team_members();
 
 get_header();
 
-?><!-- team.php -->
+?>
+<!-- team.php -->
 
 <div id="content_wrapper" class="clearfix">
 
