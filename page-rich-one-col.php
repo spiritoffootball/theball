@@ -3,6 +3,7 @@
  * Template Name: Page Rich One Column
  *
  * @since 1.0.0
+ *
  * @package The_Ball
  */
 

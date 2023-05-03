@@ -5,6 +5,7 @@
  * The "left-open elements" here are closed in footer.php
  *
  * @since 1.0.0
+ *
  * @package The_Ball
  */
 

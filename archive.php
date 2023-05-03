@@ -3,7 +3,8 @@
  * The Ball Archive Template.
  *
  * @since 1.0.0
- * @package The_Ball_2018
+ *
+ * @package The_Ball
  */
 
 // Exit if accessed directly.

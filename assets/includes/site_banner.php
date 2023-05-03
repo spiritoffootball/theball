@@ -3,7 +3,8 @@
  * Site Banner Template.
  *
  * @since 1.0.0
- * @package The_Ball_2022
+ *
+ * @package The_Ball
  */
 
 // Exit if accessed directly.

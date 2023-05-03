@@ -3,12 +3,17 @@
  * The Ball Default Blog Archive Template.
  *
  * @since 1.0.0
+ *
  * @package The_Ball
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 get_header();
 
-?><!-- index.php -->
+?>
+<!-- index.php -->
 
 <div id="content_wrapper" class="clearfix">
 

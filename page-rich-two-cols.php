@@ -3,6 +3,7 @@
  * Template Name: Page Rich Two Columns
  *
  * @since 1.0.0
+ *
  * @package The_Ball
  */
 

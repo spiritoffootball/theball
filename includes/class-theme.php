@@ -3,6 +3,7 @@
  * The Ball Theme Class.
  *
  * @since 2.4.4
+ *
  * @package The_Ball
  */
 

@@ -7,7 +7,6 @@
  * they are wrapped in "function_exists" checks. I don't like that much and prefer
  * to offer actions and filters instead.
  *
- * @since 1.0.0
  * @package The_Ball
  */
 

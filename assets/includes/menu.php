@@ -3,6 +3,7 @@
  * Global Menu for Themes based on The Ball.
  *
  * @since 1.0.0
+ *
  * @package The_Ball
  */
 

@@ -7,6 +7,7 @@
  * For styling of the info window, see map-style-default.css.
  *
  * @since 1.0.0
+ *
  * @package The_Ball
  */
 

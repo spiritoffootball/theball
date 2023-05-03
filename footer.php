@@ -5,6 +5,7 @@
  * The "left-open elements" here were opened in header.php or header_body.php
  *
  * @since 1.0.0
+ *
  * @package The_Ball
  */
 
