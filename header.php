@@ -21,21 +21,7 @@ defined( 'ABSPATH' ) || exit;
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<!-- Add Google fonts prior to enqueued styles -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300" rel="stylesheet" type="text/css">
-
 	<?php wp_head(); ?>
-
-	<?php if ( is_multisite() ) : ?>
-		<?php if ( 'wp-signup.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) : ?>
-			<!-- signup css -->
-			<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/signup.css" media="screen" />
-		<?php endif; ?>
-		<?php if ( 'wp-activate.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) : ?>
-			<!-- activate css -->
-			<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/activate.css" media="screen" />
-		<?php endif; ?>
-	<?php endif; ?>
 
 </head>
 

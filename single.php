@@ -84,7 +84,7 @@ get_header();
 					<?php
 
 					global $more;
-					$more = true;
+					$more = true; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 					the_content( '' );
 
 					?>

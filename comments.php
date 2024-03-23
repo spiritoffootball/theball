@@ -10,12 +10,11 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-// Do not delete these lines.
-if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
-	die( 'Please do not load this page directly. Thanks!' );
-}
-
-// If there's a password.
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password,
+ * return early without loading the comments.
+ */
 if ( post_password_required() ) {
 	?>
 	<div id="comments_wrapper" class="no_comments">
@@ -53,7 +52,7 @@ $oddcomment = 'class="alt" ';
 
 			wp_list_comments( [
 				// List comments params.
-				'type'       => 'all', //'comment',
+				'type'       => 'all', // Cal also use 'comment'.
 				'reply_text' => __( 'Reply to this comment', 'theball' ),
 				'callback'   => [ sof_the_ball_theme(), 'comment_markup' ],
 			] );

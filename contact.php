@@ -49,7 +49,7 @@ get_header();
 							<?php
 
 							global $more;
-							$more = false;
+							$more = false; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 							the_content( '', true );
 
 							?>

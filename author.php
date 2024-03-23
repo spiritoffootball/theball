@@ -13,26 +13,25 @@
 defined( 'ABSPATH' ) || exit;
 
 // Let's try to get the User from the $author global.
+$my_author = null;
 if ( ! empty( $author ) && is_numeric( $author ) ) {
 	$my_author = get_userdata( (int) $author );
 } else {
 	// Try to get author info from input vars.
-	$author_name = empty( $_GET['author_name'] ) ? '' : wp_unslash( $_GET['author_name'] );
+	// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+	$author_name = empty( $_GET['author_name'] ) ? '' : sanitize_text_field( wp_unslash( $_GET['author_name'] ) );
 	if ( ! empty( $author_name ) ) {
 		$my_author = get_user_by( 'login', $author_name );
 	}
 }
 
-// Get URL for this user - exclude 'http://' or 'https://'.
-$author_url = '';
-if ( ! empty( $my_author->user_url ) && $my_author->user_url != 'http://' && $my_author->user_url != 'https://' ) {
-	$author_url = $my_author->user_url;
-}
-
 // Use full name - or nickname if missing.
-$full_name = theball_get_full_name( $my_author->first_name, $my_author->last_name );
-if ( $full_name == '' ) {
-	$full_name = $my_author->nickname;
+$full_name = __( 'Unknown author', 'theball' );
+if ( $my_author instanceof WP_User ) {
+	$full_name = theball_get_full_name( $my_author->first_name, $my_author->last_name );
+	if ( empty( $full_name ) ) {
+		$full_name = $my_author->nickname;
+	}
 }
 
 get_header();
@@ -56,16 +55,18 @@ get_header();
 		<div class="post clearfix">
 
 			<div id="author_avatar">
-				<?php echo get_avatar( $my_author->user_email, '200' ); ?>
+				<?php if ( ! empty( $my_author->user_email ) ) : ?>
+					<?php echo get_avatar( $my_author->user_email, '200' ); ?>
+				<?php endif; ?>
 			</div>
 
 			<div id="author_desc">
 
-				<h2><?php echo $full_name; ?></h2>
+				<h2><?php echo esc_html( $full_name ); ?></h2>
 
-				<?php if ( $my_author->description != '' ) { ?>
+				<?php if ( ! empty( $my_author->description ) ) : ?>
 					<p><?php echo nl2br( $my_author->description ); ?></p>
-				<?php } ?>
+				<?php endif; ?>
 
 				</div><!-- /author_desc -->
 
@@ -83,7 +84,7 @@ get_header();
 
 				<div class="entrytext">
 
-					<h3>Most recent posts by <?php echo $full_name; ?></h3>
+					<h3>Most recent posts by <?php echo esc_html( $full_name ); ?></h3>
 
 					<ul>
 						<?php if ( have_posts() ) : ?>

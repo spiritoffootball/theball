@@ -104,9 +104,11 @@ class SOF_The_Ball_Theme {
 		add_filter( 'the_content_more_link', [ $this, 'more_link_wrap' ], 20 );
 		add_filter( 'the_content_more_link', [ $this, 'more_link_jump_remove' ] );
 
+		/*
 		// Filter the next/previous links.
-		//add_filter( 'previous_post_link', [ $this, 'next_previous_links_filter' ] );
-		//add_filter( 'next_post_link', [ $this, 'next_previous_links_filter' ] );
+		add_filter( 'previous_post_link', [ $this, 'next_previous_links_filter' ] );
+		add_filter( 'next_post_link', [ $this, 'next_previous_links_filter' ] );
+		*/
 
 		// Filter the Image Caption Shortcode's output.
 		add_filter( 'img_caption_shortcode', [ $this, 'image_caption_shortcode_filter' ], 10, 3 );
@@ -120,8 +122,10 @@ class SOF_The_Ball_Theme {
 		// Add filter for the above.
 		add_filter( 'the_author_posts_link', [ $this, 'author_posts_link_filter' ], 10, 1 );
 
+		/*
 		// Filter the Site Icon meta tag.
-		//add_filter( 'site_icon_meta_tags', [ $this, 'site_icon_meta_tags' ], 10, 1 );
+		add_filter( 'site_icon_meta_tags', [ $this, 'site_icon_meta_tags' ], 10, 1 );
+		*/
 
 	}
 
@@ -212,11 +216,20 @@ class SOF_The_Ball_Theme {
 	 */
 	public function enqueue_styles() {
 
+		// Add Google Webfont "Open Sans".
+		wp_enqueue_style(
+			'theball_font_css',
+			set_url_scheme( 'https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300' ),
+			[],
+			THEBALL_VERSION, // Version.
+			'all' // Media.
+		);
+
 		// Enqueue screen styles.
 		wp_enqueue_style(
 			'theball_screen_css',
 			get_template_directory_uri() . '/assets/css/screen.css',
-			[], // Dependencies.
+			[ 'theball_font_css' ], // Dependencies.
 			THEBALL_VERSION, // Version.
 			'all' // Media.
 		);
@@ -295,6 +308,7 @@ class SOF_The_Ball_Theme {
 		);
 
 		// Include on network home.
+		// phpcs:ignore Generic.CodeAnalysis.EmptyStatement.DetectedIf
 		if ( is_main_site() && is_front_page() ) {
 			// Nothing yet.
 		}
@@ -402,32 +416,35 @@ class SOF_The_Ball_Theme {
 	 */
 	public function image_caption_shortcode_filter( $empty, $attr, $content ) {
 
-		// Get our shortcode vars.
-		extract( shortcode_atts( [
+		// Default Shortcode attributes.
+		$defaults = [
 			'id'      => '',
 			'align'   => 'alignnone',
 			'width'   => '',
 			'caption' => '',
-		], $attr ) );
+		];
 
-		if ( 1 > (int) $width || empty( $caption ) ) {
+		// Get parsed attributes.
+		$atts = shortcode_atts( $defaults, $attr, $tag );
+
+		if ( 1 > (int) $atts['width'] || empty( $atts['caption'] ) ) {
 			return $content;
 		}
 
-		// Sanitise id.
-		if ( $id ) {
-			$id = 'id="' . esc_attr( $id ) . '" ';
+		// Build id attribute.
+		if ( $atts['id'] ) {
+			$atts['id'] = 'id="' . esc_attr( $atts['id'] ) . '" ';
 		}
 
 		// Add space prior to alignment.
-		$_alignment = ' ' . esc_attr( $align );
+		$alignment = ' ' . esc_attr( $atts['align'] );
 
 		// Get width.
-		$_width = ( 0 + (int) $width );
+		$width = esc_attr( 0 + (int) $atts['width'] );
 
 		// Construct.
-		$caption = '<div class="captioned_image' . $_alignment . '" style="width: ' . $_width . 'px"><span ' . $id . ' class="wp-caption">'
-		. do_shortcode( $content ) . '</span><small class="wp-caption-text">' . $caption . '</small></div>';
+		$caption = '<div class="captioned_image' . $alignment . '" style="width: ' . $width . 'px"><span ' . $atts['id'] . ' class="wp-caption">'
+		. do_shortcode( $content ) . '</span><small class="wp-caption-text">' . $atts['caption'] . '</small></div>';
 
 		// --<
 		return $caption;
@@ -643,62 +660,51 @@ class SOF_The_Ball_Theme {
 	 */
 	public function comment_markup( $comment, $args, $depth ) {
 
-		// Enable WordPress API on comment.
-		$GLOBALS['comment'] = $comment;
-
 		?>
 
 		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 
 			<div class="comment-wrapper">
+				<div id="comment-<?php comment_ID(); ?>">
 
-			<div id="comment-<?php comment_ID(); ?>">
+					<div class="comment-identifier clearfix">
+						<?php echo get_avatar( $comment, '50' ); ?>
 
-			<div class="comment-identifier clearfix">
+						<?php edit_comment_link( __( 'Edit comment', 'theball' ), '<span class="alignright">', '</span>' ); ?>
 
-			<?php echo get_avatar( $comment, '50' ); ?>
+						<cite class="fn"><?php echo get_comment_author_link(); ?></cite>
 
-			<?php edit_comment_link( __( 'Edit comment', 'theball' ), '<span class="alignright">', '</span>' ); ?>
+						<a class="comment_permalink" href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf( __( '%1$s at %2$s', 'theball' ), get_comment_date(), get_comment_time() ); ?></a>
+					</div><!-- /.comment-identifier -->
 
-			<cite class="fn"><?php echo get_comment_author_link(); ?></cite>
+					<div class="comment-content">
+						<?php if ( $comment->comment_approved == '0' ) { ?>
+							<p><em><?php esc_html_e( 'Your comment is awaiting moderation.', 'theball' ); ?></em></p>
+						<?php } ?>
 
-			<a class="comment_permalink" href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf( __( '%1$s at %2$s', 'theball' ), get_comment_date(), get_comment_time() ); ?></a>
+						<?php comment_text(); ?>
+					</div><!-- /.comment-content -->
 
-			</div><!-- /comment-identifier -->
+					<div class="reply">
+						<?php
 
-			<div class="comment-content">
+						echo comment_reply_link(
+							array_merge(
+								$args,
+								[
+									'depth'     => $depth,
+									'max_depth' => $args['max_depth'],
+								]
+							)
+						);
 
-			<?php if ( $comment->comment_approved == '0' ) { ?>
-			<p><em><?php esc_html_e( 'Your comment is awaiting moderation.', 'theball' ); ?></em></p>
-			<?php } ?>
-
-			<?php comment_text(); ?>
-
-			</div><!-- /comment-content -->
-
-			<div class="reply">
-
-			<?php
-
-			// Use comment_reply_link.
-			echo comment_reply_link( array_merge(
-				$args,
-				[
-					'depth'     => $depth,
-					'max_depth' => $args['max_depth'],
-				]
-			) );
-
-			?>
-
-			</div><!-- /reply -->
-
-			</div><!-- /comment-<?php comment_ID(); ?> -->
-
-			</div><!-- /comment-wrapper -->
+						?>
+					</div><!-- /.reply -->
+				</div><!-- /#comment-<?php comment_ID(); ?> -->
+			</div><!-- /.comment-wrapper -->
 
 		<?php
 
 	}
 
-} // Class ends.
+}

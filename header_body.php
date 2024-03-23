@@ -64,21 +64,3 @@ defined( 'ABSPATH' ) || exit;
 			<?php endif; ?>
 		</div><!-- /topnav_inner -->
 	</div><!-- /topnav -->
-
-	<?php if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && 'wp-signup.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) : ?>
-		<!-- signup.php -->
-
-		<div id="content_wrapper" class="clearfix">
-
-		<?php $site_banner = locate_template( 'assets/includes/site_banner.php' ); ?>
-		<?php if ( $site_banner ) : ?>
-			<?php load_template( $site_banner ); ?>
-		<?php endif; ?>
-
-		<div class="main_column clearfix">
-
-		<div class="main_column_inner" id="main_column_splash">
-
-		<div class="post">
-
-	<?php endif; ?>

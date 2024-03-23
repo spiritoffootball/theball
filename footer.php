@@ -15,16 +15,6 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <!-- footer.php -->
 
-					<?php if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && 'wp-signup.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) : ?>
-
-						</div><!-- /post -->
-						</div><!-- /main_column_inner -->
-						</div><!-- /main_column -->
-
-						<?php get_sidebar(); ?>
-
-					<?php endif; ?>
-
 				</div><!-- /.cols_inner -->
 			</div><!-- /#cols -->
 
