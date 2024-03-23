@@ -1,12 +1,12 @@
-/*
---------------------------------------------------------------------------------
-Theme Name: theball.tv Global Theme
-Theme URI: https://theball.tv/
-Description: Home theme for theball.tv
-Version: 3.0.6
-Author: Christian Wach
-Author URI: https://www.haystack.co.uk
---------------------------------------------------------------------------------
-*/
+/**
+ * Theme Name: theball.tv Global Theme
+ * Theme URI: https://theball.tv/
+ * Description: Parent theme for theball.tv
+ * Version: 3.0.6
+ * Author: Christian Wach
+ * Author URI: https://www.haystack.co.uk
+ *
+ * @package The_Ball
+ */
 
 /* deliberately empty: see 'functions.php' for how styles and scripts are enqueued */
