@@ -1,107 +1,211 @@
-# Copyright (C) 2022 Christian Wach
+# Copyright (C) 2024 Christian Wach
 # This file is distributed under the .
 msgid ""
 msgstr ""
-"Project-Id-Version: theball.tv Global Theme 3.0.3\n"
+"Project-Id-Version: theball.tv Global Theme 3.0.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/theball\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-04-26T09:37:47+00:00\n"
+"POT-Creation-Date: 2024-03-23T12:15:32+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.6.0\n"
+"X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: theball\n"
 
 #. Theme Name of the theme
+#: style.css
 msgid "theball.tv Global Theme"
 msgstr ""
 
 #. Theme URI of the theme
+#: style.css
 msgid "https://theball.tv/"
 msgstr ""
 
 #. Description of the theme
-msgid "Home theme for theball.tv"
+#: style.css
+msgid "Parent theme for theball.tv"
 msgstr ""
 
 #. Author of the theme
+#: style.css
 msgid "Christian Wach"
 msgstr ""
 
 #. Author URI of the theme
+#: style.css
 msgid "https://www.haystack.co.uk"
 msgstr ""
 
+#: 404.php:33
 msgid "Offside!"
 msgstr ""
 
+#: 404.php:35
 msgid "A whistle for offside"
 msgstr ""
 
+#: 404.php:37
 msgid "The page you requested has not been found on this server. Perhaps you could use the search form below to look for it?"
 msgstr ""
 
 #. translators: 1: Opening anchor tag, 2: Closing anchor tag.
+#: 404.php:43
 msgid "If we have got a broken link on this site, or you’re really really sure the page should be there, then mailing the details to the %1$swebmaster%2$s would be appreciated."
 msgstr ""
 
 #. Template Name of the theme
+#: assets/includes/menu.php:35
 msgid "About"
 msgstr ""
 
+#: about.php:64
+#: page_subpages.php:77
+#: page_subpages.php:150
+#: page_subpages_splash.php:80
+#: page_subpages_splash.php:145
+#: team.php:42
 msgid "Read the rest of this page &raquo;"
 msgstr ""
 
+#: about.php:75
+#: assets/includes/subpages.php:58
+#: contact.php:66
+#: includes/functions-theme.php:117
+#: page.php:69
+#: page_subpages.php:88
+#: page_subpages.php:166
+#: page_subpages_main.php:78
+#: page_subpages_splash.php:91
+#: page_subpages_splash.php:161
+#: single.php:105
 msgid "Next page"
 msgstr ""
 
+#: about.php:76
+#: assets/includes/subpages.php:59
+#: contact.php:67
+#: includes/functions-theme.php:118
+#: page.php:70
+#: page_subpages.php:89
+#: page_subpages.php:167
+#: page_subpages_main.php:79
+#: page_subpages_splash.php:92
+#: page_subpages_splash.php:162
+#: single.php:106
 msgid "Previous page"
 msgstr ""
 
+#: about.php:86
+#: archive-sofvm_video.php:64
+#: assets/includes/site_banner.php:59
+#: assets/includes/subpages.php:69
+#: attachment.php:128
+#: contact.php:77
+#: image.php:123
+#: page-rich-one-col.php:79
+#: page-rich-one-col.php:81
+#: page-rich-two-cols.php:63
+#: page-rich-two-cols.php:65
+#: page.php:54
+#: page_subpages.php:99
+#: page_subpages.php:177
+#: page_subpages_main.php:89
+#: page_subpages_splash.php:102
+#: page_subpages_splash.php:172
+#: single.php:189
+#: team.php:46
 msgid "Edit this entry"
 msgstr ""
 
+#: archive-sofvm_video.php:32
+#: archive.php:32
+#: index.php:32
 msgid "&laquo; Older Posts"
 msgstr ""
 
+#: archive-sofvm_video.php:33
+#: archive.php:33
+#: index.php:33
 msgid "Newer Posts &raquo;"
 msgstr ""
 
+#: archive-sofvm_video.php:56
+#: archive.php:92
+#: attachment.php:35
+#: author.php:92
+#: contact.php:35
+#: geo-mashup-full-post.php:25
+#: geo-mashup-info-window-max.php:30
+#: geo-mashup-info-window.php:56
+#: geo-mashup-info-window.php:61
+#: geo-mashup-info-window.php:71
+#: geo-mashup-info-window.php:76
+#: image.php:34
+#: index.php:84
+#: page.php:35
+#: search.php:74
+#: single.php:70
 msgid "Permanent Link to: "
 msgstr ""
 
+#: archive-sofvm_video.php:57
 msgid "%1$s by %2$s"
 msgstr ""
 
+#: archive-sofvm_video.php:68
+#: archive.php:104
+#: index.php:96
+#: single.php:116
 msgid "Tags: "
 msgstr ""
 
+#: archive-sofvm_video.php:68
+#: archive.php:104
+#: index.php:96
 msgid "Posted in "
 msgstr ""
 
+#: archive-sofvm_video.php:68
+#: archive.php:104
+#: index.php:96
 msgid "No Comments &#187;"
 msgstr ""
 
+#: archive-sofvm_video.php:68
+#: archive.php:104
+#: index.php:96
 msgid "1 Comment &#187;"
 msgstr ""
 
+#: archive-sofvm_video.php:68
+#: archive.php:104
+#: index.php:96
 msgid "% Comments &#187;"
 msgstr ""
 
+#: archive-sofvm_video.php:96
 msgid "No videos found"
 msgstr ""
 
+#: archive-sofvm_video.php:100
 msgid "Why not search for something?"
 msgstr ""
 
+#: archive.php:101
+#: attachment.php:51
+#: image.php:56
+#: index.php:93
 msgid "Read the rest of this entry &raquo;"
 msgstr ""
 
+#: archive.php:128
 msgid "Nothing found"
 msgstr ""
 
+#: archive.php:139
 msgid "Try searching for something?"
 msgstr ""
 
@@ -109,166 +213,264 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
+#: archives.php:61
 msgid "%s Archives"
 msgstr ""
 
+#: archives.php:83
 msgid "Topics"
 msgstr ""
 
+#: archives.php:130
 msgid "Archives by Month"
 msgstr ""
 
+#: assets/includes/menu.php:25
 msgid "Main Menu"
 msgstr ""
 
+#: assets/includes/menu.php:28
 msgid "The Ball Home"
 msgstr ""
 
+#: assets/includes/menu.php:28
+#: header_body.php:29
+#: header_body.php:44
 msgid "Home"
 msgstr ""
 
+#: assets/includes/menu.php:29
 msgid "The Ball 2022/23"
 msgstr ""
 
+#: assets/includes/menu.php:29
 msgid "2022/23"
 msgstr ""
 
+#: assets/includes/menu.php:30
+#: sidebar.php:32
+#: sidebar.php:37
 msgid "The Ball 2018"
 msgstr ""
 
+#: assets/includes/menu.php:30
 msgid "2018"
 msgstr ""
 
+#: assets/includes/menu.php:31
+#: sidebar.php:58
+#: sidebar.php:63
 msgid "The Ball 2014"
 msgstr ""
 
+#: assets/includes/menu.php:31
 msgid "2014"
 msgstr ""
 
+#: assets/includes/menu.php:32
+#: sidebar.php:84
+#: sidebar.php:89
 msgid "The Ball 2010"
 msgstr ""
 
+#: assets/includes/menu.php:32
 msgid "2010"
 msgstr ""
 
+#: assets/includes/menu.php:33
+#: sidebar.php:111
+#: sidebar.php:116
 msgid "The Ball 2006"
 msgstr ""
 
+#: assets/includes/menu.php:33
 msgid "2006"
 msgstr ""
 
+#: assets/includes/menu.php:34
+#: sidebar.php:138
+#: sidebar.php:143
 msgid "The Ball 2002"
 msgstr ""
 
+#: assets/includes/menu.php:34
 msgid "2002"
 msgstr ""
 
+#: assets/includes/menu.php:35
 msgid "About The Ball"
 msgstr ""
 
+#: assets/includes/menu.php:36
 msgid "Contact The Ball"
 msgstr ""
 
 #. Template Name of the theme
+#: assets/includes/menu.php:36
 msgid "Contact"
 msgstr ""
 
+#: assets/includes/menu.php:37
 msgid "The Ball Shop"
 msgstr ""
 
+#: assets/includes/menu.php:37
 msgid "Shop"
 msgstr ""
 
+#: assets/includes/network-white.php:20
+#: assets/includes/network.php:20
 msgid "The SOF Network"
 msgstr ""
 
+#: assets/includes/network-white.php:23
+#: assets/includes/network.php:23
 msgid "Spirit of Football Brazil"
 msgstr ""
 
+#: assets/includes/network-white.php:24
+#: assets/includes/network.php:24
 msgid "Spirit of Football CIC"
 msgstr ""
 
+#: assets/includes/network-white.php:25
+#: assets/includes/network.php:25
 msgid "Spirit of Football Germany"
 msgstr ""
 
+#: assets/includes/page_list.php:17
 msgid "Submenu"
 msgstr ""
 
+#: assets/includes/paypal.php:18
 msgid "Give The Ball a Kick!"
 msgstr ""
 
+#: attachment.php:56
 msgid "Pages:"
 msgstr ""
 
+#: attachment.php:66
+#: image.php:61
+#: single.php:127
 msgid "RSS 2.0"
 msgstr ""
 
+#: attachment.php:72
+#: image.php:67
+#: single.php:133
 msgid "You can follow any comments on this entry through the %s feed."
 msgstr ""
 
+#: attachment.php:82
+#: attachment.php:98
+#: image.php:77
+#: image.php:93
+#: single.php:143
+#: single.php:159
 msgid "trackback"
 msgstr ""
 
+#: attachment.php:88
+#: image.php:83
+#: single.php:149
 msgid "You can leave a comment, or %s from your own site."
 msgstr ""
 
+#: attachment.php:104
+#: image.php:99
+#: single.php:165
 msgid "Comments are currently closed, but you can %s from your own site."
 msgstr ""
 
+#: attachment.php:112
+#: image.php:107
+#: single.php:173
 msgid "You can leave a comment. Pinging is currently not allowed."
 msgstr ""
 
+#: attachment.php:120
+#: image.php:115
+#: single.php:181
 msgid "Both comments and pings are currently closed."
 msgstr ""
 
+#: attachment.php:150
+#: image.php:144
 msgid "Not found"
 msgstr ""
 
+#: attachment.php:152
 msgid "Sorry, no attachments matched your criteria."
 msgstr ""
 
+#: author.php:95
 msgid "No recent posts by this author."
 msgstr ""
 
+#: comments.php:22
 msgid "Enter the password to view comments"
 msgstr ""
 
+#: comments.php:42
 msgid "<span>0</span> comments on this post"
 msgstr ""
 
+#: comments.php:43
 msgid "<span>1</span> comment on this post"
 msgstr ""
 
+#: comments.php:44
 msgid "<span>%</span> comments on this post"
 msgstr ""
 
+#: comments.php:57
 msgid "Reply to this comment"
 msgstr ""
 
+#: comments.php:73
 msgid "No comments yet"
 msgstr ""
 
+#: comments.php:75
 msgid "Be the first to leave one!"
 msgstr ""
 
+#: comments.php:83
 msgid "Comments are closed"
 msgstr ""
 
+#: contact.php:93
+#: page.php:94
 msgid "Page Not Found"
 msgstr ""
 
+#: contact.php:103
+#: geo-mashup-full-post.php:40
+#: geo-mashup-info-window-max.php:45
+#: geo-mashup-info-window.php:88
+#: page.php:96
+#: single.php:217
 msgid "Sorry, but you are looking for something that isn’t here."
 msgstr ""
 
+#: geo-mashup-full-post.php:39
+#: geo-mashup-info-window-max.php:44
+#: geo-mashup-info-window.php:87
+#: single.php:215
 msgid "Not Found"
 msgstr ""
 
+#: geo-mashup-info-window.php:71
+#: geo-mashup-info-window.php:76
 msgid "Read full story..."
 msgstr ""
 
+#: header_body.php:16
 msgid "Skip to Content"
 msgstr ""
 
+#: header_body.php:29
 msgid "The Ball logo"
 msgstr ""
 
@@ -276,73 +478,96 @@ msgstr ""
 msgid "Main Site Homepage"
 msgstr ""
 
+#: image.php:146
 msgid "Sorry, no images matched your criteria."
 msgstr ""
 
+#: includes/class-theme.php:200
 msgid "Global Menu"
 msgstr ""
 
+#: includes/class-theme.php:201
 msgid "Table of Contents"
 msgstr ""
 
+#: includes/class-theme.php:450
 msgid "Home Top Left"
 msgstr ""
 
+#: includes/class-theme.php:452
 msgid "A widget area at the top left of the homepage"
 msgstr ""
 
+#: includes/class-theme.php:461
 msgid "Home Top Right"
 msgstr ""
 
+#: includes/class-theme.php:463
 msgid "A widget area at the top right of the homepage"
 msgstr ""
 
+#: includes/class-theme.php:472
 msgid "Home Top Sub"
 msgstr ""
 
+#: includes/class-theme.php:474
 msgid "A widget area just below the top of the homepage"
 msgstr ""
 
+#: includes/class-theme.php:483
 msgid "Home Middle Left"
 msgstr ""
 
+#: includes/class-theme.php:485
 msgid "A widget area in the middle left of the homepage"
 msgstr ""
 
+#: includes/class-theme.php:494
 msgid "Home Middle Right"
 msgstr ""
 
+#: includes/class-theme.php:496
 msgid "A widget area in the middle right of the homepage"
 msgstr ""
 
+#: includes/class-theme.php:505
 msgid "Page Top Right"
 msgstr ""
 
+#: includes/class-theme.php:507
 msgid "A widget area at the top right of a single page"
 msgstr ""
 
 #. translators: %s: author's display name
+#: includes/class-theme.php:592
 msgid "Posts by %s"
 msgstr ""
 
+#: includes/class-theme.php:665
 msgid "Edit comment"
 msgstr ""
 
+#: includes/class-theme.php:669
 msgid "%1$s at %2$s"
 msgstr ""
 
+#: includes/class-theme.php:676
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
+#: includes/functions-geomashup.php:36
 msgid "Jump to map"
 msgstr ""
 
+#: includes/functions-theme.php:136
 msgid "Pages: "
 msgstr ""
 
+#: index.php:121
 msgid "Page not found"
 msgstr ""
 
+#: index.php:123
 msgid "Sorry, but you are looking for something that isn’t here. Try a search?"
 msgstr ""
 
@@ -370,78 +595,106 @@ msgstr ""
 msgid "Subpages with Splash"
 msgstr ""
 
+#: search.php:121
 msgid "Try a different search?"
 msgstr ""
 
+#: searchform.php:18
+#: searchform.php:19
+#: searchform.php:20
 msgid "Search"
 msgstr ""
 
+#: sidebar.php:30
 msgid "The 2018 route"
 msgstr ""
 
+#: sidebar.php:37
 msgid "%s left England on 25th March 2018 and travelled to the World Cup in Russia."
 msgstr ""
 
+#: sidebar.php:39
 msgid "More about 2018..."
 msgstr ""
 
+#: sidebar.php:40
 msgid "Go to the 2018 blog"
 msgstr ""
 
+#: sidebar.php:56
 msgid "The 2014 route"
 msgstr ""
 
+#: sidebar.php:63
 msgid "%s kicked off from England on 9th Jan 2014 and headed to the World Cup in Brazil."
 msgstr ""
 
+#: sidebar.php:65
 msgid "More about 2014..."
 msgstr ""
 
+#: sidebar.php:66
 msgid "Go to the 2014 blog"
 msgstr ""
 
+#: sidebar.php:82
 msgid "The 2010 route"
 msgstr ""
 
+#: sidebar.php:89
 msgid "%s left England on 24th Jan 2010 headed to the Opening Ceremony in Johannesburg, South Africa."
 msgstr ""
 
+#: sidebar.php:91
 msgid "More about 2010..."
 msgstr ""
 
+#: sidebar.php:92
 msgid "Go to the 2010 blog"
 msgstr ""
 
+#: sidebar.php:93
 msgid "Start reading from the kickoff"
 msgstr ""
 
+#: sidebar.php:109
 msgid "The 2006 route"
 msgstr ""
 
+#: sidebar.php:116
 msgid "%s travelled from London to the Opening Ceremony in Munich, Germany."
 msgstr ""
 
+#: sidebar.php:118
 msgid "More about 2006..."
 msgstr ""
 
+#: sidebar.php:119
+#: sidebar.php:146
 msgid "Start reading from the beginning"
 msgstr ""
 
+#: sidebar.php:120
 msgid "The Christmas Truce"
 msgstr ""
 
+#: sidebar.php:136
 msgid "The 2002 route"
 msgstr ""
 
+#: sidebar.php:143
 msgid "%s was carried 7000 miles across Europe and Asia to the World Cup finals in Korea &amp; Japan."
 msgstr ""
 
+#: sidebar.php:145
 msgid "More about 2002..."
 msgstr ""
 
+#: sidebar.php:147
 msgid "Watch short videos of the journey"
 msgstr ""
 
+#: single.php:119
 msgid "Categories:"
 msgstr ""
 
@@ -449,5 +702,6 @@ msgstr ""
 msgid "Team"
 msgstr ""
 
+#: team.php:74
 msgid "Edit this profile"
 msgstr ""
