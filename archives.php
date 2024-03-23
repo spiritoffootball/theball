@@ -29,12 +29,12 @@ get_header();
 		<?php
 
 		// Init.
-		$has_feature_image = false;
+		$has_feature_image   = false;
 		$feature_image_class = '';
 
 		// Do we have a feature image?
 		if ( has_post_thumbnail() ) {
-			$has_feature_image = true;
+			$has_feature_image   = true;
 			$feature_image_class = ' has_feature_image';
 		}
 
@@ -89,25 +89,25 @@ get_header();
 
 				// Configure categories.
 				$defaults = [
-					'show_option_all' => '',
-					'orderby' => 'name',
-					'order' => 'ASC',
-					'show_last_update' => 0,
-					'style' => 'list',
-					'show_count' => 0,
-					'hide_empty' => 1,
+					'show_option_all'    => '',
+					'orderby'            => 'name',
+					'order'              => 'ASC',
+					'show_last_update'   => 0,
+					'style'              => 'list',
+					'show_count'         => 0,
+					'hide_empty'         => 1,
 					'use_desc_for_title' => 1,
-					'child_of' => 0,
-					'feed' => '',
-					'feed_type' => '',
-					'feed_image' => '',
-					'exclude' => '',
-					'exclude_tree' => '',
-					'current_category' => 0,
-					'hierarchical' => true,
-					'title_li' => '',
-					'echo' => 1,
-					'depth' => 0,
+					'child_of'           => 0,
+					'feed'               => '',
+					'feed_type'          => '',
+					'feed_image'         => '',
+					'exclude'            => '',
+					'exclude_tree'       => '',
+					'current_category'   => 0,
+					'hierarchical'       => true,
+					'title_li'           => '',
+					'echo'               => 1,
+					'depth'              => 0,
 				];
 
 				?>
@@ -133,13 +133,13 @@ get_header();
 
 				// Configure archives.
 				$defaults = [
-					'type' => 'monthly',
-					'limit' => '',
-					'format' => 'html',
-					'before' => '',
-					'after' => '',
+					'type'            => 'monthly',
+					'limit'           => '',
+					'format'          => 'html',
+					'before'          => '',
+					'after'           => '',
 					'show_post_count' => false,
-					'echo' => 1,
+					'echo'            => 1,
 				];
 
 				?>

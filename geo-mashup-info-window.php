@@ -41,10 +41,10 @@ add_filter( 'the_excerpt', [ 'GeoMashupQuery', 'strip_brackets' ] );
 				<?php
 
 				// Init feature image vars.
-				$has_feature_image = false;
+				$has_feature_image   = false;
 				$feature_image_class = '';
 				if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail() ) {
-					$has_feature_image = true;
+					$has_feature_image   = true;
 					$feature_image_class = ' has_feature_image';
 				}
 

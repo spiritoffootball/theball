@@ -34,12 +34,12 @@ get_header();
 								<?php
 
 								// Init.
-								$has_feature_image = false;
+								$has_feature_image   = false;
 								$feature_image_class = '';
 
 								// Do we have a Feature Image?
 								if ( has_post_thumbnail() ) {
-									$has_feature_image = true;
+									$has_feature_image   = true;
 									$feature_image_class = ' has_feature_image';
 								}
 

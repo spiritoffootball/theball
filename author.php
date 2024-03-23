@@ -24,9 +24,9 @@ if ( ! empty( $author ) && is_numeric( $author ) ) {
 }
 
 // Get URL for this user - exclude 'http://' or 'https://'.
-$authorURL = '';
+$author_url = '';
 if ( ! empty( $my_author->user_url ) && $my_author->user_url != 'http://' && $my_author->user_url != 'https://' ) {
-	$authorURL = $my_author->user_url;
+	$author_url = $my_author->user_url;
 }
 
 // Use full name - or nickname if missing.

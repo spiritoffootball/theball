@@ -24,9 +24,9 @@ defined( 'ABSPATH' ) || exit;
 				// Try and use it.
 				wp_nav_menu( [
 					'theme_location' => 'theball_menu',
-					'echo' => true,
-					'container' => '',
-					'items_wrap' => '%3$s',
+					'echo'           => true,
+					'container'      => '',
+					'items_wrap'     => '%3$s',
 				] );
 
 				?>

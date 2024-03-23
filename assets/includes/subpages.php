@@ -14,9 +14,9 @@ global $post;
 
 // Set params.
 $args = [
-	'order_by' => 'menu_order',
-	'order' => 'ASC',
-	'post_type' => 'page',
+	'order_by'    => 'menu_order',
+	'order'       => 'ASC',
+	'post_type'   => 'page',
 	'post_status' => 'publish',
 	'post_parent' => $post->ID,
 ];
@@ -50,16 +50,16 @@ if ( $subpages->have_posts() ) :
 
 				// Set default behaviour.
 				$defaults = [
-					'before' => '<div class="multipager">',
-					'after' => '</div>',
-					'link_before' => '',
-					'link_after' => '',
-					'next_or_number' => 'next',
-					'nextpagelink' => '<span class="alignright">' . __( 'Next page', 'theball' ) . ' &raquo;</span>',
+					'before'           => '<div class="multipager">',
+					'after'            => '</div>',
+					'link_before'      => '',
+					'link_after'       => '',
+					'next_or_number'   => 'next',
+					'nextpagelink'     => '<span class="alignright">' . __( 'Next page', 'theball' ) . ' &raquo;</span>',
 					'previouspagelink' => '<span class="alignleft">&laquo; ' . __( 'Previous page', 'theball' ) . '</span>',
-					'pagelink' => '%',
-					'more_file' => '',
-					'echo' => 1,
+					'pagelink'         => '%',
+					'more_file'        => '',
+					'echo'             => 1,
 				];
 
 				wp_link_pages( $defaults );

@@ -109,16 +109,16 @@ if ( ! function_exists( 'theball_multipager' ) ) :
 
 		// Set default behaviour.
 		$defaults = [
-			'before' => '<div class="multipager">',
-			'after' => '</div>',
-			'link_before' => '',
-			'link_after' => '',
-			'next_or_number' => 'next',
-			'nextpagelink' => '<span class="alignright">' . __( 'Next page', 'theball' ) . ' &raquo;</span>',
+			'before'           => '<div class="multipager">',
+			'after'            => '</div>',
+			'link_before'      => '',
+			'link_after'       => '',
+			'next_or_number'   => 'next',
+			'nextpagelink'     => '<span class="alignright">' . __( 'Next page', 'theball' ) . ' &raquo;</span>',
 			'previouspagelink' => '<span class="alignleft">&laquo; ' . __( 'Previous page', 'theball' ) . '</span>',
-			'pagelink' => '%',
-			'more_file' => '',
-			'echo' => 0,
+			'pagelink'         => '%',
+			'more_file'        => '',
+			'echo'             => 0,
 		];
 
 		// Get page links.
@@ -133,10 +133,10 @@ if ( ! function_exists( 'theball_multipager' ) ) :
 
 		// Get page links.
 		$page_links .= wp_link_pages( [
-			'before' => '<div class="multipager multipager_all"><span>' . __( 'Pages: ', 'theball' ) . '</span>',
-			'after' => '</div>',
+			'before'   => '<div class="multipager multipager_all"><span>' . __( 'Pages: ', 'theball' ) . '</span>',
+			'after'    => '</div>',
 			'pagelink' => '<span class="multipager_link">%</span>',
-			'echo' => 0,
+			'echo'     => 0,
 		] );
 
 		// --<

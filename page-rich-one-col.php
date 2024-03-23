@@ -44,7 +44,7 @@ get_header();
 
 								// Get the Featured Video.
 								$has_feature_image = false;
-								$header_video = get_field( 'header_video' );
+								$header_video      = get_field( 'header_video' );
 
 								// Do not show Feature Image if we have a Video.
 								if ( $header_video ) {
@@ -53,7 +53,7 @@ get_header();
 
 									// Do we have a Feature Image?
 									if ( has_post_thumbnail() ) {
-										$has_feature_image = true;
+										$has_feature_image   = true;
 										$feature_image_class = ' has_feature_image';
 									}
 

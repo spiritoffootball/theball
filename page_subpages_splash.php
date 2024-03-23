@@ -45,12 +45,12 @@ get_header();
 				<?php
 
 				// Init.
-				$has_feature_image = false;
+				$has_feature_image   = false;
 				$feature_image_class = '';
 
 				// Do we have a feature image?
 				if ( has_post_thumbnail() ) {
-					$has_feature_image = true;
+					$has_feature_image   = true;
 					$feature_image_class = ' has_feature_image';
 				}
 
@@ -83,16 +83,16 @@ get_header();
 
 					// Set default behaviour.
 					$defaults = [
-						'before' => '<div class="multipager">',
-						'after' => '</div>',
-						'link_before' => '',
-						'link_after' => '',
-						'next_or_number' => 'next',
-						'nextpagelink' => '<span class="alignright">' . __( 'Next page', 'theball' ) . ' &raquo;</span>',
+						'before'           => '<div class="multipager">',
+						'after'            => '</div>',
+						'link_before'      => '',
+						'link_after'       => '',
+						'next_or_number'   => 'next',
+						'nextpagelink'     => '<span class="alignright">' . __( 'Next page', 'theball' ) . ' &raquo;</span>',
 						'previouspagelink' => '<span class="alignleft">&laquo; ' . __( 'Previous page', 'theball' ) . '</span>',
-						'pagelink' => '%',
-						'more_file' => '',
-						'echo' => 1,
+						'pagelink'         => '%',
+						'more_file'        => '',
+						'echo'             => 1,
 					];
 
 					wp_link_pages( $defaults );
@@ -117,9 +117,9 @@ get_header();
 
 	// Set params.
 	$args = [
-		'order_by' => 'menu_order',
-		'order' => 'ASC',
-		'post_type' => 'page',
+		'order_by'    => 'menu_order',
+		'order'       => 'ASC',
+		'post_type'   => 'page',
 		'post_status' => 'publish',
 		'post_parent' => $post->ID,
 	];
@@ -153,16 +153,16 @@ get_header();
 
 					// Set default behaviour.
 					$defaults = [
-						'before' => '<div class="multipager">',
-						'after' => '</div>',
-						'link_before' => '',
-						'link_after' => '',
-						'next_or_number' => 'next',
-						'nextpagelink' => '<span class="alignright">' . __( 'Next page', 'theball' ) . ' &raquo;</span>',
+						'before'           => '<div class="multipager">',
+						'after'            => '</div>',
+						'link_before'      => '',
+						'link_after'       => '',
+						'next_or_number'   => 'next',
+						'nextpagelink'     => '<span class="alignright">' . __( 'Next page', 'theball' ) . ' &raquo;</span>',
 						'previouspagelink' => '<span class="alignleft">&laquo; ' . __( 'Previous page', 'theball' ) . '</span>',
-						'pagelink' => '%',
-						'more_file' => '',
-						'echo' => 1,
+						'pagelink'         => '%',
+						'more_file'        => '',
+						'echo'             => 1,
 					];
 
 					wp_link_pages( $defaults );

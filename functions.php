@@ -29,10 +29,8 @@ define( 'THEBALL_VERSION', '3.0.6' );
  */
 function sof_the_ball_theme() {
 
-	// Declare as static.
+	// Maybe instantiate theme class.
 	static $theme;
-
-	// Instantiate plugin if not yet instantiated.
 	if ( ! isset( $theme ) ) {
 		include get_template_directory() . '/includes/class-theme.php';
 		$theme = new SOF_The_Ball_Theme();

@@ -20,19 +20,15 @@ defined( 'ABSPATH' ) || exit;
 class SOF_The_Ball_Theme {
 
 	/**
-	 * Initialises this object.
+	 * Constructor.
 	 *
 	 * @since 2.4.4
 	 */
 	public function __construct() {
 
-		// Include files.
+		// Bootstrap class.
 		$this->include_files();
-
-		// Set up objects and references.
 		$this->setup_objects();
-
-		// Register hooks.
 		$this->register_hooks();
 
 		/**
@@ -53,7 +49,7 @@ class SOF_The_Ball_Theme {
 
 		// Only do this once.
 		static $done;
-		if ( isset( $done ) && $done === true ) {
+		if ( isset( $done ) && true === $done ) {
 			return;
 		}
 
@@ -75,7 +71,7 @@ class SOF_The_Ball_Theme {
 
 		// Only do this once.
 		static $done;
-		if ( isset( $done ) && $done === true ) {
+		if ( isset( $done ) && true === $done ) {
 			return;
 		}
 
@@ -85,7 +81,7 @@ class SOF_The_Ball_Theme {
 	}
 
 	/**
-	 * Register WordPress hooks.
+	 * Register hook callbacks.
 	 *
 	 * @since 2.4.4
 	 */
@@ -400,7 +396,7 @@ class SOF_The_Ball_Theme {
 	 * @since 1.0.0
 	 *
 	 * @param string $empty The existing caption.
-	 * @param array $attr Attributes attributed to the shortcode.
+	 * @param array  $attr Attributes attributed to the shortcode.
 	 * @param string $content Optional. Shortcode content.
 	 * @return string $caption The customised caption.
 	 */
@@ -408,9 +404,9 @@ class SOF_The_Ball_Theme {
 
 		// Get our shortcode vars.
 		extract( shortcode_atts( [
-			'id' => '',
-			'align' => 'alignnone',
-			'width' => '',
+			'id'      => '',
+			'align'   => 'alignnone',
+			'width'   => '',
 			'caption' => '',
 		], $attr ) );
 
@@ -447,68 +443,68 @@ class SOF_The_Ball_Theme {
 
 		// Define an area where a widget may be placed.
 		register_sidebar( [
-			'name' => __( 'Home Top Left', 'theball' ),
-			'id' => 'sof-top-left',
-			'description' => __( 'A widget area at the top left of the homepage', 'theball' ),
+			'name'          => __( 'Home Top Left', 'theball' ),
+			'id'            => 'sof-top-left',
+			'description'   => __( 'A widget area at the top left of the homepage', 'theball' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
 		] );
 
 		// Define an area where a widget may be placed.
 		register_sidebar( [
-			'name' => __( 'Home Top Right', 'theball' ),
-			'id' => 'sof-top-right',
-			'description' => __( 'A widget area at the top right of the homepage', 'theball' ),
+			'name'          => __( 'Home Top Right', 'theball' ),
+			'id'            => 'sof-top-right',
+			'description'   => __( 'A widget area at the top right of the homepage', 'theball' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
 		] );
 
 		// Define an area where a widget may be placed.
 		register_sidebar( [
-			'name' => __( 'Home Top Sub', 'theball' ),
-			'id' => 'sof-top-sub',
-			'description' => __( 'A widget area just below the top of the homepage', 'theball' ),
+			'name'          => __( 'Home Top Sub', 'theball' ),
+			'id'            => 'sof-top-sub',
+			'description'   => __( 'A widget area just below the top of the homepage', 'theball' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
 		] );
 
 		// Define an area where a widget may be placed.
 		register_sidebar( [
-			'name' => __( 'Home Middle Left', 'theball' ),
-			'id' => 'sof-middle-left',
-			'description' => __( 'A widget area in the middle left of the homepage', 'theball' ),
+			'name'          => __( 'Home Middle Left', 'theball' ),
+			'id'            => 'sof-middle-left',
+			'description'   => __( 'A widget area in the middle left of the homepage', 'theball' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
 		] );
 
 		// Define an area where a widget may be placed.
 		register_sidebar( [
-			'name' => __( 'Home Middle Right', 'theball' ),
-			'id' => 'sof-middle-right',
-			'description' => __( 'A widget area in the middle right of the homepage', 'theball' ),
+			'name'          => __( 'Home Middle Right', 'theball' ),
+			'id'            => 'sof-middle-right',
+			'description'   => __( 'A widget area in the middle right of the homepage', 'theball' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
 		] );
 
 		// Define an area where a widget may be placed.
 		register_sidebar( [
-			'name' => __( 'Page Top Right', 'theball' ),
-			'id' => 'sof-top-right-page',
-			'description' => __( 'A widget area at the top right of a single page', 'theball' ),
+			'name'          => __( 'Page Top Right', 'theball' ),
+			'id'            => 'sof-top-right-page',
+			'description'   => __( 'A widget area at the top right of a single page', 'theball' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
 		] );
 
 	}
@@ -519,7 +515,7 @@ class SOF_The_Ball_Theme {
 	 * @since 1.0.0
 	 *
 	 * @param string $markup The gallery markup.
-	 * @param array $attr The shortcode attributes array.
+	 * @param array  $attr The shortcode attributes array.
 	 * @return string $markup The modified gallery markup.
 	 */
 	public function gallery_shortcode_filter( $markup, $attr ) {
@@ -642,8 +638,8 @@ class SOF_The_Ball_Theme {
 	 * @since 1.0.0
 	 *
 	 * @param string $comment The comment.
-	 * @param array $args The comment arguments.
-	 * @param int $depth The comment depth.
+	 * @param array  $args The comment arguments.
+	 * @param int    $depth The comment depth.
 	 */
 	public function comment_markup( $comment, $args, $depth ) {
 
@@ -688,7 +684,7 @@ class SOF_The_Ball_Theme {
 			echo comment_reply_link( array_merge(
 				$args,
 				[
-					'depth' => $depth,
+					'depth'     => $depth,
 					'max_depth' => $args['max_depth'],
 				]
 			) );

@@ -53,8 +53,8 @@ get_header();
 						<?php
 
 						wp_link_pages( [
-							'before' => '<p><strong>' . __( 'Pages:', 'theball' ) . '</strong> ',
-							'after' => '</p>',
+							'before'         => '<p><strong>' . __( 'Pages:', 'theball' ) . '</strong> ',
+							'after'          => '</p>',
 							'next_or_number' => 'number',
 						] );
 

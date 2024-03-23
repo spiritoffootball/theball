@@ -54,7 +54,7 @@ get_header();
 
 				<div class="post_header">
 					<h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute( [ 'before' => __( 'Permanent Link to: ', 'theball' ), 'after' => '' ] ); ?>"><?php the_title(); ?></a></h3>
-					<p class="postname"><?php printf( __( '%1$s by %2$s', 'theball' ), get_the_time( 'F jS, Y' ), get_the_author_posts_link() ); ?></p>
+					<p class="postname"><?php printf( esc_html__( '%1$s by %2$s', 'theball' ), get_the_time( 'F jS, Y' ), get_the_author_posts_link() ); ?></p>
 				</div><!-- /post_header -->
 
 				<div class="entry clearfix">

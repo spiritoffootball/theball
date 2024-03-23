@@ -53,9 +53,9 @@ $oddcomment = 'class="alt" ';
 
 			wp_list_comments( [
 				// List comments params.
-				'type' => 'all', //'comment',
+				'type'       => 'all', //'comment',
 				'reply_text' => __( 'Reply to this comment', 'theball' ),
-				'callback' => [ sof_the_ball_theme(), 'comment_markup' ],
+				'callback'   => [ sof_the_ball_theme(), 'comment_markup' ],
 			] );
 
 			?>
