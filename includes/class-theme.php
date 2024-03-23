@@ -425,7 +425,7 @@ class SOF_The_Ball_Theme {
 		];
 
 		// Get parsed attributes.
-		$atts = shortcode_atts( $defaults, $attr, $tag );
+		$atts = shortcode_atts( $defaults, $attr );
 
 		if ( 1 > (int) $atts['width'] || empty( $atts['caption'] ) ) {
 			return $content;
