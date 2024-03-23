@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
  *
  * @since 1.0.0
  */
-define( 'THEBALL_VERSION', '3.0.6' );
+define( 'THEBALL_VERSION', '3.0.7a' );
 
 /**
  * Load theme class if not yet loaded and return instance.
